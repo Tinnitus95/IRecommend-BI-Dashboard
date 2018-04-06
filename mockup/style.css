@@ -189,7 +189,7 @@ a.article, a.article:hover {
   /* border: 1px solid #EEE; */
   margin: 10px 0;
   color: white;
-  
+
 }
 
 #number-widgets div {
@@ -252,5 +252,13 @@ a.article, a.article:hover {
     #sidebarCollapse.active span:last-of-type {
         transform: rotate(-45deg) translate(1px, -1px);
     }
+
+}
+
+#drop_zone {
+  width: 300px;
+  height: 300px;
+  background: #EEE;
+  color: black;
 
 }

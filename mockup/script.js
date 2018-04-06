@@ -5,21 +5,23 @@ $(document).ready(function () {
     });
 });
 
-let listItems = document.querySelectorAll('li');
-
-
-
-
-function allowDrop(ev) {
-    ev.preventDefault();
+function _(id){
+  return document.getElementById(id);
 }
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
+function drag_start(event){
+  event.dataTransfer.dropEffect = "move";
+  event.dataTransfer.setData("text", event.target.getAttribute('id') );
 }
 
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+var droppedIn = false;
+
+function drop_end(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("Text");
+  var copy = document.createElement("h4");
+  var original = document.getElementById(data);
+
+  copy.innerHTML = original.innerHTML;
+  ev.target.appendChild(copy);
 }
