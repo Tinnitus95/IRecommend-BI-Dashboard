@@ -1,0 +1,11 @@
+.circle{
+    width: 200px;
+}
+.smaller{
+    width: 400px;
+}
+
+#amount, #percent{
+    display: flex;
+    background: #eff4f4;
+}

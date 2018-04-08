@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/js/jquery.circliful.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container smaller">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#amount" data-toggle="tab">Numbers</a></li>
+            <li><a href="#percent" data-toggle="tab">Percent</a></li>
+
+        </ul>
+
+        <div class="tab-content">
+            <div id="amount" class="tab-pane fade in active">
+                <div id="circle-1" class="circle" data-dimension="250" data-text="" data-info="Sweet" data-width="30" data-fontsize="38" data-percent="50" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="50"></div>
+
+                <div id="circle-2" class="circle" data-dimension="250" data-text="" data-info="Terrible" data-width="30" data-fontsize="38" data-percent="20" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="20"></div>
+
+                <div id="circle-3" class="circle" data-dimension="250" data-text="" data-info="Drunk" data-width="30" data-fontsize="38" data-percent="20" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="20"></div>
+                <div id="circle-4" class="circle" data-dimension="250" data-text="" data-info="Drunk" data-width="30" data-fontsize="38" data-percent="10" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="10"></div>
+            </div>
+            <div id="percent" class="tab-pane fade">
+
+
+            </div>
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#circle-1').circliful();
+            $('#circle-2').circliful();
+            $('#circle-3').circliful();
+            $('#circle-4').circliful();
+            // $('#circle-5').circliful();
+            // $('#circle-6').circliful();
+            // $('#circle-7').circliful();
+            // $('#circle-8').circliful();
+        });
+</script>
+</body>
+
+</html>
