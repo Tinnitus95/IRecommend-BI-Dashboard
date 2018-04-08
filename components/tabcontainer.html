@@ -5,23 +5,26 @@
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="container smaller">
         <ul class="nav nav-tabs">
-            <li class="active"><a href="#home">Leaderboard</a></li>
-            <li><a href="#menu1">Team Leaderboard</a></li>
+            <li class="active"><a href="#leaderboard" data-toggle="tab">Leaderboard</a></li>
+            <li><a href="#teams" data-toggle="tab">Team Leaderboard</a></li>
 
         </ul>
 
         <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">
-                <h3>Leaderboard</h3>
+            <div id="leaderboard" class="tab-pane fade in active">
+
                 <table>
                     <tr>
                         <th>Rank</th>
@@ -30,32 +33,32 @@
                         <th>Poäng</th>
                     </tr>
                     <tr>
-                        <td>1.</td>
-                        <td> Mats Knutsson</td>
+                        <td><i class="fas fa-trophy"></i></td>
+                        <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
                         <td>200</td>
                         <td>206099</td>
                     </tr>
                     <tr>
                         <td>2.</td>
-                        <td>Mats Knutsson</td>
+                        <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
                         <td>200</td>
                         <td>206099</td>
                     </tr>
                     <tr>
                         <td>3.</td>
-                        <td>Mats Knutsson</td>
+                        <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
                         <td>200</td>
                         <td>206099</td>
                     </tr>
                     <tr>
                         <td>4.</td>
-                        <td>Mats Knutsson</td>
+                        <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
                         <td>200</td>
                         <td>206099</td>
                     </tr>
                     <tr>
                         <td>5.</td>
-                        <td>Mats Knutsson</td>
+                        <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
                         <td>200</td>
                         <td>206099</td>
                     </tr>
@@ -63,8 +66,8 @@
 
                 </table>
             </div>
-            <div id="menu1" class="tab-pane fade">
-                <h3>Team Leaderboard</h3>
+            <div id="teams" class="tab-pane fade">
+
                 <table>
                     <tr>
                         <th>Rank</th>
@@ -73,32 +76,32 @@
                         <th>Poäng</th>
                     </tr>
                     <tr>
-                        <td>1.</td>
-                        <td> Mats Knutsson</td>
+                        <td><i class="fas fa-trophy"></i></td>
+                        <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
                         <td>200</td>
                         <td>206099</td>
                     </tr>
                     <tr>
                         <td>2.</td>
-                        <td>Mats Knutsson</td>
+                        <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
                         <td>200</td>
                         <td>206099</td>
                     </tr>
                     <tr>
                         <td>3.</td>
-                        <td>Mats Knutsson</td>
+                        <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
                         <td>200</td>
                         <td>206099</td>
                     </tr>
                     <tr>
                         <td>4.</td>
-                        <td>Mats Knutsson</td>
+                        <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
                         <td>200</td>
                         <td>206099</td>
                     </tr>
                     <tr>
                         <td>5.</td>
-                        <td>Mats Knutsson</td>
+                        <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
                         <td>200</td>
                         <td>206099</td>
                     </tr>
@@ -110,13 +113,13 @@
         </div>
     </div>
 
-    <script>
+    <!-- <script>
         $(document).ready(function() {
             $(".nav-tabs a").click(function() {
                 $(this).tab('show');
             });
         });
-    </script>
+    </script> -->
 
 </body>
 

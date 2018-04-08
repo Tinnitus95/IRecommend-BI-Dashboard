@@ -1,0 +1,56 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.smaller{
+    width: 400px;
+
+}
+table{
+    width: 100%;
+
+}
+
+
+img{
+    width: 30px;
+}
+
+td{
+
+    padding: 5px 10px;
+}
+th, td{
+text-align: center;
+}
+
+#leaderboard, #teams{
+
+    padding: 5px 10px;
+    /* border:1px solid black;
+    border-top: none; */
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+a{
+    background: rgba(186, 161, 161, 0.3);
+}
+
+
+tr:nth-child(even){
+    background-color: #1f9095;
+    color: #d5eced;
+
+}
+
+
+.nav li.active a,
+.nav li a:hover,
+.nav li.active a:focus,
+.nav li.active a:hover{
+    background-color: #1f9095;
+    color: #d5eced;
+
+}
