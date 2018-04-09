@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Drag n Drop test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,70 +9,91 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <div class="wrapper">
-      <nav id="sidebar">
-        <div class="sidebar-header">
-          <h3>Telenor</h3>
-          <h4 id="anna-lena" draggable="true" ondragstart="drag_start(event)">anna-lena</h4>
-        </div>
-        <ul class="list-unstyled components">
-          <p>Visualisera data</p>
-          <li class="active">
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Highscore</a>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-              <li><a href="#">Personlig topplista</a></li>
-              <li><a href="#">Team topplista</a></li>
+</head>
+
+<body>
+    <div class="fapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Telenor</h3>
+                <h4 id="anna-lena" draggable="true" ondragstart="drag_start(event)">anna-lena</h4>
+            </div>
+            <ul class="list-unstyled components">
+                <p>Visualisera data</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Highscore</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li><a href="#">Personlig topplista</a></li>
+                        <li><a href="#">Team topplista</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#timeSubmenu" data-toggle="collapse" aria-expanded="false">Tid</a>
+                    <ul class="collapse list-unstyled" id="timeSubmenu">
+                        <li><a href="#">Tipsfrekvens per klockslag</a></li>
+                        <li><a href="#">Tipsfrekvens per veckodag</a></li>
+                        <li><a href="#">Svarfrekvens från de som rekommenderats</a></li>
+                        <li><a href="#">Snitt-tid per rekrytering</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#numberSubmenu" data-toggle="collapse" aria-expanded="false">Siffror</a>
+                    <ul class="collapse list-unstyled" id="numberSubmenu">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Återställ</a>
+                </li>
             </ul>
-          </li>
-          <li>
-            <a href="#timeSubmenu" data-toggle="collapse" aria-expanded="false">Tid</a>
-            <ul class="collapse list-unstyled" id="timeSubmenu">
-              <li><a href="#">Tipsfrekvens per klockslag</a></li>
-              <li><a href="#">Tipsfrekvens per veckodag</a></li>
-              <li><a href="#">Svarfrekvens från de som rekommenderats</a></li>
-              <li><a href="#">Snitt-tid per rekrytering</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#numberSubmenu" data-toggle="collapse" aria-expanded="false">Siffror</a>
-            <ul class="collapse list-unstyled" id="numberSubmenu">
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Återställ</a>
-          </li>
-        </ul>
-      </nav>
-      <button type="button" id="sidebarCollapse" class="navbar-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        </nav>
+        <button type="button" id="sidebarCollapse" class="navbar-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
         <!-- Page Content Holder -->
         <div id="content">
-          <div id="number-widgets" class="widgets">
-            <div><p>1</p></div>
-            <div><p>2</p></div>
-            <div><p>3</p></div>
-            <div><p>4</p></div>
-          </div>
-          <div id="widgets-content-1" class="widgets">
-            <div><h5>ej svarat</h5></div>
-            <div><h5>visat intresse</h5></div>
-            <div><h5>intervju</h5></div>
-            <div><h5>anställda</h5></div>
-          </div>
-          <div id="widgets-content-2" class="widgets">
-            <div><h2>Multi-line chart</h2></div>
-            <div id="drop_zone" ondrop="drop_end(event)" ondragover='return false'></div>
-          </div>
+            <div id="radial_gauge" class="widgets">
+                <div class="wrapper">
+
+                        <div id="g1" class="gauge"></div>
+
+
+                        <div id="g2" class="gauge"></div>
+
+
+                        <div id="g3" class="gauge"></div>
+
+
+                        <div id="g4" class="gauge"></div>
+
+                </div>
+            </div>
+            <div id="number-widgets" class="widgets">
+                <div>
+                    <p>1</p>
+                </div>
+                <div>
+                    <p>2</p>
+                </div>
+                <div>
+                    <p>3</p>
+                </div>
+                <div>
+                    <p>4</p>
+                </div>
+            </div>
+
+            <div id="widgets-content-2" class="widgets">
+                <div>
+                    <h2>Multi-line chart</h2></div>
+                <div id="drop_zone" ondrop="drop_end(event)" ondragover='return false'></div>
+            </div>
 
 
 
@@ -82,5 +104,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-  </body>
+    <script src="raphael-2.1.4.min.js"></script>
+    <script src="justgage.js"></script>
+    <script src="radial_gauge.js"></script>
+</body>
+
 </html>
