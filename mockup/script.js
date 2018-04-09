@@ -17,11 +17,17 @@ function drag_start(event){
 var droppedIn = false;
 
 function drop_end(ev) {
+  let target = ev.target;
   ev.preventDefault();
-  var data = ev.dataTransfer.getData("Text");
-  var copy = document.createElement("h4");
-  var original = document.getElementById(data);
 
-  copy.innerHTML = original.innerHTML;
+  target.removeChild(target.childNodes[0]);
+
+  var data = ev.dataTransfer.getData("Text");
+
+  var copy = document.createElement("img");
+  
+
+  var original = document.getElementById(data);
+  copy.src = original.src;
   ev.target.appendChild(copy);
 }
