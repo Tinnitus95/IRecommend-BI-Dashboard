@@ -191,6 +191,12 @@ a.article, a.article:hover {
 #test {
   height: 274px;
 }
+
+.number-widgets {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  text-align: center;
+  padding: 20px;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -238,15 +244,13 @@ a.article, a.article:hover {
 
 }
 
-
-
 .gauge {
     text-align: center;
   /* box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
 
 }
 
-.gauge h3 {
+.center h3 {
   margin: 0;
 }
 
