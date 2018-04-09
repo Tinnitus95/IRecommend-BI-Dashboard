@@ -7,11 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
     <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/circliful/1.2.0/js/jquery.circliful.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+        text-align: center;
+      }
+
+      #g1 {
+        width:400px; height:320px;
+        display: inline-block;
+        margin: 1em;
+      }
+
+      #g2, #g3, #g4 {
+        width:100px; height:80px;
+        display: inline-block;
+        margin: 1em;
+      }
+
+      p {
+        display: block;
+        width: 450px;
+        margin: 2em auto;
+        text-align: left;
+      }
+    </style>
 </head>
 
 <body>
@@ -24,14 +46,14 @@
         </ul>
 
         <div class="tab-content">
-            <div id="amount" class="tab-pane fade in active">
-                <div id="circle-1" class="circle" data-dimension="250" data-text="" data-info="Sweet" data-width="30" data-fontsize="38" data-percent="50" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="50"></div>
+             <div id="amount" class="tab-pane fade">
+                 <div id="g1"></div>
+                 <div id="g2"></div>
+                 <div id="g3"></div>
+                 <div id="g4"></div>
+             </div>
 
-                <div id="circle-2" class="circle" data-dimension="250" data-text="" data-info="Terrible" data-width="30" data-fontsize="38" data-percent="20" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="20"></div>
 
-                <div id="circle-3" class="circle" data-dimension="250" data-text="" data-info="Drunk" data-width="30" data-fontsize="38" data-percent="20" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="20"></div>
-                <div id="circle-4" class="circle" data-dimension="250" data-text="" data-info="Drunk" data-width="30" data-fontsize="38" data-percent="10" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="10"></div>
-            </div>
             <div id="percent" class="tab-pane fade">
 
 
@@ -39,18 +61,57 @@
 
         </div>
     </div>
+    <script src="raphael-2.1.4.min.js"></script>
+    <script src="justgage.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#circle-1').circliful();
-            $('#circle-2').circliful();
-            $('#circle-3').circliful();
-            $('#circle-4').circliful();
-            // $('#circle-5').circliful();
-            // $('#circle-6').circliful();
-            // $('#circle-7').circliful();
-            // $('#circle-8').circliful();
+      var g1, g2, g3, g4;
+
+      window.onload = function(){
+        var g1 = new JustGage({
+          id: "g1",
+          value: getRandomInt(0, 100),
+          min: 0,
+          max: 100,
+          title: "Big Fella",
+          label: "pounds"
         });
-</script>
+
+        var g2 = new JustGage({
+          id: "g2",
+          value: getRandomInt(0, 100),
+          min: 0,
+          max: 100,
+          title: "Small Buddy",
+          label: "oz"
+        });
+
+        var g3 = new JustGage({
+          id: "g3",
+          value: getRandomInt(0, 100),
+          min: 0,
+          max: 100,
+          title: "Tiny Lad",
+          label: "oz"
+        });
+
+        var g4 = new JustGage({
+          id: "g4",
+          value: getRandomInt(0, 100),
+          min: 0,
+          max: 100,
+          title: "Little Pal",
+          label: "oz"
+        });
+
+        setInterval(function() {
+          g1.refresh(getRandomInt(50, 100));
+          g2.refresh(getRandomInt(50, 100));
+          g3.refresh(getRandomInt(0, 50));
+          g4.refresh(getRandomInt(0, 50));
+        }, 2500);
+      };
+    </script>
+
 </body>
 
 </html>
