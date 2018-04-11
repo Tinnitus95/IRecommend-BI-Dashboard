@@ -9,6 +9,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 </head>
@@ -112,11 +113,11 @@
 
             <div class="container-fluid">
                 <div class="row" id="test">
-                    <div class="col-sm-6 line-chart">
-                        <h3>Line chart goes here</h3>
+                    <div class="col-sm-6" id="donutchart">
+
 
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" id="leaderboard-container">
                         <div class="smaller">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#leaderboard" data-toggle="tab">Leaderboard</a></li>
@@ -208,22 +209,13 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div id="donutchart">
-                            <!-- Donut chart goes in here -->
-                        </div>
-                    </div>
-                </div>
+            <div class="container-fluid number-widgets ">
+              <div class="col-sm-12">
+                <canvas id="myChart" width="300" height="200"></canvas>
+              </div>
             </div>
-
-
-
-        </div>
-
-
-    </div>
+      </div>
+  </div>
 
 
 
@@ -234,7 +226,8 @@
     <script src="raphael-2.1.4.min.js"></script>
     <script src="justgage.js"></script>
     <script src="radial_gauge.js"></script>
-    <script src="pie_chart.js" charset="utf-8"></script>
+    <script src="pie_chart.js"></script>
+    <script src="line_chart.js"></script>
 </body>
 
 </html>
