@@ -198,6 +198,7 @@ a.article, a.article:hover {
 
 .sidebarLogo img {
     width: 75px;
+    padding-top: 85%;
 }
 .sidebarLogo p {
     color: rgb(212, 234, 236);
