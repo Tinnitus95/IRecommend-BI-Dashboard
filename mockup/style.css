@@ -185,10 +185,10 @@ a.article, a.article:hover {
 
 .sidebarLogo {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    padding-top: 70%;
     flex-direction: column;
+
 }
 
 .sidebarLogo img {
