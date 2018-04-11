@@ -185,6 +185,21 @@ a.article, a.article:hover {
     background: transparent;
 }
 
+.sidebarLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70%;
+    flex-direction: column;
+}
+
+.sidebarLogo img {
+    width: 75px;
+}
+.sidebarLogo p {
+    color: rgb(212, 234, 236);
+    font-size: 13px;
+}
 
 /* ---------------------------------------------------
     CONTENT STYLE
