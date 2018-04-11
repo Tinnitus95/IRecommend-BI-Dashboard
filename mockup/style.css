@@ -54,7 +54,7 @@ a, a:hover, a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    
+
     /* background: #7386D5; */
     background: linear-gradient(to bottom right, #45BCB7 , #007185);
     /* background: linear-gradient(#45BCB7, #007185); */
@@ -259,10 +259,7 @@ a.article, a.article:hover {
 
 
 }
-.border{
-    border: 1px solid rgb(200, 200, 200);
-    background: #fff;
-}
+
 
 .gauge {
     text-align: center;
@@ -275,6 +272,7 @@ a.article, a.article:hover {
 
 .center {
   text-align: center;
+
 }
 
 
