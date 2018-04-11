@@ -54,7 +54,10 @@ a, a:hover, a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #7386D5;
+
+    /* background: #7386D5; */
+    background: linear-gradient(to bottom right, #45BCB7 , #007185);
+    /* background: linear-gradient(#45BCB7, #007185); */
     color: #fff;
     transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
     transform-origin: bottom left;
@@ -67,7 +70,7 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #45BCB7;
 }
 
 #sidebar ul.components {
@@ -92,7 +95,7 @@ a, a:hover, a:focus {
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: #45BCB7;
 }
 
 
@@ -101,7 +104,7 @@ a[data-toggle="collapse"] {
 }
 
 a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
-    content: '\e259';
+    /* content: '\e259'; */
     display: block;
     position: absolute;
     right: 20px;
@@ -109,7 +112,7 @@ a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
     font-size: 0.6em;
 }
 a[aria-expanded="true"]::before {
-    content: '\e260';
+    /* content: '\e260'; */
 }
 
 
@@ -197,6 +200,7 @@ a.article, a.article:hover {
     font-size: 40px;
     height: inherit;
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10), 0 1px 4px 0 rgba(0,0,0,0.10);
+    background: #fff;
 }
 
 #test {
@@ -206,6 +210,7 @@ a.article, a.article:hover {
 .number-widgets {
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10), 0 1px 4px 0 rgba(0,0,0,0.10);
   text-align: center;
+  background: #fff;
 
 }
 /* ---------------------------------------------------
@@ -251,18 +256,17 @@ a.article, a.article:hover {
     justify-content: space-around;
     clear: both;
     width: 100%;
-   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10), 0 1px 4px 0 rgba(0,0,0,0.10);
+    background: #fff;
 
 
 }
-.border{
-    
-}
+
 
 .gauge {
     text-align: center;
   /* box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10), 0 1px 4px 0 rgba(0,0,0,0.10); */
     margin: 0 auto;
+    background: #fff;
 }
 
 
@@ -307,7 +311,7 @@ text-align: center;
 }
 
 #leaderboard, #teams{
-    background: #eff4f4;
+    background: #fff;
     padding: 5px 10px;
     /* border:1px solid black;
     border-top: none; */

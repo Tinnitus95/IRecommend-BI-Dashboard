@@ -17,7 +17,7 @@ function drawChart() {
         title: 'Bästa Rollerna',
 
         backgroundColor: {
-            fill: '#eff4f4'
+            fill: '#fff'
         },
         titleTextStyle: {
             fontSize: 24
