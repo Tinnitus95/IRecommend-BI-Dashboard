@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   max: 100,
   symbol: '%',
   pointer: true,
+  title: "Ej Svarat",
   gaugeWidthScale: 0.6,
   levelColors: [
     "#43bbb6",
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   max: 100,
   symbol: '%',
   pointer: true,
+  title: "Visat Intresse",
   gaugeWidthScale: 0.6,
   levelColors: [
     "#43bbb6",
@@ -38,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   max: 40000,
   symbol: 'st',
   pointer: true,
+  title: "Intervju",
   gaugeWidthScale: 0.6,
   levelColors: [
     "#43bbb6",
@@ -53,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   max: 100,
   symbol: '%',
   pointer: true,
+  title: "Anställda",
   gaugeWidthScale: 0.6,
   levelColors: [
     "#43bbb6",
