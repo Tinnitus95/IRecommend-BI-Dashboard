@@ -20,7 +20,8 @@ function drawChart() {
             fill: '#fff'
         },
         titleTextStyle: {
-            fontSize: 24
+            fontSize: 24,
+            color: '#424241'
         },
         pieSliceBorderColor: "transparent",
         legend: {

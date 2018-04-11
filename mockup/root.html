@@ -17,20 +17,24 @@
     <div class="fapper">
         <nav id="sidebar">
             <div class="sidebar-header">
+                    <div class="sidebarLogo">
+                            <img src="bi-logo.png" alt="">
+                            <p>IRECOMMEND</p>
+                        </div>
                 <h3>Telenor</h3>
                 <h4 id="anna-lena" draggable="true" ondragstart="drag_start(event)">anna-lena</h4>
             </div>
             <ul class="list-unstyled components">
                 <p>Visualisera data</p>
                 <li>
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Highscore</a>
+                    <a href="#homeSubmenu" class="menuItem" data-toggle="collapse" aria-expanded="false">Highscore</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li><a href="#">Personlig topplista</a></li>
                         <li><a href="#">Team topplista</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#timeSubmenu" data-toggle="collapse" aria-expanded="false">Tid</a>
+                    <a href="#timeSubmenu" class="menuItem" data-toggle="collapse" aria-expanded="false">Tid</a>
                     <ul class="collapse list-unstyled" id="timeSubmenu">
                         <li><a href="#">Tipsfrekvens per klockslag</a></li>
                         <li><a href="#">Tipsfrekvens per veckodag</a></li>
@@ -39,7 +43,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#numberSubmenu" data-toggle="collapse" aria-expanded="false">Siffror</a>
+                    <a href="#numberSubmenu" class="menuItem" data-toggle="collapse" aria-expanded="false">Siffror</a>
                     <ul class="collapse list-unstyled" id="numberSubmenu">
                         <li><a href="#">1</a></li>
                         <li><a href="#">2</a></li>
@@ -48,9 +52,14 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Återställ</a>
+                    <a href="#" class="menuItem">Återställ</a>
                 </li>
             </ul>
+            <!-- <div class="sidebarLogo">
+                <img src="bi-logo.png" alt="">
+                <p>IRECOMMEND</p>
+            </div> -->
+            
         </nav>
         <!-- <button type="button" id="sidebarCollapse" class="navbar-btn">
             <span></span>
