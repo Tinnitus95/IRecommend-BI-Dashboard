@@ -19,7 +19,9 @@ th {
     color: #424241;
 }
 
-
+.nav-tabs>li>a {
+    border-radius: 0;
+}
 
 p {
     font-family: 'Poppins', sans-serif;

@@ -16,7 +16,9 @@ th {
     color: #424241;
 }
 
-
+.nav-tabs>li>a {
+    border-radius: 0;
+}
 
 p {
     font-family: 'Roboto', sans-serif;
