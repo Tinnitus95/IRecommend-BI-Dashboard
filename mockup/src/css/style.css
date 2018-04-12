@@ -6,6 +6,7 @@ body {
     /* background: #0f1f3d; */
     background: #f7f8f8;
     color: #424241;
+    max-width: 1440px;
 }
 
 strong {
