@@ -47,12 +47,16 @@ var weekData = {
 };
 
 var chartOptions = {
+  title: {
+    display: true,
+    text: 'Svarfrekvens per timme'
+  },
   legend: {
     display: true,
     position: 'top',
     labels: {
       boxWidth: 80,
-      fontColor: '#424241'
+      fontColor: '#424241',
     }
   }
 };
@@ -74,36 +78,40 @@ var lineChart2 = new Chart(weekcanvas, {
 
 
 
+var ctx = document.getElementById("columnchart_material").getContext("2d");
 
-google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
+var data = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"],
+  datasets: [{
+    label: "Mobil",
+    backgroundColor: "rgba(143, 199, 202, 0.9)",
+    data: [100, 110, 120, 105, 195, 188, 167, 198, 175, 181, 104, 156]
+  }, {
+    label: "Tablet",
+    backgroundColor: "rgba(5, 109, 114, 0.9)",
+    data: [101, 95, 51, 81, 104, 156, 134, 122, 201, 178, 172, 114]
+  }, {
+    label: "Dator",
+    backgroundColor: "rgba(42, 154, 158, 0.9)",
+    data: [299, 288, 245, 233, 294, 278, 289, 267, 285, 292, 301, 218]
+  }]
+};
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Månad', 'Mobile', 'Tablet', 'Desktop'],
-          ['Jan', 1000, 400, 200],
-          ['Feb', 1170, 460, 250],
-          ['Mar', 660, 1120, 300],
-          ['Apr', 1000, 400, 200],
-          ['Maj', 1170, 460, 250],
-          ['Jun', 660, 1120, 300],
-          ['Jul', 1030, 540, 350],
-          ['Aug', 1000, 400, 200],
-          ['Sep', 1170, 460, 250],
-          ['Okt', 660, 1120, 300],
-          ['Nov', 1000, 400, 200],
-          ['Dec', 1170, 460, 250]
-
-        ]);
-
-        var options = {
-          chart: {
-            title: 'Besökande enheter',
-            subtitle: 'när rekommenderade svarar',
-          }
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
+var myBarChart = new Chart(ctx, {
+  type: 'bar',
+  data: data,
+  options: {
+    title: {
+      display: true,
+      text: 'Enheter som rekommenderade svarar ifrån'
+    } ,
+    barValueSpacing: 20,
+    scales: {
+      yAxes: [{
+        ticks: {
+          min: 0,
+        }
+      }]
+    }
+  }
+});
