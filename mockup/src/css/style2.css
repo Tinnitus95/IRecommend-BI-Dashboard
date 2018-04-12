@@ -19,7 +19,9 @@ th {
     color: #424241;
 }
 
-
+.nav-tabs>li>a {
+    border-radius: 0;
+}
 
 p {
     font-family: 'Poppins', sans-serif;
@@ -118,9 +120,9 @@ a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
     font-family: 'Glyphicons Halflings';
     font-size: 0.6em;
 }
-a[aria-expanded="true"]::before {
-    /* content: '\e260'; */
-}
+/* a[aria-expanded="true"]::before {
+    content: '\e260';
+} */
 
 
 ul ul a {
