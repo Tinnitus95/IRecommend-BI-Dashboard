@@ -6,9 +6,10 @@
     <title>Drag n Drop test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/css/style.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 </head>
@@ -17,8 +18,12 @@
     <div class="fapper">
         <nav id="sidebar">
             <div class="sidebar-header">
+                    <div class="sidebarLogo">
+                            <img src="src/img/bi-logo.png" alt="">
+                            <p>IRECOMMEND</p>
+                        </div>
                 <h3>Telenor</h3>
-                <h4 id="anna-lena" draggable="true" ondragstart="drag_start(event)">anna-lena</h4>
+                <h4 id="anna-lena" draggable="true" ondragstart="drag_start(event)">Anna-Lena</h4>
             </div>
             <ul class="list-unstyled components">
                 <p>Visualisera data</p>
@@ -51,11 +56,11 @@
                     <a href="#" class="menuItem">Återställ</a>
                 </li>
             </ul>
-            <div class="sidebarLogo">
+            <!-- <div class="sidebarLogo">
                 <img src="bi-logo.png" alt="">
                 <p>IRECOMMEND</p>
-            </div>
-            
+            </div> -->
+
         </nav>
         <!-- <button type="button" id="sidebarCollapse" class="navbar-btn">
             <span></span>
@@ -137,31 +142,31 @@
                                         </tr>
                                         <tr>
                                             <td><i class="fas fa-trophy"></i></td>
-                                            <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
+                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
                                             <td>200</td>
                                             <td>206099</td>
                                         </tr>
                                         <tr>
                                             <td>2.</td>
-                                            <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
+                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
                                             <td>200</td>
                                             <td>206099</td>
                                         </tr>
                                         <tr>
                                             <td>3.</td>
-                                            <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
+                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
                                             <td>200</td>
                                             <td>206099</td>
                                         </tr>
                                         <tr>
                                             <td>4.</td>
-                                            <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
+                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
                                             <td>200</td>
                                             <td>206099</td>
                                         </tr>
                                         <tr>
                                             <td>5.</td>
-                                            <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
+                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
                                             <td>200</td>
                                             <td>206099</td>
                                         </tr>
@@ -177,31 +182,31 @@
                                         </tr>
                                         <tr>
                                             <td><i class="fas fa-trophy"></i></td>
-                                            <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
+                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
                                             <td>200</td>
                                             <td>206099</td>
                                         </tr>
                                         <tr>
                                             <td>2.</td>
-                                            <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
+                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
                                             <td>200</td>
                                             <td>206099</td>
                                         </tr>
                                         <tr>
                                             <td>3.</td>
-                                            <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
+                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
                                             <td>200</td>
                                             <td>206099</td>
                                         </tr>
                                         <tr>
                                             <td>4.</td>
-                                            <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
+                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
                                             <td>200</td>
                                             <td>206099</td>
                                         </tr>
                                         <tr>
                                             <td>5.</td>
-                                            <td><img src="round-profile.png" alt=""> Mats Knutsson</td>
+                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
                                             <td>200</td>
                                             <td>206099</td>
                                         </tr>
@@ -226,11 +231,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    <script src="raphael-2.1.4.min.js"></script>
-    <script src="justgage.js"></script>
-    <script src="radial_gauge.js"></script>
-    <script src="pie_chart.js" charset="utf-8"></script>
+    <script src="src/script/script.js"></script>
+    <script src="src/assets/raphael-2.1.4.min.js"></script>
+    <script src="src/assets/justgage.js"></script>
+    <script src="src/script/radial_gauge.js"></script>
+    <script src="src/script/pie_chart.js" charset="utf-8"></script>
 </body>
 
 </html>
