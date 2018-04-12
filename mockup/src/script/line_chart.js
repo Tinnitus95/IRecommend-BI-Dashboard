@@ -83,7 +83,7 @@ google.charts.load('current', {'packages':['bar']});
           ['Månad', 'Mobile', 'Tablet', 'Desktop'],
           ['Jan', 1000, 400, 200],
           ['Feb', 1170, 460, 250],
-          ['Mars', 660, 1120, 300],
+          ['Mar', 660, 1120, 300],
           ['Apr', 1000, 400, 200],
           ['Maj', 1170, 460, 250],
           ['Jun', 660, 1120, 300],
@@ -93,7 +93,7 @@ google.charts.load('current', {'packages':['bar']});
           ['Okt', 660, 1120, 300],
           ['Nov', 1000, 400, 200],
           ['Dec', 1170, 460, 250]
-['Copper', 8.94, '#b87333'],
+
         ]);
 
         var options = {
