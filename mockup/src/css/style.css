@@ -18,7 +18,7 @@ th {
 }
 
 .nav-tabs>li>a {
-    border-radius: 0;
+    /* border-radius: 0; */
 }
 
 p {
@@ -273,7 +273,9 @@ a.article, a.article:hover {
 
 }
 
-
+.border-radius{
+    border-radius: 3px;
+}
 
 /* Style for radial gauge */
 
