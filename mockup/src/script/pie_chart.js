@@ -25,10 +25,7 @@ function drawChart() {
         },
         pieSliceBorderColor: "transparent",
         legend: {
-            position: 'bottom',
-            textStyle: {
-                color: "#2a9a9e"
-            }
+            position: 'right'
         },
         slices: {
             0: {

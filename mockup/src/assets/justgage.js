@@ -75,7 +75,7 @@ JustGage = function(config) {
 
     // titleFontFamily : string
     // color of gauge title
-    titleFontFamily: kvLookup('titleFontFamily', config, dataset, "sans-serif"),
+    titleFontFamily: kvLookup('titleFontFamily', config, dataset, "Roboto"),
 
     // titlePosition : string
     // 'above' or 'below'
@@ -87,7 +87,7 @@ JustGage = function(config) {
 
     // valueFontFamily : string
     // color of label showing current value
-    valueFontFamily: kvLookup('valueFontFamily', config, dataset, "Arial"),
+    valueFontFamily: kvLookup('valueFontFamily', config, dataset, "Roboto"),
 
     // symbol : string
     // special symbol to show next to value

@@ -1,11 +1,8 @@
-/*
-    DEMO STYLE
-*/
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
 
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     /* background: #0f1f3d; */
     background: #f7f8f8;
     color: #424241;
@@ -19,12 +16,10 @@ th {
     color: #424241;
 }
 
-.nav-tabs>li>a {
-    border-radius: 0;
-}
+
 
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -54,12 +49,17 @@ a, a:hover, a:focus {
 .fapper {
     display: flex;
     align-items: stretch;
-    perspective: 1500px;
+
 }
 
 #sidebar {
     min-width: 250px;
     max-width: 250px;
+    height: 100vh;
+    position: fixed;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
 
     /* background: #7386D5; */
     background: linear-gradient(to bottom right, #45BCB7 , #007185);
@@ -187,10 +187,10 @@ a.article, a.article:hover {
 
 .sidebarLogo {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    padding-top: 70%;
     flex-direction: column;
+
 }
 
 .sidebarLogo img {
@@ -209,6 +209,7 @@ a.article, a.article:hover {
     width: 100%;
     min-height: 100vh;
     transition: all 0.3s;
+    margin-left: 250px;
 }
 
 .container-fluid{
@@ -301,9 +302,9 @@ a.article, a.article:hover {
 
 /* style for pie-chart */
 #donutchart{
-width: 300px;
-height: 300px;
-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10), 0 1px 4px 0 rgba(0,0,0,0.10);
+  height: 100%;
+  padding: 0;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.10), 0 1px 4px 0 rgba(0,0,0,0.10);
 }
 
 
