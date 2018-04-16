@@ -6,6 +6,7 @@ body {
     /* background: #0f1f3d; */
     background: #f7f8f8;
     color: #424241;
+    max-width: 1440px;
 }
 
 strong {
@@ -17,7 +18,7 @@ th {
 }
 
 .nav-tabs>li>a {
-    border-radius: 0;
+    /* border-radius: 0; */
 }
 
 p {
@@ -272,7 +273,9 @@ a.article, a.article:hover {
 
 }
 
-
+.border-radius{
+    border-radius: 3px;
+}
 
 /* Style for radial gauge */
 
