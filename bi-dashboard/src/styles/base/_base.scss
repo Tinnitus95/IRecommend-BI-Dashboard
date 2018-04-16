@@ -31,3 +31,18 @@ a, a:hover, a:focus {
     text-decoration: none;
     transition: all 0.3s;
 }
+
+
+.content{
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+    margin-left: 250px;
+
+}
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    clear: both;
+    width: 100%;
+}
