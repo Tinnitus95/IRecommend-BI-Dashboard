@@ -14,7 +14,7 @@ function drawChart() {
     ]);
 
     var options = {
-        title: 'Bästa Rollerna',
+        title: 'Success Stories',
 
         backgroundColor: {
             fill: '#fff'
