@@ -1,21 +1,54 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+import SideNav from './components/SideNav';
+import NumberWidget from './components/NumberWidget';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+import 'normalize.css/normalize.css'
+import './styles/styles.scss';
+
+class Main extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            numbers:[{
+                name:'Antal Tips',
+                amount: 200
+            },
+            {
+                name:'Intresserade rekommendationer',
+                amount: 200
+            },
+            {
+                name:'Intervjuade kandidater',
+                amount: 200
+            },
+            {
+                name:'Tips som lett till anställning',
+                amount: 200
+            },
+            {
+                name:'Tips per person',
+                amount: 200
+            }]
+        }
+    }
+
+    render(){
+        return(
+            <div>
+                <SideNav/>
+                <div className="content">
+                    <div className="wrapper">
+                        <NumberWidget
+                            numbers={this.state.numbers}
+                        />
+                    </div>
+
+                </div>
+            </div>
+        );
+    }
 }
 
-export default App;
+
+ReactDOM.render(<Main/>, document.getElementById('app'))

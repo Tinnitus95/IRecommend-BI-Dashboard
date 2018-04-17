@@ -8,7 +8,9 @@ let totalRec = document.querySelector("#total-rec"),
     interestedRec = document.querySelector("#interested-rec"),
     interviewedCan = document.querySelector("#interviewed-can"),
     employedCan = document.querySelector("#employed-can"),
-    tipsPerPerson = document.querySelector("#tips-per-person");
+    tipsPerPerson = document.querySelector("#tips-per-person"),
+    teamLeader = document.querySelector('#first');
+
 
 const API_URL = 'https://api.irecommend.se/api/v1/bi/';
 
@@ -105,6 +107,7 @@ function getPiechartVal() {
   // pass required data value to piechart function
   drawChart({role1, role2, role3});
 }
+
 
 // function updateNumberWidgets() {
 //   totalRec.textContent = recommendations.length;
