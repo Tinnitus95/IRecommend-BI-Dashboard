@@ -22,6 +22,7 @@ window.onload = function() {
 
   setTimeout( () => {
     getNumberVal();
+    getPiechartVal();
   }, 1000);
 }
 
@@ -69,15 +70,7 @@ function getTeamHiscore() {
   });
 }
 
-
-function updateNumberWidgets(obj) {
-  totalRec.textContent = recommendations.length;
-  interestedRec.textContent = obj.amount.length;
-  interviewedCan.textContent = obj.candidates.length;
-  employedCan.textContent = obj.employed.length;
-  tipsPerPerson.textContent = obj.tipsPerPers;
-}
-
+// Get all number values for numberwidget sections
 function getNumberVal() {
   let amount = recommendations
     .filter( total => { return total.notinterested === false });
@@ -90,10 +83,28 @@ function getNumberVal() {
 
   let tipsPerPers = (recommendations.length / userHiscore.length);
 
+  // pass properties to updateNumberWidgets function for displaying values
   updateNumberWidgets({amount, candidates, employed, tipsPerPers});
 }
 
+// Function to set text content on the numberwidgets in section 1
+function updateNumberWidgets(obj) {
+  totalRec.textContent = recommendations.length;
+  interestedRec.textContent = obj.amount.length;
+  interviewedCan.textContent = obj.candidates.length;
+  employedCan.textContent = obj.employed.length;
+  tipsPerPerson.textContent = obj.tipsPerPers;
+}
 
+
+function getPiechartVal() {
+  let role1 = {title: positions[0].title, recommendations: positions[0].recommendations};
+  let role2 = {title: positions[1].title, recommendations: positions[1].recommendations};
+  let role3 = {title: positions[2].title, recommendations: positions[2].recommendations};
+
+  // pass required data value to piechart function
+  drawChart({role1, role2, role3});
+}
 
 // function updateNumberWidgets() {
 //   totalRec.textContent = recommendations.length;

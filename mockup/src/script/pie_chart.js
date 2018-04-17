@@ -3,14 +3,14 @@ google.charts.load("current", {
 });
 google.charts.setOnLoadCallback(drawChart);
 
-function drawChart() {
+
+function drawChart(obj) {
     var data = google.visualization.arrayToDataTable([
-        ['Role', 'Hired'],
-        ['Scrum Master', 112],
-        ['Front End Developer', 462],
-        ['Back End Developer', 452],
-        ['Full Stack Developer', 122],
-        ['Chief Editor', 57]
+        ['Roller', 'Mest relevanta tips'],
+        [obj.role1.title, obj.role1.recommendations],
+        [obj.role2.title, obj.role2.recommendations],
+        [obj.role3.title, obj.role3.recommendations],
+
     ]);
 
     var options = {
@@ -36,15 +36,6 @@ function drawChart() {
             },
             2: {
                 color: '#299da2'
-            },
-            3: {
-                color: '#1f929b'
-            },
-            4: {
-                color: '#158794'
-            },
-            5: {
-                color: '#017486'
             }
         }
 
