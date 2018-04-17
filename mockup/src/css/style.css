@@ -17,6 +17,8 @@ th {
     color: #424241;
 }
 
+
+
 .nav-tabs>li>a {
     /* border-radius: 0; */
 }
@@ -331,14 +333,18 @@ img{
 }
 
 td{
-
     padding: 5px 10px;
 }
-th, td{
-text-align: center;
+
+td > img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
 }
 
-#leaderboard, #teams{
+
+#leaderboard, #teams, #toptips{
     background: #fff;
     padding: 6px 10px;
     /* border:1px solid black;

@@ -13,13 +13,10 @@ const NumberWidget = (props) => {
     });
     return (
         <div className="row numberWidget">
-            {/* <NumberWidgetItem/>
-            {props.numbers.name} */}
+
              {numbersDisplay}
         </div>
-        // <ul>
-        //
-        // </ul>
+
     );
 }
 

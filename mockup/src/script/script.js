@@ -1,16 +1,50 @@
 let  positions = [],
      recommendations = [],
      userHiscore = [],
-     teamHiscore = [],
-     totalRecommendations = [];
+     teamHiscore = [];
 
+    //Numbers widget
 let totalRec = document.querySelector("#total-rec"),
     interestedRec = document.querySelector("#interested-rec"),
     interviewedCan = document.querySelector("#interviewed-can"),
     employedCan = document.querySelector("#employed-can"),
-    tipsPerPerson = document.querySelector("#tips-per-person"),
-    teamLeader = document.querySelector('#first');
+    tipsPerPerson = document.querySelector("#tips-per-person");
 
+      //Tips solo hiscore 1-5
+let tipsFirstName = document.querySelector('#tips-first-name'),
+    tipsFirstTips = document.querySelector("#tips-first-tips"),
+    tipsFirstLogo = document.querySelector("#tips-first-logo"),
+    tipsSecondName = document.querySelector('#tips-second-name'),
+    tipsSecondTips = document.querySelector("#tips-second-tips"),
+    tipsSecondLogo = document.querySelector("#tips-second-logo"),
+    tipsThirdName = document.querySelector('#tips-third-name'),
+    tipsThirdTips = document.querySelector("#tips-third-tips"),
+    tipsThirdLogo = document.querySelector("#tips-third-logo"),
+
+    //Solo hiscore 1-5
+    soloFirstName = document.querySelector('#solo-first-name'),
+    soloFirstScore = document.querySelector('#solo-first-score'),
+    soloFirstTips = document.querySelector("#solo-first-tips"),
+    soloFirstLogo = document.querySelector("#solo-first-logo"),
+    soloSecondName = document.querySelector('#solo-second-name'),
+    soloSecondScore = document.querySelector('#solo-second-score'),
+    soloSecondTips = document.querySelector("#solo-second-tips"),
+    soloSecondLogo = document.querySelector("#solo-second-logo"),
+    soloThirdName = document.querySelector('#solo-third-name'),
+    soloThirdScore = document.querySelector('#solo-third-score'),
+    soloThirdTips = document.querySelector("#solo-third-tips"),
+    soloThirdLogo = document.querySelector("#solo-third-logo"),
+
+    //Team hiscore 1-5
+    teamFirstName = document.querySelector('#team-first-name'),
+    teamFirstScore = document.querySelector('#team-first-score'),
+    teamFirstLogo = document.querySelector("#team-first-logo"),
+    teamSecondName = document.querySelector('#team-second-name'),
+    teamSecondScore = document.querySelector('#team-second-score'),
+    teamSecondLogo = document.querySelector("#team-second-logo"),
+    teamThirdName = document.querySelector('#team-third-name'),
+    teamThirdScore = document.querySelector('#team-third-score'),
+    teamThirdLogo = document.querySelector("#team-third-logo");
 
 const API_URL = 'https://api.irecommend.se/api/v1/bi/';
 
@@ -25,6 +59,10 @@ window.onload = function() {
   setTimeout( () => {
     getNumberVal();
     getPiechartVal();
+    updateTeamScores();
+    updatePlayerScores();
+
+
   }, 1000);
 }
 
@@ -167,3 +205,46 @@ $(document).ready(function () {
 //   copy.innerHTML = original.innerHTML;
 //   ev.target.appendChild(copy);
 // }
+
+
+
+
+
+
+function updateTeamScores(){
+
+        // console.log(array.team.name);
+        //Display name, score, profilepicture for top team 1-5
+        teamFirstName.textContent = teamHiscore[0].team.name;
+        teamFirstScore.textContent = teamHiscore[0].points.Int64;
+        teamFirstLogo.src = teamHiscore[0].team.picture;
+
+        teamSecondName.textContent = teamHiscore[1].team.name;
+        teamSecondScore.textContent = teamHiscore[1].points.Int64;
+        teamSecondLogo.src = teamHiscore[1].team.picture;
+
+        teamThirdName.textContent = teamHiscore[2].team.name;
+        teamThirdScore.textContent = teamHiscore[2].points.Int64;
+        teamThirdLogo.src = teamHiscore[2].team.picture;
+
+}
+
+function updatePlayerScores(){
+
+    soloFirstName.textContent = `${userHiscore[0].user.givenname} ${userHiscore[0].user.familyname}`
+    soloFirstScore.textContent = userHiscore[0].points.Int64;
+    soloFirstTips.textContent = userHiscore[0].points.Int64;
+    soloFirstLogo.src = userHiscore[0].user.picture;
+
+    soloSecondName.textContent = `${userHiscore[1].user.givenname} ${userHiscore[1].user.familyname}`
+    soloSecondScore.textContent = userHiscore[1].points.Int64;
+    soloSecondTips.textContent = userHiscore[1].points.Int64;
+    soloSecondLogo.src = userHiscore[1].user.picture;
+
+    soloThirdName.textContent = `${userHiscore[2].user.givenname} ${userHiscore[2].user.familyname}`
+    soloThirdScore.textContent = userHiscore[2].points.Int64;
+    soloThirdTips.textContent = userHiscore[2].points.Int64;
+    soloThirdLogo.src = userHiscore[2].user.picture;
+
+
+}

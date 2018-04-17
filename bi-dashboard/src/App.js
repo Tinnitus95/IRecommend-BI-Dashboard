@@ -29,7 +29,8 @@ class Main extends Component {
             {
                 name:'Tips per person',
                 amount: 200
-            }]
+            }
+        ]
         }
     }
 
@@ -38,11 +39,11 @@ class Main extends Component {
             <div>
                 <SideNav/>
                 <div className="content">
-                    <div className="wrapper">
+                    
                         <NumberWidget
                             numbers={this.state.numbers}
                         />
-                    </div>
+
 
                 </div>
             </div>

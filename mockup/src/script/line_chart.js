@@ -77,41 +77,41 @@ var lineChart2 = new Chart(weekcanvas, {
 // ------------------------------------------- linebar   --------------------------
 
 
-
-var ctx = document.getElementById("columnchart_material").getContext("2d");
-
-var data = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"],
-  datasets: [{
-    label: "Mobil",
-    backgroundColor: "rgba(143, 199, 202, 0.9)",
-    data: [100, 110, 120, 105, 195, 188, 167, 198, 175, 181, 104, 156]
-  }, {
-    label: "Tablet",
-    backgroundColor: "rgba(5, 109, 114, 0.9)",
-    data: [101, 95, 51, 81, 104, 156, 134, 122, 201, 178, 172, 114]
-  }, {
-    label: "Dator",
-    backgroundColor: "rgba(42, 154, 158, 0.9)",
-    data: [299, 288, 245, 233, 294, 278, 289, 267, 285, 292, 301, 218]
-  }]
-};
-
-var myBarChart = new Chart(ctx, {
-  type: 'bar',
-  data: data,
-  options: {
-    title: {
-      display: true,
-      text: 'Enheter som rekommenderade svarar ifrån'
-    } ,
-    barValueSpacing: 20,
-    scales: {
-      yAxes: [{
-        ticks: {
-          min: 0,
-        }
-      }]
-    }
-  }
-});
+// 
+// var ctx = document.getElementById("columnchart_material").getContext("2d");
+//
+// var data = {
+//   labels: ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"],
+//   datasets: [{
+//     label: "Mobil",
+//     backgroundColor: "rgba(143, 199, 202, 0.9)",
+//     data: [100, 110, 120, 105, 195, 188, 167, 198, 175, 181, 104, 156]
+//   }, {
+//     label: "Tablet",
+//     backgroundColor: "rgba(5, 109, 114, 0.9)",
+//     data: [101, 95, 51, 81, 104, 156, 134, 122, 201, 178, 172, 114]
+//   }, {
+//     label: "Dator",
+//     backgroundColor: "rgba(42, 154, 158, 0.9)",
+//     data: [299, 288, 245, 233, 294, 278, 289, 267, 285, 292, 301, 218]
+//   }]
+// };
+//
+// var myBarChart = new Chart(ctx, {
+//   type: 'bar',
+//   data: data,
+//   options: {
+//     title: {
+//       display: true,
+//       text: 'Enheter som rekommenderade svarar ifrån'
+//     } ,
+//     barValueSpacing: 20,
+//     scales: {
+//       yAxes: [{
+//         ticks: {
+//           min: 0,
+//         }
+//       }]
+//     }
+//   }
+// });

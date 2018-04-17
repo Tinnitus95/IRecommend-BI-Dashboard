@@ -119,6 +119,7 @@
                         <div class="smaller">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#leaderboard" data-toggle="tab">Leaderboard</a></li>
+                                <li><a href="#toptips" data-toggle="tab">Top Tips</a></li>
                                 <li><a href="#teams" data-toggle="tab">Team Leaderboard</a></li>
                             </ul>
                             <div class="tab-content">
@@ -132,33 +133,45 @@
                                         </tr>
                                         <tr>
                                             <td><i class="fas fa-trophy"></i></td>
-                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
-                                            <td>200</td>
-                                            <td>206099</td>
+                                            <td><img id="solo-first-logo" src="src/img/round-profile.png" alt=""><span id="solo-first-name">Rikard Pittsson</span></td>
+                                            <td id="solo-first-tips">200</td>
+                                            <td id="solo-first-score">206099</td>
                                         </tr>
                                         <tr>
                                             <td>2.</td>
-                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
-                                            <td>200</td>
-                                            <td>206099</td>
+                                            <td><img id="solo-second-logo" src="src/img/round-profile.png" alt=""><span id="solo-second-name">Rikard Pittsson</span></td>
+                                            <td id="solo-second-tips">200</td>
+                                            <td id="solo-second-score">206099</td>
                                         </tr>
                                         <tr>
                                             <td>3.</td>
-                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
-                                            <td>200</td>
-                                            <td>206099</td>
+                                            <td><img id="solo-third-logo" src="src/img/round-profile.png" alt=""><span id="solo-third-name">Rikard Pittsson</span></td>
+                                            <td id="solo-third-tips">200</td>
+                                            <td id="solo-third-score">206099</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="toptips" class="tab-pane fade in border-radius">
+                                    <table>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Användare</th>
+                                            <th>Tips</th>
                                         </tr>
                                         <tr>
-                                            <td>4.</td>
-                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
-                                            <td>200</td>
-                                            <td>206099</td>
+                                            <td><i class="fas fa-trophy"></i></td>
+                                            <td><img id="tips-first-logo" src="src/img/round-profile.png" alt=""><span id="tips-first-name">Rikard Pittsson</span></td>
+                                            <td id="tips-first-tips">200</td>
                                         </tr>
                                         <tr>
-                                            <td>5.</td>
-                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
-                                            <td>200</td>
-                                            <td>206099</td>
+                                            <td>2.</td>
+                                            <td><img id="tips-second-logo" src="src/img/round-profile.png" alt=""><span id="tips-second-name">Rikard Pittsson</span></td>
+                                            <td id="tips-second-tips">200</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.</td>
+                                            <td><img id="tips-third-logo" src="src/img/round-profile.png" alt=""><span id="tips-third-name">Rikard Pittsson</span></td>
+                                            <td id="tips-third-tips">200</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -172,29 +185,20 @@
                                         </tr>
                                         <tr>
                                             <td><i class="fas fa-trophy"></i></td>
-                                            <td><img src="src/img/round-profile.png" alt="" id="first"> Mats Knutsson</td>
-                                            <td id="first-score">206099</td>
+                                            <td><img id="team-first-logo" src="src/img/round-profile.png" alt=""> <span id="team-first-name">Mats Knutsson</span></td>
+                                            <td id="team-first-score">0</td>
                                         </tr>
                                         <tr>
                                             <td>2.</td>
-                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
-                                            <td>206099</td>
+                                            <td><img id="team-second-logo" src="src/img/round-profile.png" alt=""> <span id="team-second-name">Mats Knutsson</span></td>
+                                            <td id="team-second-score">0</td>
                                         </tr>
                                         <tr>
                                             <td>3.</td>
-                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
-                                            <td>206099</td>
+                                            <td><img id="team-third-logo" src="src/img/round-profile.png" alt=""> <span id="team-third-name">Mats Knutsso</span></td>
+                                            <td id="team-third-score">206099</td>
                                         </tr>
-                                        <tr>
-                                            <td>4.</td>
-                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
-                                            <td>206099</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5.</td>
-                                            <td><img src="src/img/round-profile.png" alt=""> Mats Knutsson</td>
-                                            <td>206099</td>
-                                        </tr>
+
                                     </table>
                                 </div>
                             </div>
@@ -221,13 +225,13 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-sm-12">
                 <div class="white_shadow border-radius">
                   <canvas id="columnchart_material" widht="300" height="80"></canvas>
                 </div>
               </div>
-            </div>
+            </div> -->
 
         </div>
 
@@ -245,6 +249,7 @@
     <script src="src/script/radial_gauge.js"></script>
     <script src="src/script/line_chart.js" charset="utf-8"></script>
     <script src="src/script/pie_chart.js" charset="utf-8"></script>
+
 </body>
 
 </html>
