@@ -38,7 +38,7 @@ var data = {
 var chartOptions = {
   title: {
     display: true,
-    text: 'Svarfrekvens per timme'
+    text: 'Success Stories'
   },
   legend: {
     display: true,
