@@ -58,7 +58,7 @@ window.onload = function() {
 
   setTimeout( () => {
     getNumberVal();
-    getPiechartVal();
+    // getDonutVal();
     updateTeamScores();
     updatePlayerScores();
 
@@ -137,13 +137,13 @@ function updateNumberWidgets(obj) {
 }
 
 
-function getPiechartVal() {
+function getDonutVal() {
   let role1 = {title: positions[0].title, recommendations: positions[0].recommendations};
   let role2 = {title: positions[1].title, recommendations: positions[1].recommendations};
   let role3 = {title: positions[2].title, recommendations: positions[2].recommendations};
 
   // pass required data value to piechart function
-  drawChart({role1, role2, role3});
+  setSliceValue({role1, role2, role3});
 }
 
 
