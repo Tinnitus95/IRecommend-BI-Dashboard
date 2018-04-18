@@ -10,10 +10,10 @@ var dataFirst = {
     data: [1, 0, 0, 0, 1, 2, 2,3,6,2,1,12,9,3,4,4,12,16,21,18,12,6,4,1],
     lineTension: 0.3,
     fill: true,
-    borderColor: '#8fc7ca',
-    backgroundColor: 'rgba(143, 198, 201, 0.1)',
-    pointBorderColor: '#8fc7ca',
-    pointBackgroundColor: '#2a9a9e',
+    borderColor: 'rgb(255, 102, 163)',
+    backgroundColor: 'rgba(255, 26, 179, 0.2)',
+    pointBorderColor: 'rgba(255, 102, 163, 0.2)',
+    pointBackgroundColor: 'rgb(255, 179, 217)',
     pointRadius: 5,
     pointHoverRadius: 15,
     pointHitRadius: 30,
@@ -77,7 +77,7 @@ var lineChart2 = new Chart(weekcanvas, {
 // ------------------------------------------- linebar   --------------------------
 
 
-// 
+//
 // var ctx = document.getElementById("columnchart_material").getContext("2d");
 //
 // var data = {
