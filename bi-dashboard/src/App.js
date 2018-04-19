@@ -1,55 +1,29 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import SideNav from './components/SideNav';
-import NumberWidget from './components/NumberWidget';
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
+import ReduxPromise from 'redux-promise';
+
+
+import Main from './components/Main';
+import reducers from './reducers';
 
 import 'normalize.css/normalize.css'
 import './styles/styles.scss';
 
-class Main extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            numbers:[{
-                name:'Antal Tips',
-                amount: 200
-            },
-            {
-                name:'Intresserade rekommendationer',
-                amount: 200
-            },
-            {
-                name:'Intervjuade kandidater',
-                amount: 200
-            },
-            {
-                name:'Tips som lett till anställning',
-                amount: 200
-            },
-            {
-                name:'Tips per person',
-                amount: 200
-            }
-        ]
-        }
-    }
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+
+class App extends Component {
+
 
     render(){
         return(
-            <div>
-                <SideNav/>
-                <div className="content">
-                    
-                        <NumberWidget
-                            numbers={this.state.numbers}
-                        />
-
-
-                </div>
-            </div>
+            <Provider store={createStoreWithMiddleware(reducers)}>
+                <Main/>
+            </Provider>
         );
     }
 }
 
 
-ReactDOM.render(<Main/>, document.getElementById('app'))
+ReactDOM.render(<App/>, document.getElementById('app'))
