@@ -11,55 +11,24 @@ class NumberWidget extends Component{
 
     }
 
-
-    // const numbersDisplay = props.numbers.map((number) => {
-    //     return (
-    //         <NumberWidgetItem
-    //             key={number.name}
-    //             number={number}
-    //         />
-    //     );
-    // });
-    // filterPoints = () => {
-    //     console.log('filter called');
-    //     let value = this.props.number
-    //     for(let i = 0, x = value.length; i < x; i++){
-    //         console.log(value[i]);
-    //     }
-    // }
     renderPoints(){
-        // if(this.props.numbers.length !== 0){
-            // let val = this.props.numbers;
-            // for (var i = 0; i < val.length; i++) {
-            //     console.log(val[i].generatedpoints);
-            // }
-            return _.map(this.props.numbers, numberItem => {
-            return(
-                <NumberWidgetItem
-                    key={numberItem.idrecommendations}
-                    number={numberItem}
-                />
-                
-            );
-        });
-
-        // }
-
-
+      const value = this.props.numbers;
+      return value.map( numb => {
+        return (
+          <NumberWidgetItem
+            key={numb.title}
+            number={numb} />
+        );
+      });
     }
 
-
-
-    render (){
-
-        console.log('numberWidget was rendered');
-        return (
-            <div className="row numberWidget">
-                {this.renderPoints()}
-                {/* {numbersDisplay} */}
-            </div>
-        );
-    };
+render (){
+    return (
+        <div className="row numberWidget">
+            {this.renderPoints()}
+        </div>
+    );
+  };
 }
 
 function mapStateToProps(state){

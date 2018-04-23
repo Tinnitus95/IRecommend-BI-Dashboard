@@ -6,15 +6,12 @@ import PositionContainer from './PositionContainer'
 import Leaderboard from './Leaderboard';
 
 class Main extends Component {
-
     render(){
         return(
             <div>
                 <SideNav/>
                 <div className="content">
-                    <NumberWidget
-
-                    />
+                    <NumberWidget />
                     <PositionContainer/>
                     <Leaderboard/>
                 </div>
