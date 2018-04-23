@@ -8,7 +8,7 @@ export const FETCH_NUMBERS = 'FETCH_NUMBERS';
 export function fetchNumbers(){
 
     const request = axios.get(`${ROOT_URL}recommendations`);
-
+    console.log('fetch done');
     return {
         type: FETCH_NUMBERS,
         payload: request
