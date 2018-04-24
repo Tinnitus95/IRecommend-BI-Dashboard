@@ -1,0 +1,14 @@
+.Leaderboard {
+  display: flex;
+  border-radius: 3px;
+  text-align: center;
+  background: $white;
+  box-shadow: $main-shadow;
+  margin: 10px 0;
+  width: 50%;
+
+}
+
+.LeaderboardContent {
+  width: 100%;
+}
