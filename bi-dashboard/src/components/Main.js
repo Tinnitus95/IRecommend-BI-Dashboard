@@ -4,6 +4,7 @@ import SideNav from './SideNav';
 import NumberWidget from './NumberWidget';
 import PositionContainer from './PositionContainer'
 import Leaderboard from './Leaderboard';
+import BarDiagram from './BarDiagram';
 
 class Main extends Component {
     render(){
@@ -14,6 +15,7 @@ class Main extends Component {
                     <NumberWidget />
                     <PositionContainer/>
                     <Leaderboard/>
+                    {/* <BarDiagram /> */}
                 </div>
             </div>
         );
