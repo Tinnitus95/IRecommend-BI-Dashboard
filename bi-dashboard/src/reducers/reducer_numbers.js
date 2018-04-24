@@ -12,9 +12,9 @@ export default function(state = [], action){
 
             let numberArr = [
               {title: 'Antal tips', data: totalRec, stylingclass: 'greenballs' },
-              {title: 'Intresserade rekommendationer', data: interestedRec, stylingclass: 'greenballs' },
-              {title: 'Intervjuade kandidater', data: interviewedRec, stylingclass: 'greenballs'},
-              {title: 'Tips som lett till anställning', data: employed, stylingclass: 'greenballs'},
+              {title: 'Intresserade', data: interestedRec, stylingclass: 'greenballs' },
+              {title: 'Intervjuade', data: interviewedRec, stylingclass: 'greenballs'},
+              {title: 'Anställning', data: employed, stylingclass: 'greenballs'},
               //hardcoded value, waiting for fetch from renderPoint
               {title: 'Tips per person', data: 5.3, stylingclass: 'grayball'}
             ];

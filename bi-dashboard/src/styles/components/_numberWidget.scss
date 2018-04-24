@@ -5,8 +5,43 @@
     box-shadow: $main-shadow;
     display: flex;
     justify-content: space-around;
+    width: 100%;
+    padding: 10px 0;
 }
 
-.greenballs{background-color: green; border-radius: 50%}
 
-.grayball{background-color: gray; border-radius: 50%}
+.greenballs {
+  background: #45BCB7;
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+  animation-name: fillGreen;
+  animation-duration: 2s;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+@keyframes fillGreen {
+  from {background: white;}
+  to {background: #45BCB7;}
+}
+
+.grayball {
+  background-color: #ddd;
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+  animation-name: fillGray;
+  animation-duration: 2s;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+@keyframes fillGray {
+  from {background-color: white;}
+  to {background-color: #ddd;}
+}
