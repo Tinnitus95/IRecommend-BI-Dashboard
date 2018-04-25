@@ -3,12 +3,15 @@ import React from 'react';
 const userLeaderboard = (props) => {
 
   return (
-      <tr>
-        <td>1</td>
-        <td><img src={props.imgSrc} alt="picture" /><span>{`${props.first} ${props.last}`}</span></td>
-        <td>{props.tips}</td>
-        <td>{props.score}</td>
-      </tr>
+    props.data.map(row => (
+          <tr key={row.id}>
+            <td>{row.id}</td>
+            <td>{row.first}</td>
+            <td>{row.last}</td>
+            <td>{row.tips}</td>
+            <td>{row.score}</td>
+          </tr>
+    ))
   );
 };
 

@@ -1,14 +1,32 @@
 .Leaderboard {
-  display: flex;
+  width: 50%;
+  height: 300px;
+  box-sizing: border-box;
   border-radius: 3px;
-  text-align: center;
   background: $white;
   box-shadow: $main-shadow;
-  margin: 10px 0;
-  width: 50%;
-
+  margin: 10px auto;
+  padding: 20px;
+  overflow-y: scroll;
 }
 
-.LeaderboardContent {
+.Leaderboard table {
   width: 100%;
+}
+
+.Leaderboard th {
+    padding: 10px;
+    font-size: 18px;
+    text-decoration-line: underline;
+}
+
+.Leaderboard td {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: start;
+}
+
+.Leaderboard tr:nth-child(even) {
+  background-color: $IR-lightgreen;
 }

@@ -2,32 +2,23 @@ import React from 'react';
 import UserLeaderboard from './UserLeaderboard';
 
 const userLeaderboardControler = (props) => {
-
-  const userArr = props.users.map( user => {
-    return <UserLeaderboard
-      key={user.last}
-      first={user.first}
-      last={user.last}
-      tips={user.tips}
-      score={user.score}/>
-  });
-
   return (
-    <div className="LeaderboardContent">
+    //<div className="LeaderboardContent">
       <table>
         <thead>
           <tr>
-            <th>Rank</th>
-            <th>Användare</th>
-            <th>Tips</th>
-            <th>Poäng</th>
+            <th onClick={() => props.sortColumn('id')}>Rank</th>
+            <th>Förnamn</th>
+            <th>Efternamn</th>
+            <th onClick={() => props.sortColumn('tips')}>Tips</th>
+            <th onClick={() => props.sortColumn('score')}>Poäng</th>
           </tr>
         </thead>
         <tbody>
-          {userArr}
+          <UserLeaderboard data={props.data} />
         </tbody>
       </table>
-    </div>
+  //  </div>
   );
 };
 
