@@ -6,34 +6,26 @@ class LineChart extends Component {
     constructor(props){
         super(props);
         this.state ={
-            chartData: props.chartData
+            chartData: props.chartData,
+            options: props.options,
+            size: props.size
+
         }
     }
-    static defaultProps ={
-        displayTitle: true,
-        displayLegend: true,
-        legendPosition: 'top'
-    }
+    // static defaultProps ={
+    //     displayTitle: true,
+    //     displayLegend: true,
+    //     legendPosition: 'top'
+    // }
 
     render(){
         return (
             <div className="chart">
                 <Line
                     data={this.state.chartData}
-                    width={1000}
-                    height={400}
-                    options={{
-                        title:{
-                            display:this.props.displayTitle,
-                            text:'Tips och Svar per timme',
-                            fontSize:25
-                        },
-                        legend:{
-                            display:this.props.displayLegend,
-                            position: this.props.legendPosition
-
-                        }
-                    }}
+                    width={this.state.size.width}
+                    height={this.state.size.height}
+                    options={this.state.options}
                 />
             </div>
         );
