@@ -16,7 +16,7 @@ export default function(state = [], action){
               {title: 'Intervjuade', data: interviewedRec + " st", stylingclass: 'greenballs'},
               {title: 'Anställning', data: employed + " st", stylingclass: 'greenballs'},
               //hardcoded value, waiting for fetch from renderPoint
-              {title: 'Tips per person', data: 5.3, stylingclass: 'grayball'}
+              {title: 'Tips per person', data: 5.3 + " st", stylingclass: 'grayball'}
             ];
 
             return numberArr;
