@@ -4,7 +4,7 @@ const NumberWidgetItem = ({number}) => {
     // console.log(number);
     return(
       <div>
-        <div className="">
+        <div>
           <h3>{number.title}</h3>
         </div>
         <div className={number.stylingclass}>

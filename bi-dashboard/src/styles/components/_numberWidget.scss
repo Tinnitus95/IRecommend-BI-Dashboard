@@ -4,9 +4,9 @@
     background: $white;
     box-shadow: $main-shadow;
     display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding: 10px 0;
+    justify-content: space-between;
+    width: 88%;
+    padding: 0 0 10px 0;
 }
 
 
@@ -15,17 +15,27 @@
   border-radius: 50%;
   width: 125px;
   height: 125px;
-  animation-name: fillGreen;
+  animation-name: animateGreen;
   animation-duration: 2s;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  border: 1px solid $main-green;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10), 0 2px 4px 0 rgba(0,0,0,0.10);
+  transition: background 0.5s ease-in;
 }
 
-@keyframes fillGreen {
-  from {background: white;}
-  to {background: #45BCB7;}
+.greenballs:hover {
+  background: $main-green;
+  transition: background 0.5s ease-in;
+}
+
+@keyframes animateGreen {
+  0% {background: white; margin-top: -500px;}
+  25% {margin-top: 25px;}
+  50% {background: $main-green; margin-top: 0px;}
+  100% {background: #45BCB7;}
 }
 
 .grayball {
@@ -33,15 +43,25 @@
   border-radius: 50%;
   width: 125px;
   height: 125px;
-  animation-name: fillGray;
+  animation-name: animateGray;
   animation-duration: 2s;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  border: 1px solid #bdbdbd;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10), 0 2px 4px 0 rgba(0,0,0,0.10);
+  transition: background 0.5s ease-in;
 }
 
-@keyframes fillGray {
-  from {background-color: white;}
-  to {background-color: #ddd;}
+.grayball:hover {
+  background: #bdbdbd;
+  transition: background 0.5s ease-in;
+}
+
+@keyframes animateGray {
+  0% {background: white; margin-top: -500px;}
+  25% {margin-top: 25px;}
+  50% {background: #bdbdbd; margin-top: 0px;}
+  100% {background: #ddd;}
 }

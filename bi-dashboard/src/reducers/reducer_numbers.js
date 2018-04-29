@@ -11,10 +11,10 @@ export default function(state = [], action){
             const employed = data.filter( state => { return state.state === 11}).length;
 
             let numberArr = [
-              {title: 'Antal tips', data: totalRec, stylingclass: 'greenballs' },
-              {title: 'Intresserade', data: interestedRec, stylingclass: 'greenballs' },
-              {title: 'Intervjuade', data: interviewedRec, stylingclass: 'greenballs'},
-              {title: 'Anställning', data: employed, stylingclass: 'greenballs'},
+              {title: 'Antal tips', data: totalRec + " st", stylingclass: 'greenballs' },
+              {title: 'Intresserade', data: interestedRec + " st", stylingclass: 'greenballs' },
+              {title: 'Intervjuade', data: interviewedRec + " st", stylingclass: 'greenballs'},
+              {title: 'Anställning', data: employed + " st", stylingclass: 'greenballs'},
               //hardcoded value, waiting for fetch from renderPoint
               {title: 'Tips per person', data: 5.3, stylingclass: 'grayball'}
             ];
