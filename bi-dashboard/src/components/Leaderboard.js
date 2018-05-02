@@ -11,7 +11,7 @@ class Leaderboard extends Component {
     }
     render(){
         return (
-            <div>hi</div>
+            <div>Leaderboard goes here</div>
         );
     }
 }

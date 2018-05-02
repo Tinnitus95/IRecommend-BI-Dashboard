@@ -1,4 +1,5 @@
 import React from 'react';
+import CountUp from 'react-countup';
 
 const NumberWidgetItem = ({number}) => {
     // console.log(number);
@@ -8,7 +9,13 @@ const NumberWidgetItem = ({number}) => {
           <h3>{number.title}</h3>
         </div>
         <div className={number.stylingclass}>
-            <h4>{number.data}</h4>
+            <h3>{number.title}</h3>
+            <h4>
+                <CountUp
+                    start={0}
+                    end={number.data}
+                />
+            </h4>
         </div>
       </div>
     )
