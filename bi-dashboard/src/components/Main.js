@@ -69,7 +69,7 @@ class Main extends Component {
             },
             size: {
                 width: 1000,
-                height: 400
+                height: 300
             },
             weekChart:{
                 labels: ["mon", "tue", "wed", "thu", "fri"],
