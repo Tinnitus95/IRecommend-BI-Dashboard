@@ -9,16 +9,34 @@ import Data from './Leaderboard/LeaderboardData.json';
 
 
 class Leaderboard extends Component {
-
-
-    state = {
-        data: Data,
+      state = {
+        data: [],
         direction: {
             id: 'asc',
             tips: 'asc',
-            score: 'asc',
+            points: 'asc'
         }
     }
+
+    //Did not work!!
+   /*  componentDidUpdate () {
+      if(this.state.data.length > 0 && this.state.data !== this.props.userscore){
+        let newData = this.props.userscore;
+        this.setState({ data: newData});
+      }
+    } */
+
+    // Did not work!!
+    /* static getDerivedStateFromProps(nextProps, prevState){
+      if(prevState.data.length > 0 && prevState.data !== nextProps.userscore){
+        let newData = nextProps.userscore;
+        this.setState({ data: newData});
+      }
+    } */
+
+    clickHandler = () => {
+      this.setState({ data: this.props.userscore});
+    } 
 
     sortColumnHandler = (key) => {
         const dataCopy = [...this.state.data];
@@ -65,8 +83,9 @@ class Leaderboard extends Component {
                     <TabPanel>
                         <div>Hello again</div>
                     </TabPanel>
-                    </Tabs>
-                </div>
+                  </Tabs>
+                  <button onClick={this.clickHandler}>click</button>
+              </div>
             );
         }
     }
@@ -76,6 +95,7 @@ class Leaderboard extends Component {
         return {
             teamscore: state.teamscore,
             userscore: state.userscore
+            
         };
     }
 

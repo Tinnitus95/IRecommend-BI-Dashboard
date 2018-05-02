@@ -7,11 +7,11 @@ const userLeaderboardControler = (props) => {
       <table>
         <thead>
           <tr>
-            <th onClick={() => props.sortColumn('id')}>Rank</th>
+            <th>Rank</th>
             <th>Förnamn</th>
             <th>Efternamn</th>
-            <th onClick={() => props.sortColumn('tips')}>Tips</th>
-            <th onClick={() => props.sortColumn('score')}>Poäng</th>
+            <th>Tips</th>
+            <th onClick={() => props.sortColumn('points')}>Poäng</th>
           </tr>
         </thead>
         <tbody>
