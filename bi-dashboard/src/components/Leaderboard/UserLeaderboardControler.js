@@ -2,6 +2,10 @@ import React from 'react';
 import UserLeaderboard from './UserLeaderboard';
 
 const userLeaderboardControler = (props) => {
+    console.log(props);
+    if (!props) {
+        return <div>loading</div>;
+    }
   return (
     //<div className="LeaderboardContent">
       <table>

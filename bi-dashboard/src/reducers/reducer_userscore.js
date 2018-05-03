@@ -4,12 +4,13 @@ export default function(state = [], action){
     switch (action.type) {
         case FETCH_USERSCORE:
         const data = action.payload.data;
-        console.log(data);
+
         let userArr = [];
         data.map(user => {
-            
+
             userArr.push(
                 {
+                    id: user.user.iduser,
                     lastname: user.user.familyname,
                     firstname: user.user.givenname,
                     picture: user.user.picture,
@@ -17,7 +18,7 @@ export default function(state = [], action){
                 }
                 );
             })
-            console.log('userArr:' ,userArr);
+
 
             return userArr;
 

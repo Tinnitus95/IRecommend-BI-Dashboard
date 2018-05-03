@@ -9,7 +9,7 @@ import Data from './Leaderboard/LeaderboardData.json';
 
 
 class Leaderboard extends Component {
-      state = {
+    state = {
         data: [],
         direction: {
             id: 'asc',
@@ -17,27 +17,6 @@ class Leaderboard extends Component {
             points: 'asc'
         }
     }
-
-    //Did not work!!
-   /*  componentDidUpdate () {
-      if(this.state.data.length > 0 && this.state.data !== this.props.userscore){
-        let newData = this.props.userscore;
-        this.setState({ data: newData});
-      }
-    } */
-
-    // Did not work!!
-    /* static getDerivedStateFromProps(nextProps, prevState){
-      if(prevState.data.length > 0 && prevState.data !== nextProps.userscore){
-        let newData = nextProps.userscore;
-        this.setState({ data: newData});
-      }
-    } */
-
-    clickHandler = () => {
-      this.setState({ data: this.props.userscore});
-    } 
-
     sortColumnHandler = (key) => {
         const dataCopy = [...this.state.data];
         dataCopy.sort( (a, b) => (
@@ -58,9 +37,17 @@ class Leaderboard extends Component {
     componentDidMount(){
         this.props.fetchTeamScore();
         this.props.fetchUserScore();
+        // TODO: update the setState
+        setTimeout( () => {
+            this.setState({
+                data: this.props.userscore
+            })
+        }, 1500);
+
 
     }
     render(){
+
         return (
             //Bör flytta stylen så att tabs ligger utanför Leaderboard containern
             <div className="Leaderboard">
@@ -83,20 +70,20 @@ class Leaderboard extends Component {
                     <TabPanel>
                         <div>Hello again</div>
                     </TabPanel>
-                  </Tabs>
-                  <button onClick={this.clickHandler}>click</button>
-              </div>
-            );
-        }
-    }
+                </Tabs>
 
-    function mapStateToProps(state){
-        
-        return {
-            teamscore: state.teamscore,
-            userscore: state.userscore
-            
-        };
+            </div>
+        );
     }
+}
 
-    export default connect(mapStateToProps, {fetchTeamScore, fetchUserScore})(Leaderboard);
+function mapStateToProps(state){
+
+    return {
+        teamscore: state.teamscore,
+        userscore: state.userscore
+
+    };
+}
+
+export default connect(mapStateToProps, {fetchTeamScore, fetchUserScore})(Leaderboard);

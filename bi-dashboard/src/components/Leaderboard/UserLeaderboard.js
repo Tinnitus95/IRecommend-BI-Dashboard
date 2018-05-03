@@ -4,7 +4,7 @@ import CountUp from 'react-countup';
 const userLeaderboard = (props) => {
     if(props.data.length === 0){
         return null;
-    } 
+    }
     return (
         props.data.map((row, index) => (
             <tr key={index}>
