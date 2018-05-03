@@ -8,7 +8,7 @@ import _ from 'lodash';
 class NumberWidget extends Component{
     componentDidMount(){
         this.props.fetchNumbers();
-
+        
     }
 
     renderPoints(){

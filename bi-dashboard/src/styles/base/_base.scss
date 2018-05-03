@@ -38,13 +38,16 @@ a, a:hover, a:focus {
 
 
 .content{
-  width: 100%;
+  width: 93%;
     min-height: 100vh;
     transition: all 0.3s;
-    margin-left: 250px;
+
     padding: 0px 15px;
 }
 
+.flex{
+    display: flex;
+}
 .wrapper {
     display: flex;
     justify-content: space-around;

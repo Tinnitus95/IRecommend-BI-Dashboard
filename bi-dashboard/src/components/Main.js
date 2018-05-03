@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import {Tab, Tabs, TabList, TabPanel} from 'react-tabs'
 
-import SideNav from './SideNav';
+import SideNav from './SideBar/SideNav';
 import NumberWidget from './NumberWidget';
 import PositionContainer from './PositionContainer'
 import Leaderboard from './Leaderboard';
@@ -68,8 +68,8 @@ class Main extends Component {
                 }
             },
             size: {
-                width: 1000,
-                height: 300
+                width: 800,
+                height: 200
             },
             weekChart:{
                 labels: ["mon", "tue", "wed", "thu", "fri"],
@@ -123,7 +123,7 @@ class Main extends Component {
 
     render(){
         return(
-            <div>
+            <div className="flex">
                 <SideNav/>
                 <div className="content">
                     <NumberWidget />
@@ -143,11 +143,13 @@ class Main extends Component {
                             />
                         </TabPanel>
                         <TabPanel>
-                            <LineChart
-                                chartData={this.state.weekChart}
-                                options={this.state.weekOptions}
-                                size={this.state.size}
-                            />
+
+                                <LineChart
+                                    chartData={this.state.weekChart}
+                                    options={this.state.weekOptions}
+                                    size={this.state.size}
+                                />
+
                         </TabPanel>
                     </Tabs>
                 </div>

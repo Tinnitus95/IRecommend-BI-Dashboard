@@ -5,8 +5,8 @@
     box-shadow: $main-shadow;
     display: flex;
     justify-content: space-between;
-    
-    height: 200px;
+
+
     padding: 0 0 10px 0;
 }
 
@@ -14,8 +14,8 @@
 .greenballs {
   background: #45BCB7;
   border-radius: 50%;
-  width: 125px;
-  height: 125px;
+  width: 100px;
+  height: 100px;
   animation-name: animateGreen;
   animation-duration: 2s;
   margin: 0 auto;
@@ -42,8 +42,8 @@
 .grayball {
   background-color: #ddd;
   border-radius: 50%;
-  width: 125px;
-  height: 125px;
+  width: 100px;
+  height: 100px;
   animation-name: animateGray;
   animation-duration: 2s;
   margin: 0 auto;
