@@ -3,13 +3,15 @@ import {connect} from 'react-redux';
 import {fetchTeamScore, fetchUserScore} from '../actions';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import _ from 'lodash';
-import UserLeaderboardControler from './Leaderboard/userLeaderboardControler';
+import UserLeaderboardControler from './Leaderboard/UserLeaderboard/UserLeaderboardControler';
+import TeamLeaderboardControler from './Leaderboard/TeamLeaderboard/TeamLeaderboardControler';
 
 
 
 class Leaderboard extends Component {
     state = {
         data: [],
+        team: [],
         direction: {
             id: 'asc',
             tips: 'asc',
@@ -39,7 +41,8 @@ class Leaderboard extends Component {
         // TODO: update the setState
         setTimeout( () => {
             this.setState({
-                data: this.props.userscore
+                data: this.props.userscore,
+                team: this.props.teamscore
             })
         }, 1500);
 
@@ -52,11 +55,11 @@ class Leaderboard extends Component {
             <div className="Leaderboard">
                 <Tabs>
                     <TabList>
-                        <Tab> Title 1</Tab>
-                        <Tab> Title 2</Tab>
-                        <Tab> Title 3</Tab>
+                        <Tab> Leaderboard</Tab>
+                        <Tab> Top Tips</Tab>
+                        <Tab> Team Leaderboard</Tab>
                     </TabList>
-
+                    <div className="leaderboard-content">
                     <TabPanel>
                         <UserLeaderboardControler
                             data={this.state.data}
@@ -64,11 +67,13 @@ class Leaderboard extends Component {
                         />
                     </TabPanel>
                     <TabPanel>
-                        <div>Hello</div>
+                        <div>Coming soon...</div>
                     </TabPanel>
                     <TabPanel>
-                        <div>Hello again</div>
+                        <TeamLeaderboardControler 
+                            data={this.state.team}/>
                     </TabPanel>
+                    </div>
                 </Tabs>
 
             </div>

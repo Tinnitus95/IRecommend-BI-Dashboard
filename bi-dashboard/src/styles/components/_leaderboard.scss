@@ -2,31 +2,42 @@
   width: 50%;
   height: 300px;
   box-sizing: border-box;
-  border-radius: 3px;
-  background: $white;
-  box-shadow: $main-shadow;
-  margin: 10px auto;
-  padding: 20px;
-  overflow-y: scroll;
+  margin: 20px 0;
+  
+  th {
+    padding: 10px;
+    font-size: 18px;
+    text-decoration-line: underline;
+  }
+  
+  td {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: start;
+  }
+
+  tr:nth-child(even) {
+    background-color: $IR-lightgreen;
+  }
 }
 
 .Leaderboard table {
   width: 100%;
 }
 
-.Leaderboard th {
-    padding: 10px;
-    font-size: 18px;
-    text-decoration-line: underline;
+.leaderboard-content {
+  border-radius: 3px;
+  background: $white;
+  box-shadow: $main-shadow;
+  overflow-y: scroll;
+  height: 250px;
+
+  img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
 }
 
-.Leaderboard td {
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: start;
-}
-
-.Leaderboard tr:nth-child(even) {
-  background-color: $IR-lightgreen;
-}

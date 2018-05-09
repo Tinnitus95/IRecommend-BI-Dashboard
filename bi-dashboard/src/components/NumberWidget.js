@@ -24,13 +24,11 @@ class NumberWidget extends Component{
       });
     }
 
-render (){
-    console.log("this is from numberwidget", this.props.userscore.length);
-    
-    return (
-        <div className="row numberWidget">
-            {this.renderPoints()}
-        </div>
+    render (){
+        return (
+            <div className="row numberWidget">
+                {this.renderPoints()}
+            </div>
     );
   };
 }

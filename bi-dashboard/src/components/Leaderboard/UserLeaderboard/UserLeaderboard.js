@@ -9,8 +9,7 @@ const userLeaderboard = (props) => {
         props.data.map((row, index) => (
             <tr key={index}>
                 <td>{index + 1}</td>
-                <td>{row.firstname}</td>
-                <td>{row.lastname}</td>
+                <td><img src={row.picture} alt="user"/>{`${row.firstname} ${row.lastname}`}</td>
                 <td>
                     <CountUp
                         start={0}
