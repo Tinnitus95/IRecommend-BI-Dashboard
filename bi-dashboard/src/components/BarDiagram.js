@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {fetchTeamScore, fetchUserScore} from '../actions';
+import {fetchPositions} from '../actions';
 import {Bar} from 'react-chartjs-2';
 
 class BarDiagram extends Component {
@@ -8,7 +8,7 @@ class BarDiagram extends Component {
         super(props);
         this.state = {
             barData: {
-                labels: ["Jobbtitel", "Jobbtitel", "Jobbtitel"],
+                labels: ['efwewveewf', 'afqefqef', 'qefqeqefvfeq'],
                 datasets: [{
                 label: "Red",
                 backgroundColor: 'rgba(255, 99, 132, 0.6)',
@@ -25,9 +25,21 @@ class BarDiagram extends Component {
         }
         }
     }
+
+    componentDidMount(){
+        
+        this.props.fetchPositions();
+    }
+
+clickHandler = () => {
+    console.log(this.props.positions);
+    
+}
+
     render() {
         return(
             <div>
+            <button onClick={this.clickHandler}></button>
                 <Bar
 	              data={this.state.barData}
                   width={1000}
@@ -61,7 +73,13 @@ class BarDiagram extends Component {
 
 
 
+function mapStateToProps(state){
+    return {
+        positions: state.positions
+        
+    };
+}
+
+export default connect(mapStateToProps, {fetchPositions})(BarDiagram);
 
 
-
-export default BarDiagram;
