@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchPositions} from '../actions';
+import BarDiagram from './BarDiagram';
 
 import _ from 'lodash';
 
@@ -10,7 +11,9 @@ class PositionContainer extends Component{
     }
     render(){
         return (
-            <div></div>
+            <div className="bar-diagram">
+                <BarDiagram />
+            </div>
         );
     }
 }

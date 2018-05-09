@@ -3,6 +3,7 @@ import SideNav from './SideBar/SideNav';
 import NumberWidget from './NumberWidget';
 import PositionContainer from './PositionContainer'
 import Leaderboard from './Leaderboard';
+import BarDiagram from './BarDiagram';
 import LineCharts from './LineCharts';
 
 // import 'react-tabs/style/react-tabs.scss';
