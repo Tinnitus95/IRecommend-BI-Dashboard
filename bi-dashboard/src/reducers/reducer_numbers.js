@@ -15,8 +15,8 @@ export default function(state = [], action){
               {title: 'Intresserade', data: interestedRec, stylingclass: 'greenballs' },
               {title: 'Intervjuade', data: interviewedRec, stylingclass: 'greenballs'},
               {title: 'Anställning', data: employed, stylingclass: 'greenballs'},
-              //hardcoded value, waiting for fetch from renderPoint
-              {title: 'Tips per person', data: 5.3 , stylingclass: 'grayball'}
+              //We send total recommendations and then divide in NumberWidgetItem.js 
+              {title: 'Tips per person', data: totalRec , stylingclass: 'grayball'}
             ];
 
             return numberArr;

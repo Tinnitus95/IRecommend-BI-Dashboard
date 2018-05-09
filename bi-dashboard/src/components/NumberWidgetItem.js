@@ -1,8 +1,13 @@
 import React from 'react';
 import CountUp from 'react-countup';
 
-const NumberWidgetItem = ({number}) => {
-    console.log(number);
+const NumberWidgetItem = ({number, user}) => {
+    let data = number.data;
+    let decimal = 0;
+    if(number.stylingclass === 'grayball'){
+        data = (number.data / user).toFixed(1);
+        decimal = 1;
+    }
     return(
       <div>
         <div>
@@ -12,7 +17,9 @@ const NumberWidgetItem = ({number}) => {
             <h4>
                 <CountUp
                     start={0}
-                    end={number.data}
+                    // check if count up can take to fixed 
+                    end={data}
+                    decimals={decimal}
                 />
                 &nbsp;st
             </h4>

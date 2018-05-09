@@ -3,9 +3,8 @@ import {connect} from 'react-redux';
 import {fetchTeamScore, fetchUserScore} from '../actions';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import _ from 'lodash';
-
 import UserLeaderboardControler from './Leaderboard/userLeaderboardControler';
-import Data from './Leaderboard/LeaderboardData.json';
+
 
 
 class Leaderboard extends Component {
