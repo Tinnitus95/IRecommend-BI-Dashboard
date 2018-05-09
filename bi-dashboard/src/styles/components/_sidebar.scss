@@ -3,13 +3,15 @@
     height: 100vh;
     min-width: 18%;
     overflow-x: hidden;
-    background: linear-gradient(to bottom right, $IR-lightgreen , $IR-darkgreen);
+
     color: #fff;
 
     .fixed{
         position: fixed;
+        background: linear-gradient(to bottom right, $IR-lightgreen , $IR-darkgreen);
+        width: inherit;
+        height: 100vh;
 
-        
         .sidebar-header{
             padding: $m-size;
             h3{

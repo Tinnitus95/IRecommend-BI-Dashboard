@@ -35,6 +35,7 @@ class Leaderboard extends Component {
     }
 
     componentDidMount(){
+        //Timeout might need some other fix
         this.props.fetchTeamScore();
         this.props.fetchUserScore();
         // TODO: update the setState
