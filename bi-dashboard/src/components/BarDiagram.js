@@ -8,7 +8,7 @@ class BarDiagram extends Component {
         super(props);
         this.state = {
             barData: {
-                labels: ['efwewveewf', 'afqefqef', 'qefqeqefvfeq'],
+                labels: ['account 1', 'account 2', 'account 3'],
                 datasets: [{
                 label: "Red",
                 backgroundColor: 'rgba(255, 99, 132, 0.6)',
@@ -27,45 +27,48 @@ class BarDiagram extends Component {
     }
 
     componentDidMount(){
-        
         this.props.fetchPositions();
+        setTimeout( () => {
+            const title = this.props.positions.map( title => title.title);
+
+            // försöker att uppdatera statet med våra labels så vi inte har hårdkodad data
+            // dock blir det undefined vet inte om man måste in i barData först eller om man
+            // kan välja labels direkt i setState ?
+            console.log(title);
+            /* setState({
+                labels: title
+            }); */
+        }, 2000);
+        
     }
 
-clickHandler = () => {
-    console.log(this.props.positions);
-    
-}
-
     render() {
+        
         return(
-            <div>
-            <button onClick={this.clickHandler}></button>
-                <Bar
-	              data={this.state.barData}
-                  width={1000}
-      	        height={400}
-	              options={{
-                      barValueSpacing: 60,
-            title:{
-              display: true,
-              fontSize:25
-            },
-            legend:{
-              display: true,
-              position: 'top'
-          },
-          scales: {
-          yAxes: [{
-        ticks: {
-          min: 0,
-          max: 10
-      }
-    }]
-  }
-          }}
-/>
-            </div>
-        )
+            <Bar
+	            data={this.state.barData}
+                width={500}
+      	        height={350}
+	            options={{
+                    barValueSpacing: 60,
+                title:{
+                display: true,
+                fontSize:25
+                },
+                legend:{
+                display: true,
+                position: 'top'
+                },
+                scales: {
+                yAxes: [{
+                ticks: {
+                min: 0,
+                max: 10
+                }
+                }]
+              }
+            }}/>
+        );
     }
 }
 

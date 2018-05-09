@@ -15,8 +15,10 @@ class Main extends Component {
                 <SideNav/>
                 <div className="content">
                     <NumberWidget />
-                    <PositionContainer/>
-                    <Leaderboard/>
+                    <div className="wrapper">
+                        <PositionContainer/>
+                        <Leaderboard/>
+                    </div>    
                     <LineCharts />
                 </div>
             </div>
