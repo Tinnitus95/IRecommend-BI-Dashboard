@@ -11,12 +11,12 @@ export default function(state = [], action){
             const employed = data.filter( state => { return state.state === 11}).length;
 
             let numberArr = [
-              {title: 'Antal tips', data: totalRec, stylingclass: 'greenballs' },
-              {title: 'Intresserade', data: interestedRec, stylingclass: 'greenballs' },
-              {title: 'Intervjuade', data: interviewedRec, stylingclass: 'greenballs'},
-              {title: 'Anställning', data: employed, stylingclass: 'greenballs'},
+              {title: 'Antal tips', data: totalRec, stylingclass: 'number-balls greenballs' },
+              {title: 'Intresserade', data: interestedRec, stylingclass: 'number-balls greenballs' },
+              {title: 'Intervjuade', data: interviewedRec, stylingclass: 'number-balls greenballs'},
+              {title: 'Anställning', data: employed, stylingclass: 'number-balls greenballs'},
               //We send total recommendations and then divide in NumberWidgetItem.js 
-              {title: 'Tips per person', data: totalRec , stylingclass: 'grayball'}
+              {title: 'Tips per person', data: totalRec , stylingclass: 'number-balls grayball'}
             ];
 
             return numberArr;

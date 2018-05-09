@@ -4,7 +4,7 @@ import CountUp from 'react-countup';
 const NumberWidgetItem = ({number, user}) => {
     let data = number.data;
     let decimal = 0;
-    if(number.stylingclass === 'grayball'){
+    if (number.stylingclass === 'number-balls grayball'){
         data = (number.data / user).toFixed(1);
         decimal = 1;
     }
