@@ -5,26 +5,28 @@
     box-shadow: $main-shadow;
     display: flex;
     justify-content: space-between;
-    height: 165px;
+    height: 175px;
 
     padding: 0 0 10px 0;
 }
 
-
-.greenballs {
-  background: #45BCB7;
+.number-balls {
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  animation-name: animateGreen;
   animation-duration: 2s;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid $main-green;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10), 0 2px 4px 0 rgba(0,0,0,0.10);
   transition: background 0.5s ease-in;
+}
+
+.greenballs {
+  background: #45BCB7;
+  animation-name: animateGreen;
+  border: 1px solid $main-green;
 }
 
 .greenballs:hover {
@@ -41,18 +43,8 @@
 
 .grayball {
   background-color: #ddd;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
   animation-name: animateGray;
-  animation-duration: 2s;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: 1px solid #bdbdbd;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10), 0 2px 4px 0 rgba(0,0,0,0.10);
-  transition: background 0.5s ease-in;
 }
 
 .grayball:hover {

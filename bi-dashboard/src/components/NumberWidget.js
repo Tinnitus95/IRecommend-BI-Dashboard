@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import NumberWidgetItem from './NumberWidgetItem';
 import {connect} from 'react-redux';
-import {fetchNumbers} from '../actions';
+import {fetchNumbers, fetchUserScore} from '../actions';
 import _ from 'lodash';
 
 
 class NumberWidget extends Component{
     componentDidMount(){
         this.props.fetchNumbers();
+        this.props.fetchUserScore();
         
     }
 
@@ -17,21 +18,24 @@ class NumberWidget extends Component{
         return (
           <NumberWidgetItem
             key={numb.title}
-            number={numb} />
+            number={numb}
+            user={this.props.userscore.length} />
         );
       });
     }
 
-render (){
-    return (
-        <div className="row numberWidget">
-            {this.renderPoints()}
-        </div>
+    render (){
+        return (
+            <div className="row numberWidget">
+                {this.renderPoints()}
+            </div>
     );
   };
 }
 
 function mapStateToProps(state){
-    return { numbers: state.number};
+    return { numbers: state.number,
+             userscore: state.userscore};
+
 }
-export default connect(mapStateToProps, {fetchNumbers}) (NumberWidget);
+export default connect(mapStateToProps, {fetchNumbers, fetchUserScore}) (NumberWidget);

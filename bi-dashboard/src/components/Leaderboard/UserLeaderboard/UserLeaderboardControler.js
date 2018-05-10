@@ -2,7 +2,6 @@ import React from 'react';
 import UserLeaderboard from './UserLeaderboard';
 
 const userLeaderboardControler = (props) => {
-    console.log(props);
     if (!props) {
         return <div>loading</div>;
     }
@@ -12,8 +11,7 @@ const userLeaderboardControler = (props) => {
         <thead>
           <tr>
             <th>Rank</th>
-            <th>Förnamn</th>
-            <th>Efternamn</th>
+            <th>Användare</th>
             <th>Tips</th>
             <th onClick={() => props.sortColumn('points')}>Poäng</th>
           </tr>
