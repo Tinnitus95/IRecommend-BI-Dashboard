@@ -7,9 +7,12 @@ import ReduxPromise from 'redux-promise';
 
 import Main from './components/Main';
 import reducers from './reducers';
+import Auth from './Auth';
 
 import 'normalize.css/normalize.css'
 import './styles/styles.scss';
+
+const auth = new Auth();
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
@@ -19,11 +22,24 @@ class App extends Component {
     render(){
         return(
             <Provider store={createStoreWithMiddleware(reducers)}>
-                <Main/>
+                <Main {...state}/>
             </Provider>
         );
     }
 }
+let username = auth.getProfile().given_name || "Anna-Lena";
+let state = {};
+window.setState = (changes) => {
+    state = Object.assign({}, state, changes);
 
+    ReactDOM.render(<App />, document.getElementById('app'))
+}
 
-ReactDOM.render(<App />, document.getElementById('app'))
+let initialState = {
+    name: username,
+    company: 'Telia',
+    location: location.pathname.replace(/^\?|\/$/g, ""),
+    auth
+};
+
+window.setState(initialState);

@@ -10,8 +10,8 @@ class SideNav extends Component{
             <nav className="sidebar">
                 <div className="fixed">
                     <SidebarHeader
-                        name="Anna-Lena"
-                        company="Telenor"
+                        name={this.props.name}
+                        company={this.props.company}
                     />
                     <SidebarWidgetLinks />
                     <SidebarLogo/>

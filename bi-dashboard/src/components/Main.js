@@ -5,20 +5,30 @@ import PositionContainer from './PositionContainer'
 import Leaderboard from './Leaderboard';
 import BarDiagram from './BarDiagram';
 import LineCharts from './LineCharts';
+import Auth from '../Auth';
 
 // import 'react-tabs/style/react-tabs.scss';
 
 class Main extends Component {
+    componentDidMount(){
+        const auth = new Auth();
+        auth.handleAuthentication();
+    }
     render(){
+        console.log(this.props);
         return(
             <div className="flex">
-                <SideNav/>
+                <SideNav {...this.props}/>
                 <div className="content">
+                    <div>
+                        <button onClick={this.props.auth.login}>Login</button>
+                        <button onClick={this.props.auth.logout}>Logout</button>
+                    </div>
                     <NumberWidget />
                     <div className="wrapper">
                         <PositionContainer/>
                         <Leaderboard/>
-                    </div>    
+                    </div>
                     <LineCharts />
                 </div>
             </div>
