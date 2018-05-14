@@ -5,10 +5,10 @@ import jwtDecode from 'jwt-decode';
 
 export default class Auth {
     auth0 = new auth0.WebAuth({
-        domain: 'nestr.eu.auth0.com',
-        clientID: 'UF22AiQXVLvVKZY8NjweZyE0Q9TY04xl',
-        redirectUri: 'http://localhost:8080/',
-        audience: 'https://nestr.eu.auth0.com/userinfo',
+        domain: 'irec.eu.auth0.com',
+        clientID: 'rl5dc2cKKmlSNefgoxUacYeS3fPG1NO4',
+        redirectUri: 'http://localhost:8080/callback',
+        audience: 'https://irec.eu.auth0.com/userinfo',
         responseType: 'token id_token',
         scope: 'openid profile'
     });

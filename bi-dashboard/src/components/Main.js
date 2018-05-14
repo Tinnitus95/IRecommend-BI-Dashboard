@@ -10,11 +10,8 @@ import Auth from '../Auth';
 // import 'react-tabs/style/react-tabs.scss';
 
 class Main extends Component {
-    componentDidMount(){
-        const auth = new Auth();
-        auth.handleAuthentication();
-    }
-    render(){
+
+    render(){  
         console.log(this.props);
         return(
             <div className="flex">
