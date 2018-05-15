@@ -13,10 +13,11 @@ export default function(state = [], action){
                     title: pos.title,
                     recommendations: pos.recommendations,
                     startDate: pos.created,
-                    endDate: pos.enddate 
+                    endDate: pos.enddate
                 }
             )
         })
+        
             return positionArr;
 
     }

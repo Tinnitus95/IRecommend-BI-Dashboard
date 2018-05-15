@@ -6,10 +6,8 @@ import ReduxPromise from 'redux-promise';
 
 
 import Main from './components/Main';
-import Callback from './components/Callback';
 import reducers from './reducers';
 import Auth from './Auth';
-
 
 import 'normalize.css/normalize.css'
 import './styles/styles.scss';
@@ -34,7 +32,7 @@ class App extends Component {
         }
         return(
             <Provider store={createStoreWithMiddleware(reducers)}>
-                {mainComponent}
+                <Main {...state}/>
             </Provider>
         );
     }
