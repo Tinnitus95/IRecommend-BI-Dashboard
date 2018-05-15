@@ -1,0 +1,30 @@
+{
+    "sidebar-route-time-graphs": "Tids-graf Vy",
+    "sidebar-route-highscore": "Highscore Vy",
+    "sidebar-route-numbers": "Nummer Vy",
+    "sidebar-route-default": "Standard Vy",
+
+    "number-widget-total-tips": "Antal tips",
+    "number-widget-total-interested": "Intresserade",
+    "number-widget-total-interviewed": "Intervjuade",
+    "number-widget-total-employed": "Anställning",
+    "number-widget-total-tips-per-person": "Tips per person",
+
+    "bar-chart-most-relevant-tips": "Relevanta tips",
+    "bar-chart-most-tips": "Flesta tips",
+    "bar-chart-fastest-recruitment": "Snabbaste rekryteringarna",
+
+    "leaderboard-tab": "Leaderboard",
+    "leaderboard-tab-top-tips": "Top tips",
+    "leaderboard-tab-team": "Team leaderboard",
+    "leaderboard-rank": "Rank",
+    "leaderboard-user": "Användare",
+    "leaderboard-team": "Lag",
+    "leaderboard-tips": "Tips",
+    "leaderboard-score": "Poäng",
+
+    "line-chart-tab-hourly": "Klockslag",
+    "line-chart-tab-weekly": "Veckodag",
+    "line-chart-total-tips": "Antal tips",
+    "line-chart-total-answers": "Antal svar"
+}
