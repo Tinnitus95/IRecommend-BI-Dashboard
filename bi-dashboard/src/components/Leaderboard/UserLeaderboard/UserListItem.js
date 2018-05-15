@@ -1,10 +1,7 @@
 import React from 'react';
 import CountUp from 'react-countup';
 
-const userLeaderboard = (props) => {
-    if(props.data.length === 0){
-        return null;
-    }
+const UserListItem = (props) => {
     return (
         props.data.map((row, index) => (
             <tr key={index}>
@@ -27,6 +24,4 @@ const userLeaderboard = (props) => {
     );
 };
 
-
-
-export default userLeaderboard;
+export default UserListItem;

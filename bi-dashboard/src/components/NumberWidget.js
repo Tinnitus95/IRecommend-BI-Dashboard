@@ -1,33 +1,21 @@
 import React, {Component} from 'react';
 import NumberWidgetItem from './NumberWidgetItem';
 
-// class NumberWidget extends Component {
-//   render() {
-//
-//     return(
-//
-//     );
-//   }
-// }
-
-
-
-const NumberWidget = ( {data, users} ) => {
+const NumberWidget = ({data, users}) => {
     const value = data.map( numb => {
         return (
             <NumberWidgetItem
                 key={numb.title}
                 number={numb}
-                user={users.length}
-            />
+                user={users.length} />
+            );
+        });
+
+        return (
+            <div className="row number-widget">
+                {value}
+            </div>
         );
-    });
+    }
 
-  return (
-      <div className="row number-widget">
-          {value}
-      </div>
-  );
-}
-
-export default NumberWidget;
+    export default NumberWidget;
