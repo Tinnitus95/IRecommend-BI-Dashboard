@@ -51,10 +51,10 @@ class BarDiagram extends Component {
             for (var i = 0; i < unix_start.length; i++) {
                 unix_combine.push((unix_end[i] - unix_start[i])/86400);
             }
-            console.log(unix_combine);
+            // console.log(unix_combine);
             // var unix_seconds = this.props.positions.map(unix_epoch => return {new Date((unix_epoch).getTime() /1000)})
 
-            console.log(unix_end);
+            // console.log(unix_end);
 
             const barDataCopy = Object.assign({}, this.state.barData);
             barDataCopy.labels = title;
@@ -72,8 +72,8 @@ class BarDiagram extends Component {
 
             console.log(`startDate: ${startDate} and endDate: ${endDate}`); */
 
-            console.log(positions);
-            console.log(startDates);
+            // console.log(positions);
+            // console.log(startDates);
 
 
 
@@ -116,7 +116,7 @@ class BarDiagram extends Component {
 
 
     function mapStateToProps(state){
-        console.log(state.position);
+        // console.log(state.position);
         return {
             positions: state.positions
 

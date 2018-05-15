@@ -71,7 +71,7 @@ class Leaderboard extends Component {
                         <div>Coming soon...</div>
                     </TabPanel>
                     <TabPanel>
-                        <TeamLeaderboardControler 
+                        <TeamLeaderboardControler
                             data={this.state.team}/>
                     </TabPanel>
                     </div>

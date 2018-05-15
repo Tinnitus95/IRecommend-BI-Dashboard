@@ -1,22 +1,18 @@
 import React from 'react';
-
+import {NavLink} from 'react-router-dom'
 const sidebarWidgetLinks = () => (
-    <ul className="components">
+    <ul className="sidebar-widget-links">
         <li>
-            <a>Highscore</a>
-            {/* Render list items here*/}
+            <NavLink to="/">Default</NavLink>
         </li>
         <li>
-            <a>Tid</a>
-            {/* Render list items here*/}
+            <NavLink to="/numbers">Siffror</NavLink>
         </li>
         <li>
-            <a>Siffror</a>
-            {/* Render list items here*/}
+            <NavLink to="/highscores">Highscores</NavLink>
         </li>
         <li>
-            <a>Återställ</a>
-            {/* Render list items here*/}
+            <NavLink to="/time">Tids-grafer</NavLink>
         </li>
     </ul>
 );
