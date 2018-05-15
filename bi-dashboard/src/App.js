@@ -12,6 +12,16 @@ import Auth from './Auth';
 import 'normalize.css/normalize.css'
 import './styles/styles.scss';
 
+import { IntlProvider, addLocaleData } from 'react-intl';
+import { getLanguage } from './api';
+
+import enLocaleData from 'react-intl/locale-data/en';
+import svLocaleData from 'react-intl/locale-data/sv';
+import translations from './translations';
+
+addLocaleData([...svLocaleData, ...enLocaleData]);
+const language = getLanguage();
+
 const auth = new Auth();
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
@@ -41,8 +51,12 @@ let username = auth.getProfile().given_name || "Anna-Lena";
 let state = {};
 window.setState = (changes) => {
     state = Object.assign({}, state, changes);
+    document.title = 'irecommend';
 
-    ReactDOM.render(<App />, document.getElementById('app'))
+    ReactDOM.render(<IntlProvider locale={language} messages={translations[language]}>
+    <App />
+    </IntlProvider>,
+     document.getElementById('app'));
 }
 
 let initialState = {
