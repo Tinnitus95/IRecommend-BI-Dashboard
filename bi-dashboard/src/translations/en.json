@@ -1,0 +1,30 @@
+{   
+    "sidebar-route-time-graphs": "Time-graphs View",
+    "sidebar-route-highscore": "Highscore View",
+    "sidebar-route-numbers": "Numbers View",
+    "sidebar-route-default": "Default View",
+
+    "number-widget-total-tips": "Total tips",
+    "number-widget-total-interested": "Interested",
+    "number-widget-total-interviewed": "Interviewed",
+    "number-widget-total-employed": "Employed",
+    "number-widget-total-tips-per-person": "Tips per person",
+
+    "bar-chart-most-relevant-tips": "Relevant tips",
+    "bar-chart-most-tips": "Most tips",
+    "bar-chart-fastest-recruitment": "Fastest recruitment",
+
+    "leaderboard-tab": "Leaderboard",
+    "leaderboard-tab-top-tips": "Top tips",
+    "leaderboard-tab-team": "Team leaderboard",
+    "leaderboard-rank": "Rank",
+    "leaderboard-user": "User",
+    "leaderboard-team": "Team",
+    "leaderboard-tips": "Tips",
+    "leaderboard-score": "Score",
+
+    "line-chart-tab-hourly": "Hourly",
+    "line-chart-tab-weekly": "Weekly",
+    "line-chart-total-tips": "Total tips",
+    "line-chart-total-answers": "Total answers"
+}
