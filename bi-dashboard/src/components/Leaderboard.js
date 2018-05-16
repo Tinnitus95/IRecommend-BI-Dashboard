@@ -2,14 +2,17 @@ import React, {Component} from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import UserPanel from './Leaderboard/UserLeaderboard/UserPanel';
 import TeamPanel from './Leaderboard/TeamLeaderboard/TeamPanel';
+import { injectIntl } from 'react-intl';
 
-const Leaderboard = ({user, team}) => {
+class Leaderboard extends Component {
+  render() {
+    const { intl, user, team } = this.props;
     return (
         <div className="Leaderboard">
             <Tabs>
                 <TabList>
-                    <Tab> Leaderboard</Tab>
-                    <Tab> Team Leaderboard</Tab>
+                    <Tab>{intl.formatMessage({ id:'leaderboard-tab'})}</Tab>
+                    <Tab>{intl.formatMessage({ id:'leaderboard-tab-team'})}</Tab>
                 </TabList>
                 <div className="leaderboard-content">
                     <TabPanel>
@@ -22,6 +25,7 @@ const Leaderboard = ({user, team}) => {
             </Tabs>
         </div>
     );
+    }
 }
 
-export default Leaderboard;
+export default injectIntl(Leaderboard);
