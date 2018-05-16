@@ -1,8 +1,8 @@
 {
-    "sidebar-route-time-graphs": "Tids-graf Vy",
-    "sidebar-route-highscore": "Highscore Vy",
-    "sidebar-route-numbers": "Nummer Vy",
     "sidebar-route-default": "Standard Vy",
+    "sidebar-route-numbers": "Nummer Vy",
+    "sidebar-route-highscore": "Highscore Vy",
+    "sidebar-route-time-graphs": "Tids-graf Vy",
 
     "number-widget-total-tips": "Antal tips",
     "number-widget-total-interested": "Intresserade",

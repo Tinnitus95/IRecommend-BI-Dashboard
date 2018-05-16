@@ -1,8 +1,8 @@
 {   
-    "sidebar-route-time-graphs": "Time-graphs View",
-    "sidebar-route-highscore": "Highscore View",
-    "sidebar-route-numbers": "Numbers View",
     "sidebar-route-default": "Default View",
+    "sidebar-route-numbers": "Numbers View",
+    "sidebar-route-highscore": "Highscore View",
+    "sidebar-route-time-graphs": "Time-graphs View",
 
     "number-widget-total-tips": "Total tips",
     "number-widget-total-interested": "Interested",
