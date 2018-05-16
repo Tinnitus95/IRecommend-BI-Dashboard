@@ -26,5 +26,11 @@
     "line-chart-tab-hourly": "Klockslag",
     "line-chart-tab-weekly": "Veckodag",
     "line-chart-total-tips": "Antal tips",
-    "line-chart-total-answers": "Antal svar"
+    "line-chart-total-answers": "Antal svar",
+
+    "line-chart-day-mon": "Mån",
+    "line-chart-day-tue": "Tis",
+    "line-chart-day-wed": "Ons",
+    "line-chart-day-thu": "Tor",
+    "line-chart-day-fri": "Fre"
 }

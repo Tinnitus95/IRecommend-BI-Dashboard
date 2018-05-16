@@ -26,5 +26,11 @@
     "line-chart-tab-hourly": "Hourly",
     "line-chart-tab-weekly": "Weekly",
     "line-chart-total-tips": "Total tips",
-    "line-chart-total-answers": "Total answers"
+    "line-chart-total-answers": "Total answers",
+    
+    "line-chart-day-mon": "Mon",
+    "line-chart-day-tue": "Tue",
+    "line-chart-day-wed": "Wed",
+    "line-chart-day-thu": "Thu",
+    "line-chart-day-fri": "Fri"
 }
