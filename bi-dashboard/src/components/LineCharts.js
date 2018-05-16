@@ -67,7 +67,7 @@ class LineCharts extends Component {
                 height: 200
             },
             weekChart:{
-                labels: [intl.formatMessage({ id:'line-chart-day-mon'}), intl.formatMessage({ id:'line-chart-day-tue'}), intl.formatMessage({ id:'line-chart-day-wed'}), intl.formatMessage({ id:'line-chart-day-thu'}), intl.formatMessage({ id:'line-chart-day-fre'})],
+                labels: [intl.formatMessage({ id:'line-chart-day-mon'}), intl.formatMessage({ id:'line-chart-day-tue'}), intl.formatMessage({ id:'line-chart-day-wed'}), intl.formatMessage({ id:'line-chart-day-thu'}), intl.formatMessage({ id:'line-chart-day-fri'})],
                 datasets:[
                     {
                         label: intl.formatMessage({ id:'line-chart-total-tips'}),
