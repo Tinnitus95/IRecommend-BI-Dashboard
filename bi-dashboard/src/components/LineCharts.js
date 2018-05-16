@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import {Tab, Tabs, TabList, TabPanel} from 'react-tabs'
 import LineChart from './LineChart';
+import { injectIntl } from 'react-intl';
 
 class LineCharts extends Component {
     state= {
@@ -12,12 +13,13 @@ class LineCharts extends Component {
         this.getChartData();
     }
     getChartData(){
+      const { intl } = this.props;
         this.setState({
             chartData:{
                 labels: ["01", "02", "03", "04", "05", "06", "07","08","09","10","11","12","13","14","15","16", "17","18","19","20","21","22","23","24"],
                 datasets:[
                     {
-                        label: "Antal tips",
+                        label: intl.formatMessage({ id:'line-chart-total-tips'}),
                         data: [1, 0, 0, 0, 1, 2, 2,3,6,2,1,12,9,3,4,4,12,16,21,18,12,6,4,1],
                         lineTension: 0.3,
                         fill: true,
@@ -32,7 +34,7 @@ class LineCharts extends Component {
                         pointStyle: 'circle'
                     },
                     {
-                        label: "Antal svar",
+                        label: intl.formatMessage({ id:'line-chart-total-answers'}),
                         data: [0, 0, 0, 0, 0, 1, 1, 2, 4,8,1,0,20,11,2,0,0,12,11,21,2,2,1,0,1],
                         lineTension: 0.3,
                         fill: true,
@@ -52,7 +54,7 @@ class LineCharts extends Component {
             options: {
                 title:{
                     display:true,
-                    text: 'DayData',
+                    text: intl.formatMessage({ id:'line-chart-tab-hourly'}),
                     fontSize:25
                 },
                 legend:{
@@ -65,10 +67,10 @@ class LineCharts extends Component {
                 height: 200
             },
             weekChart:{
-                labels: ["mon", "tue", "wed", "thu", "fri"],
+                labels: [intl.formatMessage({ id:'line-chart-day-mon'}), intl.formatMessage({ id:'line-chart-day-tue'}), intl.formatMessage({ id:'line-chart-day-wed'}), intl.formatMessage({ id:'line-chart-day-thu'}), intl.formatMessage({ id:'line-chart-day-fre'})],
                 datasets:[
                     {
-                        label: "Antal tips",
+                        label: intl.formatMessage({ id:'line-chart-total-tips'}),
                         data: [1, 0, 0, 0, 1, 2, 2,3,6,2,1,12,9,3,4,4,12,16,21,18,12,6,4,1],
                         lineTension: 0.3,
                         fill: true,
@@ -83,7 +85,7 @@ class LineCharts extends Component {
                         pointStyle: 'circle'
                     },
                     {
-                        label: "Antal svar",
+                        label: intl.formatMessage({ id:'line-chart-total-answers'}),
                         data: [0, 0, 0, 0, 0, 1, 1, 2, 4,8,1,0,20,11,2,0,0,12,11,21,2,2,1,0,1],
                         lineTension: 0.3,
                         fill: true,
@@ -103,7 +105,7 @@ class LineCharts extends Component {
             weekOptions:{
                 title:{
                     display:true,
-                    text: 'weekData',
+                    text: intl.formatMessage({ id:'line-chart-tab-weekly'}),
                     fontSize:25
                 },
                 legend:{
@@ -114,11 +116,12 @@ class LineCharts extends Component {
         });
     }
     render() {
+      const { intl } = this.props;
         return(
             <Tabs>
                 <TabList>
-                    <Tab>Klockslag</Tab>
-                    <Tab>Veckodag</Tab>
+                    <Tab>{intl.formatMessage({ id:'line-chart-tab-hourly'})}</Tab>
+                    <Tab>{intl.formatMessage({ id:'line-chart-tab-weekly'})}</Tab>
                 </TabList>
                 <TabPanel>
                     <LineChart
@@ -139,4 +142,4 @@ class LineCharts extends Component {
     }
 }
 
-export default LineCharts;
+export default injectIntl(LineCharts);
