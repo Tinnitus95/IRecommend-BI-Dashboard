@@ -1,8 +1,8 @@
 {
-    "sidebar-route-time-graphs": "Tids-graf Vy",
-    "sidebar-route-highscore": "Highscore Vy",
-    "sidebar-route-numbers": "Nummer Vy",
     "sidebar-route-default": "Standard Vy",
+    "sidebar-route-numbers": "Nummer Vy",
+    "sidebar-route-highscore": "Highscore Vy",
+    "sidebar-route-time-graphs": "Tids-graf Vy",
 
     "number-widget-total-tips": "Antal tips",
     "number-widget-total-interested": "Intresserade",
@@ -16,7 +16,7 @@
 
     "leaderboard-tab": "Leaderboard",
     "leaderboard-tab-top-tips": "Top tips",
-    "leaderboard-tab-team": "Team leaderboard",
+    "leaderboard-tab-team": "Lag leaderboard",
     "leaderboard-rank": "Rank",
     "leaderboard-user": "Användare",
     "leaderboard-team": "Lag",
@@ -26,5 +26,11 @@
     "line-chart-tab-hourly": "Klockslag",
     "line-chart-tab-weekly": "Veckodag",
     "line-chart-total-tips": "Antal tips",
-    "line-chart-total-answers": "Antal svar"
+    "line-chart-total-answers": "Antal svar",
+
+    "line-chart-day-mon": "Mån",
+    "line-chart-day-tue": "Tis",
+    "line-chart-day-wed": "Ons",
+    "line-chart-day-thu": "Tor",
+    "line-chart-day-fri": "Fre"
 }
