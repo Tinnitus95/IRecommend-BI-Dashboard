@@ -42,19 +42,19 @@
 }
 
 .grayball {
-  background-color: #ddd;
+  background-color: $main-accent;
   animation-name: animateGray;
-  border: 1px solid #bdbdbd;
+  border: 1px solid $main-accent-shallow;
 }
 
 .grayball:hover {
-  background: #bdbdbd;
+  background: $main-accent-shallow;
   transition: background 0.5s ease-in;
 }
 
 @keyframes animateGray {
   0% {background: white; margin-top: -500px;}
   25% {background: white; margin-top: 25px;}
-  50% {background: #bdbdbd; margin-top: 0px;}
-  100% {background: #ddd;}
+  50% {background: $main-accent-shallow; margin-top: 0px;}
+  100% {background: $main-accent;}
 }
