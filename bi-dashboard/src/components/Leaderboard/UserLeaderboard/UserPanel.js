@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import UserListItem from './UserListItem';
+import { injectIntl } from 'react-intl';
 
-const UserPanel = (props) => {
-  return (
-      <table className="user-panel">
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Användare</th>
-            <th>Tips</th>
-            <th>Poäng</th>
-          </tr>
-        </thead>
-        <tbody>
-          <UserListItem data={props.data} />
-        </tbody>
-      </table>
 
-  );
+class UserPanel extends Component {
+  render() {
+    const { intl } = this.props;
+    return (
+        <table className="user-panel">
+          <thead>
+            <tr>
+              <th>{intl.formatMessage({ id: 'leaderboard-rank' })}</th>
+              <th>{intl.formatMessage({ id: 'leaderboard-user' })}</th>
+              <th>{intl.formatMessage({ id: 'leaderboard-tips' })}</th>
+              <th>{intl.formatMessage({ id: 'leaderboard-score' })}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <UserListItem data={this.props.data} />
+          </tbody>
+        </table>
+    );
+  }
 };
 
-export default UserPanel;
+export default injectIntl(UserPanel);

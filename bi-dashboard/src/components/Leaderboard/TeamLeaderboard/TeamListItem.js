@@ -9,7 +9,7 @@ const TeamListItem = (props) => {
         props.data.map((row, index) => (
             <tr key={index} className="team-list-item">
                 <td>{index + 1}</td>
-                <td><img src={row.picture} alt="team"/>{` ${row.name}`}</td>
+                <td><img src={row.picture} draggable="false" alt="team"/>{` ${row.name}`}</td>
                 <td>
                     <CountUp
                         start={0}
