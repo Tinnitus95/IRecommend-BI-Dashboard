@@ -10,7 +10,8 @@ import {connect} from 'react-redux';
 import {fetchNumbers,
     fetchUserScore,
     fetchTeamScore,
-    fetchPositions
+    fetchPositions,
+    fetchProtected
 } from '../actions';
 
 class ClientContent extends Component {
@@ -19,6 +20,7 @@ class ClientContent extends Component {
         this.props.fetchTeamScore();
         this.props.fetchUserScore();
         this.props.fetchPositions();
+        this.props.fetchProtected();
     }
     render(){
         return (
@@ -39,7 +41,8 @@ function mapStateToProps(state){
         numbers: state.number,
         userscore: state.userscore,
         teamscore: state.teamscore,
-        positions: state.positions
+        positions: state.positions,
+        protected: state.protected
     };
 }
 
@@ -48,4 +51,6 @@ export default withRouter(connect(mapStateToProps,
     {fetchNumbers,
         fetchUserScore,
         fetchTeamScore,
-        fetchPositions})(ClientContent));
+        fetchPositions,
+        fetchProtected
+    })(ClientContent));

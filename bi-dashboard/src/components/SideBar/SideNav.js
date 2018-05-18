@@ -4,14 +4,29 @@ import SidebarLogo from './SidebarLogo'
 import SidebarHeader from './SidebarHeader';
 import SidebarWidgetLinks from './SidebarWidgetLinks';
 
+import Auth from '../../Auth/Auth';
+
+const auth = new Auth();
+
+
+
 class SideNav extends Component{
+    state= {
+        username: ''
+    }
+    componentDidMount(){
+        this.setState({
+            username: auth.getProfile().given_name
+        })
+        
+    }
+
     render(){
         return (
             <nav className="sidebar">
                 <div className="fixed">
                     <SidebarHeader
-                        name={this.props.name}
-                        company={this.props.company}
+                        name={this.state.username}
                     />
                     <SidebarWidgetLinks />
                     <SidebarLogo/>

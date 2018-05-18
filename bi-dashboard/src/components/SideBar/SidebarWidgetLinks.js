@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom'
 const sidebarWidgetLinks = () => (
     <ul className="sidebar-widget-links">
         <li>
-            <NavLink to="/">Default</NavLink>
+            <NavLink to="/home">Default</NavLink>
         </li>
         <li>
             <NavLink to="/numbers">Siffror</NavLink>

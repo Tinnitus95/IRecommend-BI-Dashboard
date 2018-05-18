@@ -1,0 +1,39 @@
+//de har en token sparad som i-recommend
+//send credentials
+//check if credentials exist;
+
+// export const getCredentials = async () => {
+    // let credentials = localStorage.getItem('id_token');
+    // console.log(credentials);
+//     credentials = credentials == null || credentials === 'undefined' ? {} : JSON.parse(credentials);
+//
+//     return credentials;
+// }
+
+/**
+ * Store Auth0 credentials and tenant URL in localStorage
+ * @param {object} credentials - Credentials from Auth0 and/or tenant URL
+ * @param {boolean} merge - Merge stored credentials with new data
+ */
+export const storeCredentials = async (credentials, merge = false) => {
+  console.log('storeCredentials', credentials);
+  if (merge) {
+    let storedCredentials = await getCredentials();
+    console.log(storedCredentials, credentials);
+    if (storedCredentials) {
+      Object.assign(credentials, storedCredentials);
+    }
+  }
+
+  localStorage.setItem('@irecommend:credentials', JSON.stringify(credentials));
+}
+
+
+// https://nestr.eu.auth0.com/authorize?
+  // audience=api.calendar&
+  // scope=read write&
+  // response_type=token&
+  // client_id={account.clientId}&
+  // redirect_uri=https://YOUR_APP/callback&
+  // nonce={CRYPTOGRAPHIC_NONCE}
+  // state={OPAQUE_VALUE}

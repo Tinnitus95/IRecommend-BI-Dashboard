@@ -8,13 +8,14 @@ import axios from 'axios';
 
 
 const ROOT_URL = 'https://api.irecommend.se/api/v1/bi/';
+const PROTECTED_URL = 'https://api.irecommend.se/positions';
 const TRANSACTIONS = 'transactions/sum/';
 
 export const FETCH_NUMBERS = 'FETCH_NUMBERS';
 export const FETCH_POSITIONS = 'FETCH_POSITIONS';
 export const FETCH_TEAMSCORE = 'FETCH_TEAMSCORE';
 export const FETCH_USERSCORE = 'FETCH_USERSCORE';
-
+export const FETCH_PROTECTED = 'FETCH_PROTECTED';
 
 export function fetchNumbers(){
 
@@ -29,27 +30,36 @@ export function fetchNumbers(){
 export function fetchPositions(){
     const request = axios.get(`${ROOT_URL}positions`);
 
-        return {
-            type: FETCH_POSITIONS,
-            payload: request
-        };
+    return {
+        type: FETCH_POSITIONS,
+        payload: request
+    };
 }
 export function fetchUserScore(){
     const request = axios.get(`${ROOT_URL}${TRANSACTIONS}users`);
 
-        return {
-            type: FETCH_USERSCORE,
-            payload: request
-        };
+    return {
+        type: FETCH_USERSCORE,
+        payload: request
+    };
 
 }
 
 export function fetchTeamScore(){
     const request = axios.get(`${ROOT_URL}${TRANSACTIONS}teams`);
 
-        return {
-            type: FETCH_TEAMSCORE,
-            payload: request
-        };
+    return {
+        type: FETCH_TEAMSCORE,
+        payload: request
+    };
 
+}
+
+export function fetchProtected(){
+    const request = axios.get(PROTECTED_URL);
+
+    return {
+        type: FETCH_PROTECTED,
+        payload: request
+    };
 }

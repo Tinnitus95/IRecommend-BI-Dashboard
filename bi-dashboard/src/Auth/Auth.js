@@ -1,5 +1,6 @@
 import history from '../history';
 import auth0 from 'auth0-js';
+import jwtDecode from 'jwt-decode';
 import { AUTH_CONFIG } from './auth0-variables';
 
 export default class Auth {
@@ -61,4 +62,14 @@ export default class Auth {
     let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
   }
+
+  getProfile(){
+        if(localStorage.getItem('id_token')) {
+            return jwtDecode(localStorage.getItem('id_token'));
+        }else{
+            return {};
+        }
+    }
+
+
 }
