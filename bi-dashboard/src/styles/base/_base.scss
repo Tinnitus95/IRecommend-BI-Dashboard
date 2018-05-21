@@ -53,9 +53,15 @@ a, a:hover, a:focus {
     justify-content: space-around;
     clear: both;
     width: 100%;
-    height: auto;
+    height: 600px;
 }
 
 .row{
     margin: 0;
+}
+
+@media(max-width: 1600px){
+    .wrapper {
+        height: 500px;
+    }
 }
