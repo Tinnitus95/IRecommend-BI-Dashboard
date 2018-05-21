@@ -3,6 +3,7 @@ import CountUp from 'react-countup';
 
 
 const NumberWidgetItem = ({number, user}) => {
+    
     let data = number.data;
     let decimal = 0;
 

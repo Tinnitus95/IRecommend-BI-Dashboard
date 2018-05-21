@@ -1,4 +1,8 @@
 .NumberView{
-    background-color: Red;
-    z-index: 5000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+
+
 }

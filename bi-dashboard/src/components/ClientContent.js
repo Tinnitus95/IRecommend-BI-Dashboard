@@ -27,7 +27,7 @@ class ClientContent extends Component {
             <div className="client-content">
                 <Switch>
                     <Route exact path="/home" render={(props) => (<DefaultView {...props} data={this.props}/>)} />
-                    <Route path="/numbers" render={(props) => (<NumberView {...props} /> )} />
+                    <Route path="/numbers" render={(props) => (<NumberView {...props} data={this.props} /> )} />
                 </Switch>
             </div>
         );
