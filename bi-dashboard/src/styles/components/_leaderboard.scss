@@ -1,9 +1,14 @@
 .Leaderboard {
   width: 50%;
-  height: 400px;
+  height: 500px;
   box-sizing: border-box;
-  margin: 20px 0;
+  margin: 30px 0;
   
+  h2 {
+    font-size: 22px;
+    margin: 10px auto;
+  }
+
   th {
     padding: 10px;
     font-size: 18px;
@@ -31,7 +36,7 @@
   background: $white;
   box-shadow: $main-shadow;
   overflow-y: scroll;
-  height: 300px;
+  height: 400px;
 
   img {
     width: 50px;

@@ -13,22 +13,23 @@
 
 .topnav-links li {
   padding: 30px;
+
 }
 
 .fontawesome {
-  // color: #a1a1a1;
+  //color: #a1a1a1;
   font-size: 3em;
   // transition: all 0.2s ease-in;
 
 }
 
-.fontawesome:hover {
+/* .fontawesome:hover {
   color: $font;
-  // transition: all 0.2s ease-in;
-}
+  transition: all 0.2s ease-in;
+} */
 
-.active-link {
-  border-bottom: 1px solid red;
-  color: red;
+li .active-link {
+  border-bottom: 3px solid $main-green;
+  color: $main-green;
   padding-bottom: 5px;
 }

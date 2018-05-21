@@ -14,21 +14,21 @@ export default function(state = [], action){
             labels: title,
             datasets: [{
                 label: "Antal tips",
-                backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                backgroundColor: 'rgba(42, 154, 158, 0.6)',
                 data: recommendations
             }, {
                 label: "Days",
-                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                backgroundColor: 'rgba(255, 26, 179, 0.6)',
                 data: [3, 5]
             }, {
                 label: "Yellow",
-                backgroundColor: 'rgba(255, 206, 86, 0.6)',
+                backgroundColor: 'rgba(69, 188, 183, 0.6)',
                 data: [1,5]
             }]
         }
 
             return barData;
-
+            
     }
     return state;
 }
