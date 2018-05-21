@@ -46,3 +46,11 @@
   }
 }
 
+@media(min-width: 1500px) {
+  .leaderboard {
+    height: 400px;
+  }
+  .leaderboard-content {
+    height: 300px;
+  }
+}
