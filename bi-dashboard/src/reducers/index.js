@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
     positions: PositionsReducer,
     teamscore: TeamScoreReducer,
     userscore: UserScoreReducer,
-    // protected: ProtectedReducer
+    protected: ProtectedReducer
 });
 
 export default rootReducer;

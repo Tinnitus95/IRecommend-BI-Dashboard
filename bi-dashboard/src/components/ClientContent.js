@@ -14,15 +14,22 @@ import {fetchNumbers,
     fetchProtected
 } from '../actions';
 
+const accessToken = localStorage.getItem('access_token');
+
+
+
+
 class ClientContent extends Component {
     componentDidMount(){
         this.props.fetchNumbers();
         this.props.fetchTeamScore();
         this.props.fetchUserScore();
         this.props.fetchPositions();
-        this.props.fetchProtected();
+        this.props.fetchProtected(accessToken);
+
     }
     render(){
+
         return (
             <div className="client-content">
                 <Switch>
