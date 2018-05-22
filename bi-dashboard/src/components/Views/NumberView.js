@@ -6,17 +6,17 @@ class NumberView extends Component {
         hardcode:[
             {
                 title: 'Antal Registrerade',
-                desc: '420 blaze it faggot',
+                desc: 'Totalt på företaget',
                 data: 120
             },
             {
-                title: 'Totala poäng för företag',
-                desc: 'Chupa mi Padrito',
+                title: 'Totala poäng för företaget',
+                desc: 'description',
                 data: 2000
             },
             {
-                title: 'Totalt Antal Vinnare',
-                desc: 'No winners here, only tears',
+                title: 'Vinnare',
+                desc: 'Totalt Antal Vinnare',
                 data: 0
             },
             {
@@ -24,6 +24,16 @@ class NumberView extends Component {
                 desc: 'BLING BLING',
                 data: 6969,
 
+            },
+            {
+                title: 'Antal Teams',
+                desc: 'Totalt antal teams i företaget',
+                data: 3
+            },
+            {
+                title: 'Nästa delmål',
+                desc: 'Poäng kvar till nästa mål',
+                data:  23742
             },
             {
                 title: 'Lediga Tjänster',
@@ -46,7 +56,7 @@ class NumberView extends Component {
                 />
             );
         });
-        const hard_dixx = this.state.hardcode.map( hard => {
+        const harddata = this.state.hardcode.map( hard => {
             return (
                 <NumberViewBox
                     key = {hard.title}
@@ -58,7 +68,7 @@ class NumberView extends Component {
         return(
             <div className="NumberView">
                 {value}
-                {hard_dixx}
+                {harddata}
             </div>
         );
     }

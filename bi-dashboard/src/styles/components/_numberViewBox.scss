@@ -1,19 +1,21 @@
 .number-view-box {
   background: white;
   box-shadow: $main-shadow;
-  width: 25%;
+  width: 30%;
   text-align: center;
-  padding: 5px;
+  margin: 1.66%;
 
-  
+
 
   h3 {
+      padding: 5px;
       text-align: left;
       color: $font;
       margin: 0;
   }
 
   p {
+      padding: 5px;
     border-bottom: 1px solid #c9c9c9;
     text-align: left;
     color: #a1a1a1;
