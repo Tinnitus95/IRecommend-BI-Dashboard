@@ -6,9 +6,9 @@ export default function(state = [], action){
         case FETCH_NUMBERS:
             const data = action.payload.data;
             const totalRec = data.length;
-            const interestedRec = data.filter( pers => pers.notinterested === false).length;
-            const interviewedRec = data.filter( state => { return state.state === 8}).length;
-            const employed = data.filter( state => { return state.state === 11}).length;
+            const interestedRec = data.filter (state => { return state.state === 50 }).length;
+            const interviewedRec = data.filter( state => { return state.state === 100}).length;
+            const employed = data.filter( state => { return state.state === 130}).length;
 
             let numberArr = [
               {title: 'Antal tips', desc: 'Totalt antal tips', data: totalRec, stylingclass: 'number-balls greenballs' },
