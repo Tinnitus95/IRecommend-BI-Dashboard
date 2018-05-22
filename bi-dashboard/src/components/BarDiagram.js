@@ -9,13 +9,15 @@ class BarDiagram extends Component {
     return(
       <Bar
           data={this.props.data}
-          width={500}
+          //width={50}
           height={350}
           options={{
+              maintainAspectRatio: false,
               barValueSpacing: 60,
               title:{
                   display: true,
-                  fontSize:25
+                  text: "Success stories",
+                  fontSize: 22
               },
               legend:{
                   display: true,
