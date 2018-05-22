@@ -17,16 +17,15 @@
 }
 
 .fontawesome {
-  //color: #a1a1a1;
   font-size: 1.6em;
-  // transition: all 0.2s ease-in;
-
+  transition: all 0.2s ease-in;
 }
 
-/* .fontawesome:hover {
-  color: $font;
+
+.fontawesome:hover {
+  color: $main-green;
   transition: all 0.2s ease-in;
-} */
+}
 
 li .active-link {
   border-bottom: 3px solid $main-green;
