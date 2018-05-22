@@ -9,7 +9,7 @@ class Leaderboard extends Component {
     const { intl, user, team } = this.props;
     return (
         <div className="Leaderboard">
-            <h2>High-Scores</h2>
+            <h2 className="highscore-title">High-Scores</h2>
             <Tabs>
                 <TabList>
                     <Tab>{intl.formatMessage({ id:'leaderboard-tab'})}</Tab>
