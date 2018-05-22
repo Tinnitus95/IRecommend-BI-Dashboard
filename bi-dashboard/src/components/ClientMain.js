@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import SideNav from './SideBar/SideNav';
+import Topnav from './Topnav/Topnav';
 // import Auth from '../Auth';
 import ClientContent from './ClientContent';
 import Callback from './Views/Callback';
@@ -15,7 +15,7 @@ class ClientMain extends Component {
             <BrowserRouter>
                 <div className="client-main">
                     {/* <Callback/> */}
-                          <SideNav />
+                          <Topnav />
                           <ClientContent/>
                 </div>
             </BrowserRouter>
