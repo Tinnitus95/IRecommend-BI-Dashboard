@@ -5,10 +5,10 @@ export default function(state = [], action){
     switch (action.type) {
         case FETCH_NUMBERS:
             const data = action.payload.data;
-            const totalRec = data.length;
-            const interestedRec = data.filter (state => { return state.state === 50 }).length;
-            const interviewedRec = data.filter( state => { return state.state === 100}).length;
-            const employed = data.filter( state => { return state.state === 130}).length;
+            const totalRec = data.filter( state => { return state.state >= 10 }).length;
+            const interestedRec = data.filter (state => { return state.state >= 50 }).length;
+            const interviewedRec = data.filter( state => { return state.state >= 100}).length;
+            const employed = data.filter( state => { return state.state >= 130}).length;
 
             let numberArr = [
               {title: 'Antal tips', desc: 'Totalt antal tips', data: totalRec, stylingclass: 'number-balls greenballs' },
