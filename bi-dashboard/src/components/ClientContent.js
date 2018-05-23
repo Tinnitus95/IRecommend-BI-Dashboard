@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { withRouter } from 'react-router';
 import DefaultView from './Views/DefaultView';
 import NumberView from './Views/NumberView';
+import GraphView from './Views/GraphView';
 // import Highscores from './Views/Highscores';
 // import TimeGraphs from './Views/Time'
 
@@ -28,6 +29,7 @@ class ClientContent extends Component {
                 <Switch>
                     <Route exact path="/home" render={(props) => (<DefaultView {...props} data={this.props}/>)} />
                     <Route path="/numbers" render={(props) => (<NumberView {...props} data={this.props} /> )} />
+                    <Route path="/time" render={(props) => (<GraphView {...props} data={this.props}/>)} />
                 </Switch>
             </div>
         );
