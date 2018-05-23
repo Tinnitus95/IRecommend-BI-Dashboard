@@ -41,6 +41,13 @@ class TopnavLinks extends Component {
                   {/* {intl.formatMessage({ id: 'sidebar-route-time-graphs' })} */}
                 </NavLink>
             </li>
+            <li>
+                <NavLink to="/positions" activeClassName='active-link'>
+                <FontAwesome
+                  className='fontawesome'
+                  name='briefcase'/>
+                </NavLink>
+            </li>
         </ul>
         );
     }
