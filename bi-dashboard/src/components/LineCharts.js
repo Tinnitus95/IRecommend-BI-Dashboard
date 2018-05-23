@@ -128,6 +128,7 @@ class LineCharts extends Component {
                         chartData={this.state.chartData}
                         options={this.state.options}
                         size={this.state.size}
+                        classes="chart"
                     />
                 </TabPanel>
                 <TabPanel>
@@ -135,6 +136,7 @@ class LineCharts extends Component {
                         chartData={this.state.weekChart}
                         options={this.state.weekOptions}
                         size={this.state.size}
+                        classes="chart"
                     />
                 </TabPanel>
             </Tabs>

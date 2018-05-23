@@ -61,8 +61,8 @@ class GraphView extends Component {
                 }
             },
             size: {
-                width: 800,
-                height: 200
+                width: 400,
+                height: 300
             },
             weekChart:{
                 labels: [intl.formatMessage({ id:'line-chart-day-mon'}), intl.formatMessage({ id:'line-chart-day-tue'}), intl.formatMessage({ id:'line-chart-day-wed'}), intl.formatMessage({ id:'line-chart-day-thu'}), intl.formatMessage({ id:'line-chart-day-fri'})],
@@ -116,21 +116,20 @@ class GraphView extends Component {
     render(){
         return (
             <div className="row">
-                <div classname="col-sm-6">
                     <LineChart
                         chartData={this.state.chartData}
                         options={this.state.options}
                         size={this.state.size}
+                        classes="test"
                     />
-                </div>
-                <div className="col-sm-6">
                     <LineChart
                         chartData={this.state.weekChart}
                         options={this.state.weekOptions}
                         size={this.state.size}
+                        classes="test"
                     />
-                </div>
             </div>
+            
         );
     }
 }
