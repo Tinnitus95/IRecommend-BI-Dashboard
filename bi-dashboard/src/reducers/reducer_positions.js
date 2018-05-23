@@ -28,7 +28,9 @@ export default function(state = [], action){
         }
 
             return barData;
-            
+
+
+
     }
     return state;
 }

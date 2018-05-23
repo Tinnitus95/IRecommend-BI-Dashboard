@@ -16,6 +16,7 @@ export const FETCH_POSITIONS = 'FETCH_POSITIONS';
 export const FETCH_TEAMSCORE = 'FETCH_TEAMSCORE';
 export const FETCH_USERSCORE = 'FETCH_USERSCORE';
 export const FETCH_PROTECTED = 'FETCH_PROTECTED';
+export const FETCH_TIME = 'FETCH_TIME';
 
 export function fetchNumbers(){
 
@@ -61,5 +62,14 @@ export function fetchProtected(){
     return {
         type: FETCH_PROTECTED,
         payload: request
+    };
+}
+
+export function fetchTime(){
+    // const request = axios.get(URl)
+
+    return {
+        type: FETCH_TIME,
+        // payload: request
     };
 }
