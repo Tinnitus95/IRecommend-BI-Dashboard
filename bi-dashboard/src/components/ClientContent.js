@@ -14,7 +14,7 @@ import {fetchNumbers,
     fetchProtected
 } from '../actions';
 
-const accessToken = localStorage.getItem('access_token');
+
 
 
 
@@ -25,7 +25,7 @@ class ClientContent extends Component {
         this.props.fetchTeamScore();
         this.props.fetchUserScore();
         this.props.fetchPositions();
-        this.props.fetchProtected(accessToken);
+        this.props.fetchProtected();
 
     }
     render(){

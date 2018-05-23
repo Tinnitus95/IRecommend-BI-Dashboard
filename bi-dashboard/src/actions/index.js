@@ -55,8 +55,8 @@ export function fetchTeamScore(){
 
 }
 
-export function fetchProtected(accessToken){
-    const authHeader = 'Bearer ' + accessToken;
+export function fetchProtected(){
+    const authHeader = 'Bearer ' + localStorage.getItem('access_token');
     const request = axios.get(PROTECTED_URL, {'headers': {'Authorization' : authHeader}})
 
      console.log(request);
