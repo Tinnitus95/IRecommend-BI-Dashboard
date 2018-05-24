@@ -12,7 +12,8 @@ import {fetchNumbers,
     fetchUserScore,
     fetchTeamScore,
     fetchPositions,
-    fetchProtected
+    fetchProtected,
+    fetchIdvBar
 } from '../actions';
 
 class ClientContent extends Component {
@@ -22,6 +23,7 @@ class ClientContent extends Component {
         this.props.fetchUserScore();
         this.props.fetchPositions();
         this.props.fetchProtected();
+        this.props.fetchIdvBar();
     }
     render(){
         return (
@@ -54,5 +56,6 @@ export default withRouter(connect(mapStateToProps,
         fetchUserScore,
         fetchTeamScore,
         fetchPositions,
-        fetchProtected
+        fetchProtected,
+        fetchIdvBar
     })(ClientContent));

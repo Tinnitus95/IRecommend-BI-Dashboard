@@ -5,13 +5,15 @@ import UserScoreReducer from './reducer_userscore';
 import TeamScoreReducer from './reducer_teamscore';
 import ProtectedReducer from './reducer_protected';
 import TimeReducer from './reducer_time';
+import IdvBarReducer from './reducer_idvBar';
 
 const rootReducer = combineReducers({
     number: NumberReducer,
     positions: PositionsReducer,
     teamscore: TeamScoreReducer,
     userscore: UserScoreReducer,
-    time: TimeReducer
+    time: TimeReducer,
+    idvBar: IdvBarReducer
     // protected: ProtectedReducer
 
 });

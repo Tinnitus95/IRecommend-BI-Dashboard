@@ -2,60 +2,42 @@ import React, {Component} from 'react';
 import LineChart from '../LineChart';
 import { injectIntl } from 'react-intl';
 import {connect} from 'react-redux';
-import {fetchTime, fetchPositions} from '../../actions';
+import {fetchIdvBar} from '../../actions';
 import BarDiagram from '../BarDiagram';
 import Aux from '../ReactAux';
-import _ from 'lodash';
+
 
 
 class GraphView extends Component {
-    state= {
-        chartData:{}
-    }
-
-    // renderBarcharts(){
-    //   this.props.positions.datasets.map( bar => {
-    //     return(
-    //
-    //     );
-    //   });
-    // }
-
     renderBarcharts(){
-        return _.map(this.props.positions, bar => {
-            return <BarDiagram data={this.props.positions}/>
-        });
+      return this.props.positions.map( bar => {
+        return(
+          <div className="idv-bar" key={bar.id}>
+              <BarDiagram data={bar} />
+          </div>
+        );
+      })
     }
-
-
-
 
     render(){
-      console.log(this.props.positions.datasets);
       return (
           <div>
             <div className="row">
-                    <LineChart
-                        chartData={this.props.time.chartData}
-                        options={this.props.time.options}
-                        size={this.props.time.size}
-                        classes="test"
-                    />
-                    <LineChart
-                        chartData={this.props.time.weekChart}
-                        options={this.props.time.weekOptions}
-                        size={this.props.time.size}
-                        classes="test"
-                    />
+                <LineChart
+                    chartData={this.props.time.chartData}
+                    options={this.props.time.options}
+                    size={this.props.time.size}
+                    classes="graphView-lineChart" />
+                <LineChart
+                    chartData={this.props.time.weekChart}
+                    options={this.props.time.weekOptions}
+                    size={this.props.time.size}
+                    classes="graphView-lineChart" />
             </div>
             <div className="row">
                 {this.renderBarcharts()}
-                {/* <BarDiagram data={this.props.positions} /> */}
             </div>
-
-
           </div>
-
         );
     }
 }
@@ -63,9 +45,9 @@ class GraphView extends Component {
 function mapStateToProps(state){
     return {
         time: state.time,
-        positions: state.positions
+        positions: state.idvBar
     };
 }
 
 
-export default connect(mapStateToProps, {fetchTime, fetchPositions})(GraphView);
+export default connect(mapStateToProps, {fetchIdvBar})(GraphView);
