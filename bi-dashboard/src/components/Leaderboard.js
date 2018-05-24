@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import UserPanel from './Leaderboard/UserLeaderboard/UserPanel';
 import TeamPanel from './Leaderboard/TeamLeaderboard/TeamPanel';
+import CompetitionPanel from './Leaderboard/CompetitionLeaderboard/CompetitionPanel';
 import { injectIntl } from 'react-intl';
 
 class Leaderboard extends Component {
@@ -14,6 +15,7 @@ class Leaderboard extends Component {
                 <TabList>
                     <Tab>{intl.formatMessage({ id:'leaderboard-tab'})}</Tab>
                     <Tab>{intl.formatMessage({ id:'leaderboard-tab-team'})}</Tab>
+                    <Tab>Competition</Tab>
                 </TabList>
                 <div className="leaderboard-content">
                     <TabPanel>
@@ -21,6 +23,9 @@ class Leaderboard extends Component {
                     </TabPanel>
                     <TabPanel>
                         <TeamPanel data={team}/>
+                    </TabPanel>
+                    <TabPanel>
+                        <CompetitionPanel />
                     </TabPanel>
                 </div>
             </Tabs>
