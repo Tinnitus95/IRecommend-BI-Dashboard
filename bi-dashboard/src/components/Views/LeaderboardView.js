@@ -8,7 +8,7 @@ class LeaderboardView extends Component {
     render(){
         const { user, team } = this.props;
         return (
-            <div className="Leaderboard-view">
+            <div className="leaderboard-view">
                 <div className="leaderboard-view-content">
                   <UserPanel data={this.props.data.userscore} />
                 </div>
