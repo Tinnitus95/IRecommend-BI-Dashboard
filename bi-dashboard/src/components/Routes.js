@@ -29,7 +29,7 @@ export const makeMainRoutes = () => {
       <Provider store={createStoreWithMiddleware(reducers)}>
       <Router history={history}>
         <Aux>
-          <Route path="/" render={(props) => <LoginPage auth={auth} {...props} />} />
+          <Route exact path="/" render={(props) => <LoginPage auth={auth} {...props} />} />
           <Route path="/home" render={(props) => <ClientMain auth={auth} {...props} />} />
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);

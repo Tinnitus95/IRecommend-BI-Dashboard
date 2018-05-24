@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 
 class App extends Component {
+
+    componentWillMount(){
+    if(!this.props.auth.isAuthenticated()){
+
+        console.log('Mount me daddy');
+        this.login()
+        }
+    }
     goTo(route) {
         this.props.history.replace(`/${route}`)
     }
