@@ -34,15 +34,17 @@ class LeaderboardView extends Component {
     render(){
         const { user, team } = this.props;
         return (
-            <div className="Leaderboard-view">
+            <div className="leaderboard-view">
                 <div className="top-three">
                     {this.renderTop()}
                 </div>
+                <div className="leaderboard-wrapper">
                 <div className="leaderboard-view-content">
                   <UserPanel data={this.props.data.userscore} />
                 </div>
                 <div className="leaderboard-view-content">
                   <TeamPanel data={this.props.data.teamscore} />
+                </div>
                 </div>
             </div>
         );
