@@ -9,7 +9,7 @@ const UserOrbs = ({top, position}) => (
     console.log(top),
     <div className={`user-orbs ${top.classes}`}>
         <figure>
-            <img src={top.picture} alt="userpictuere"/>
+            <img draggable="false" src={top.picture} alt="userpictuere"/>
             <div className="position-orb">
                 <span>
                     {top.position}
