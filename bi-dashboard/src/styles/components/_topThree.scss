@@ -15,6 +15,8 @@
                 border-radius: 50%;
                 width: 100px;
                 height: 100px;
+                transition: all 0.3s ease-in;
+                box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.1), 3px 3px 4px 0 rgba(0, 0, 0, 0.1)
             }
 
         }
@@ -45,8 +47,14 @@
             img{
                 width: 125px;
                 height: 125px;
+                border-radius: 50%;
             }
         }
     }
 
+}
+
+figure img:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in;
 }
