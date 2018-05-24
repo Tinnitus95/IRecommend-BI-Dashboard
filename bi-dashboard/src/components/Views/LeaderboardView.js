@@ -9,10 +9,10 @@ class LeaderboardView extends Component {
         const { user, team } = this.props;
         return (
             <div className="Leaderboard-view">
-                <div className="leaderboard-content">
+                <div className="leaderboard-view-content">
                   <UserPanel data={this.props.data.userscore} />
                 </div>
-                <div className="leaderboard-content">
+                <div className="leaderboard-view-content">
                   <TeamPanel data={this.props.data.teamscore} />
                 </div>
             </div>

@@ -1,8 +1,23 @@
 import React from 'react';
 
 
-const UserOrbs = () => (
-    <div>
-        this is the UserOrbs
+
+const UserOrbs = ({top, position}) => (
+
+
+
+    console.log(top),
+    <div className={`user-orbs ${top.classes}`}>
+        <figure>
+            <img src={top.picture} alt="userpictuere"/>
+            <div className="position-orb">
+                <span>
+                    {top.position}
+                </span>
+            </div>
+            <figcaption></figcaption>
+        </figure>
     </div>
 )
+
+export default UserOrbs;
