@@ -19,7 +19,7 @@ class LineChart extends Component {
 
     render(){
         return (
-            <div className="chart">
+            <div className={this.props.classes}>
                 <Line
                     data={this.state.chartData}
                     width={this.state.size.width}

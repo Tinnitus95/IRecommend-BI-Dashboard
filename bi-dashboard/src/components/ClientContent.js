@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { withRouter } from 'react-router';
 import DefaultView from './Views/DefaultView';
 import NumberView from './Views/NumberView';
+import GraphView from './Views/GraphView';
 // import Highscores from './Views/Highscores';
 // import TimeGraphs from './Views/Time'
 
@@ -11,7 +12,8 @@ import {fetchNumbers,
     fetchUserScore,
     fetchTeamScore,
     fetchPositions,
-    fetchProtected
+    fetchProtected,
+    fetchIdvBar
 } from '../actions';
 
 class ClientContent extends Component {
@@ -21,6 +23,7 @@ class ClientContent extends Component {
         this.props.fetchUserScore();
         this.props.fetchPositions();
         this.props.fetchProtected();
+        this.props.fetchIdvBar();
     }
     render(){
         return (
@@ -28,6 +31,7 @@ class ClientContent extends Component {
                 <Switch>
                     <Route exact path="/home" render={(props) => (<DefaultView {...props} data={this.props}/>)} />
                     <Route path="/numbers" render={(props) => (<NumberView {...props} data={this.props} /> )} />
+                    <Route path="/time" render={(props) => (<GraphView {...props} data={this.props}/>)} />
                 </Switch>
             </div>
         );
@@ -52,5 +56,6 @@ export default withRouter(connect(mapStateToProps,
         fetchUserScore,
         fetchTeamScore,
         fetchPositions,
-        fetchProtected
+        fetchProtected,
+        fetchIdvBar
     })(ClientContent));

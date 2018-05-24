@@ -3,6 +3,7 @@ import {Bar} from 'react-chartjs-2';
 
 class BarDiagram extends Component {
   render() {
+
     if (!this.props.data) {
         return <div>Loading</div>;
     }
