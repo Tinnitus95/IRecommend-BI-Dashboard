@@ -16,7 +16,9 @@
                 width: 100px;
                 height: 100px;
                 transition: all 0.3s ease-in;
-                box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.1), 3px 3px 4px 0 rgba(0, 0, 0, 0.1)
+                box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.1), 3px 3px 4px 0 rgba(0, 0, 0, 0.1);
+                animation-name: animate-highscore;
+                animation-duration: 2s;
             }
 
         }
@@ -28,6 +30,8 @@
             background-color: green;
             height: 25px !important;
             border-radius: 50%;
+            animation-name: animate-highscore;
+            animation-duration: 2s;
             span{
                 color: white;
             }
@@ -57,4 +61,11 @@
 figure img:hover {
   transform: scale(1.2);
   transition: all 0.3s ease-in;
+}
+
+@keyframes animate-highscore {
+  0% { margin-top: -500px;}
+  25% {margin-top: 25px;}
+  50% {margin-top: 0px;}
+  100% {}
 }
