@@ -27,9 +27,54 @@
   }
 }
 
-.Leaderboard table {
+.leaderboard-view {
+  height: 500px;
+  box-sizing: border-box;
+  margin: 9px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.leaderboard-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+
+  h2 {
+    font-size: 22px;
+    margin: 10px auto;
+  }
+
+  th {
+    padding: 10px;
+    font-size: 18px;
+    text-decoration-line: underline;
+  }
+
+  td {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: start;
+  }
+
+  tr:nth-child(even) {
+    background-color: $IR-lightgreen;
+  }
+}
+
+.Leaderboard table  {
   width: 100%;
 }
+
+.user-panel {
+  width: 100%;
+}
+.team-panel {
+  width: 100%;
+}
+
 
 .leaderboard-content {
   border-radius: 3px;
@@ -37,6 +82,22 @@
   box-shadow: $main-shadow;
   overflow-y: scroll;
   height: 400px;
+
+  img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+}
+
+.leaderboard-view-content {
+  border-radius: 3px;
+  background: $white;
+  box-shadow: $main-shadow;
+  overflow-y: scroll;
+  height: 395px;
+  width: 48%;
 
   img {
     width: 50px;

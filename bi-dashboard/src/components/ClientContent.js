@@ -4,6 +4,8 @@ import { withRouter } from 'react-router';
 import DefaultView from './Views/DefaultView';
 import NumberView from './Views/NumberView';
 import GraphView from './Views/GraphView';
+import LeaderboardView from './Views/LeaderboardView';
+
 // import Highscores from './Views/Highscores';
 // import TimeGraphs from './Views/Time'
 
@@ -32,6 +34,7 @@ class ClientContent extends Component {
                     <Route exact path="/home" render={(props) => (<DefaultView {...props} data={this.props}/>)} />
                     <Route path="/numbers" render={(props) => (<NumberView {...props} data={this.props} /> )} />
                     <Route path="/time" render={(props) => (<GraphView {...props} data={this.props}/>)} />
+                    <Route path="/highscores" render={(props)=> (<LeaderboardView {...props} data={this.props} />)} />
                 </Switch>
             </div>
         );
