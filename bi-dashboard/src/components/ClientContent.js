@@ -21,7 +21,8 @@ import {fetchNumbers,
 
 class ClientContent extends Component {
     componentDidMount(){
-        this.props.fetchNumbers();
+
+        this.props.fetchNumbers(localStorage.getItem('access_token'));
         this.props.fetchTeamScore();
         this.props.fetchUserScore();
         this.props.fetchPositions();
@@ -31,12 +32,14 @@ class ClientContent extends Component {
     render(){
 
         return (
-            <div className="client-content">
+                <div className="client-content">
                 <Switch>
                     <Route exact path="/home" render={(props) => (<DefaultView {...props} data={this.props}/>)} />
                     <Route path="/numbers" render={(props) => (<NumberView {...props} data={this.props} /> )} />
                 </Switch>
             </div>
+
+
         );
     }
 }

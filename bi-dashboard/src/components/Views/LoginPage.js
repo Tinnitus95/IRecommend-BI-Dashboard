@@ -5,7 +5,6 @@ class App extends Component {
     componentWillMount(){
     if(!this.props.auth.isAuthenticated()){
 
-        console.log('Mount me daddy');
         this.login()
         }
     }

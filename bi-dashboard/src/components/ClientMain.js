@@ -7,20 +7,27 @@ import {BrowserRouter} from 'react-router-dom';
 
 class ClientMain extends Component {
     login() {
-      this.props.auth.login();
+        this.props.auth.login();
     }
     render(){
         const { isAuthenticated } = this.props.auth;
+        console.log(localStorage.getItem('access_token'));
         return(
             <BrowserRouter>
                 <div className="client-main">
-                    {/* <Callback/> */}
-                          <Topnav />
-                          <ClientContent/>
-                </div>
-            </BrowserRouter>
-        );
-    }
-}
+                    {isAuthenticated() ?
+                        <div>
+                            <Topnav />
+                            <ClientContent/>
+                        </div>
+                        :
+                        <p>Please Work</p>
+                    }
 
-export default ClientMain;
+                    </div>
+                </BrowserRouter>
+            );
+        }
+    }
+
+    export default ClientMain;
