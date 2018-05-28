@@ -13,9 +13,7 @@ const rootReducer = combineReducers({
     teamscore: TeamScoreReducer,
     userscore: UserScoreReducer,
     time: TimeReducer,
-    idvBar: IdvBarReducer
-    // protected: ProtectedReducer
-
+    idvBar: IdvBarReducer,
     protected: ProtectedReducer
 
 });

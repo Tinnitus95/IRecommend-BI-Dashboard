@@ -21,7 +21,12 @@ class ClientMain extends Component {
                             <ClientContent/>
                         </div>
                         :
-                        <p>Please Work</p>
+                        <div style={{
+                          width: '100%',
+                          marginTop: '100px',
+                          textAlign: 'center'}}>
+                            <h2>Please login..</h2>
+                        </div>
                     }
 
                     </div>
