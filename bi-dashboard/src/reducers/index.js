@@ -16,6 +16,8 @@ const rootReducer = combineReducers({
     idvBar: IdvBarReducer
     // protected: ProtectedReducer
 
+    protected: ProtectedReducer
+
 });
 
 export default rootReducer;

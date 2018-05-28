@@ -5,7 +5,7 @@ import BarDiagram from './BarDiagram';
 export default class PositionGraph extends Component {
 
     render(){
-      console.log(this.props.data);
+      // console.log(this.props.data);
 
       return (
         <div className="position-graph">

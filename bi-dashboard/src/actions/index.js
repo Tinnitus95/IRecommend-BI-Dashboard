@@ -8,8 +8,10 @@ import axios from 'axios';
 
 
 const ROOT_URL = 'https://api.irecommend.se/api/v1/bi/';
-const PROTECTED_URL = 'https://api.irecommend.se/positions';
+const PROTECTED_URL = 'https://api.irecommend.se/api/v1/positions';
+const REAL_URL = 'https://api.irecommend.se/api/v1/';
 const TRANSACTIONS = 'transactions/sum/';
+const authHeader = 'Bearer ';
 
 export const FETCH_NUMBERS = 'FETCH_NUMBERS';
 export const FETCH_POSITIONS = 'FETCH_POSITIONS';
@@ -19,9 +21,9 @@ export const FETCH_PROTECTED = 'FETCH_PROTECTED';
 export const FETCH_TIME = 'FETCH_TIME';
 export const FETCH_IDV_BAR ='FETCH_IDV_BAR'
 
-export function fetchNumbers(){
-
-    const request = axios.get(`${ROOT_URL}recommendations`);
+export function fetchNumbers(accessToken){
+    console.log("fN authheader: " + authHeader);
+    const request = axios.get(`${REAL_URL}recommendations`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
 
     return {
         type: FETCH_NUMBERS,
@@ -58,8 +60,10 @@ export function fetchTeamScore(){
 }
 
 export function fetchProtected(){
-    const request = axios.get(PROTECTED_URL);
 
+    const request = axios.get(PROTECTED_URL, {'headers': {'Authorization' : authHeader}})
+
+     console.log(request);
     return {
         type: FETCH_PROTECTED,
         payload: request

@@ -18,18 +18,26 @@ import {fetchNumbers,
     fetchIdvBar
 } from '../actions';
 
+
+
+
+
+
 class ClientContent extends Component {
     componentDidMount(){
-        this.props.fetchNumbers();
+
+        this.props.fetchNumbers(localStorage.getItem('access_token'));
         this.props.fetchTeamScore();
         this.props.fetchUserScore();
         this.props.fetchPositions();
         this.props.fetchProtected();
         this.props.fetchIdvBar();
+
     }
     render(){
+
         return (
-            <div className="client-content">
+                <div className="client-content">
                 <Switch>
                     <Route exact path="/home" render={(props) => (<DefaultView {...props} data={this.props}/>)} />
                     <Route path="/numbers" render={(props) => (<NumberView {...props} data={this.props} /> )} />
@@ -37,6 +45,8 @@ class ClientContent extends Component {
                     <Route path="/highscores" render={(props)=> (<LeaderboardView {...props} data={this.props} />)} />
                 </Switch>
             </div>
+
+
         );
     }
 }
