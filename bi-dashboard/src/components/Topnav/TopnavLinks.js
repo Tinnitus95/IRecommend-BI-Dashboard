@@ -6,11 +6,12 @@ import FontAwesome from 'react-fontawesome';
 
 class TopnavLinks extends Component {
     render() {
+        console.log(this.props);
     const { intl } = this.props;
         return(
         <ul className="topnav-links">
             <li>
-                <NavLink to="/home" activeClassName='active-link'>
+                <NavLink to="/dashboard/default" activeClassName='active-link'>
                 <FontAwesome
                   className='fontawesome'
                   name='home' />
@@ -18,7 +19,7 @@ class TopnavLinks extends Component {
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/numbers" activeClassName='active-link'>
+                <NavLink to="/dashboard/numbers" activeClassName='active-link'>
                 <FontAwesome
                   className='fontawesome'
                   name='list-ol'/>
@@ -26,7 +27,7 @@ class TopnavLinks extends Component {
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/highscores" activeClassName='active-link'>
+                <NavLink to="/dashboard/highscores" activeClassName='active-link'>
                 <FontAwesome
                   className='fontawesome'
                   name='trophy'/>
@@ -34,20 +35,14 @@ class TopnavLinks extends Component {
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/time" activeClassName='active-link'>
+                <NavLink to="/dashboard/time" activeClassName='active-link'>
                 <FontAwesome
                   className='fontawesome'
                   name='clock'/>
                   {/* {intl.formatMessage({ id: 'sidebar-route-time-graphs' })} */}
                 </NavLink>
             </li>
-            <li>
-                <NavLink to="/positions" activeClassName='active-link'>
-                <FontAwesome
-                  className='fontawesome'
-                  name='briefcase'/>
-                </NavLink>
-            </li>
+
         </ul>
         );
     }

@@ -34,27 +34,27 @@ export default class Auth {
           localStorage.setItem('expires_at', expiresAt);
 
           // navigate to the home route
-          history.replace('/home');
+          history.replace('/dashboard/default');
         // this.setSession(authResult);
         // history.replace('/home');
       } else if (err) {
-        history.replace('/home');
+        history.replace('/dashboard/default');
         console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
     });
   }
 
-  setSession(authResult) {
-    // Set the time that the access token will expire at
-    let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
-    localStorage.setItem('access_token', authResult.accessToken);
-    localStorage.setItem('id_token', authResult.idToken);
-    localStorage.setItem('expires_at', expiresAt);
-
-    // navigate to the home route
-    history.replace('/home');
-  }
+  // setSession(authResult) {
+  //   // Set the time that the access token will expire at
+  //   let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+  //   localStorage.setItem('access_token', authResult.accessToken);
+  //   localStorage.setItem('id_token', authResult.idToken);
+  //   localStorage.setItem('expires_at', expiresAt);
+  //
+  //   // navigate to the home route
+  //   history.replace('/');
+  // }
 
   logout() {
     // Clear access token and ID token from local storage

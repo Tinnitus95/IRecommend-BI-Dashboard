@@ -14,7 +14,7 @@ import {fetchNumbers,
     fetchUserScore,
     fetchTeamScore,
     fetchPositions,
-    fetchProtected,
+    // fetchProtected,
     fetchIdvBar
 } from '../actions';
 
@@ -24,13 +24,14 @@ import {fetchNumbers,
 
 
 class ClientContent extends Component {
-    componentDidMount(){
 
+    componentDidMount(){
+    console.log(this.props);
         this.props.fetchNumbers(localStorage.getItem('access_token'));
-        this.props.fetchTeamScore();
-        this.props.fetchUserScore();
+        this.props.fetchTeamScore(localStorage.getItem('access_token'));
+        this.props.fetchUserScore(localStorage.getItem('access_token'));
         this.props.fetchPositions();
-        this.props.fetchProtected();
+        // this.props.fetchProtected();
         this.props.fetchIdvBar();
 
     }
@@ -39,10 +40,10 @@ class ClientContent extends Component {
         return (
                 <div className="client-content">
                 <Switch>
-                    <Route exact path="/home" render={(props) => (<DefaultView {...props} data={this.props}/>)} />
-                    <Route path="/numbers" render={(props) => (<NumberView {...props} data={this.props} /> )} />
-                    <Route path="/time" render={(props) => (<GraphView {...props} data={this.props}/>)} />
-                    <Route path="/highscores" render={(props)=> (<LeaderboardView {...props} data={this.props} />)} />
+                    <Route path="/dashboard/default" render={(props) => (<DefaultView {...props} data={this.props}/>)} />
+                    <Route path="/dashboard/numbers" render={(props) => (<NumberView {...props} data={this.props} /> )} />
+                    <Route path="/dashboard/time" render={(props) => (<GraphView {...props} data={this.props}/>)} />
+                    <Route path="/dashboard/highscores" render={(props)=> (<LeaderboardView {...props} data={this.props} />)} />
                 </Switch>
             </div>
 
@@ -58,8 +59,8 @@ function mapStateToProps(state){
         numbers: state.number,
         userscore: state.userscore,
         teamscore: state.teamscore,
-        positions: state.positions,
-        protected: state.protected
+        positions: state.positions
+        // protected: state.protected
     };
 }
 
@@ -69,6 +70,6 @@ export default withRouter(connect(mapStateToProps,
         fetchUserScore,
         fetchTeamScore,
         fetchPositions,
-        fetchProtected,
+        // fetchProtected,
         fetchIdvBar
     })(ClientContent));

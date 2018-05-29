@@ -11,6 +11,7 @@ class ClientMain extends Component {
     }
     render(){
         const { isAuthenticated } = this.props.auth;
+        console.log(this.props);
         console.log(localStorage.getItem('access_token'));
         return(
             <BrowserRouter>
@@ -18,7 +19,7 @@ class ClientMain extends Component {
                     {isAuthenticated() ?
                         <div>
                             <Topnav />
-                            <ClientContent/>
+                            <ClientContent {...this.props}/>
                         </div>
                         :
                         <div style={{

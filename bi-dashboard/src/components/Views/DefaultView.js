@@ -9,7 +9,7 @@ import LineCharts from '../LineCharts';
 export default class DefaultView extends Component{
     render(){
         const data = this.props.data;
-        //this.sleep(1000);
+        
         return (
 
             <div className="default-view">

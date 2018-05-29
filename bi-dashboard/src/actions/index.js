@@ -19,10 +19,11 @@ export const FETCH_TEAMSCORE = 'FETCH_TEAMSCORE';
 export const FETCH_USERSCORE = 'FETCH_USERSCORE';
 export const FETCH_PROTECTED = 'FETCH_PROTECTED';
 export const FETCH_TIME = 'FETCH_TIME';
-export const FETCH_IDV_BAR ='FETCH_IDV_BAR'
+export const FETCH_IDV_BAR ='FETCH_IDV_BAR';
+
 
 export function fetchNumbers(accessToken){
-    console.log("fN authheader: " + authHeader);
+
     const request = axios.get(`${REAL_URL}recommendations`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
 
     return {
@@ -32,6 +33,7 @@ export function fetchNumbers(accessToken){
 }
 
 export function fetchPositions(){
+
     const request = axios.get(`${ROOT_URL}positions`);
 
     return {
@@ -39,8 +41,8 @@ export function fetchPositions(){
         payload: request
     };
 }
-export function fetchUserScore(){
-    const request = axios.get(`${ROOT_URL}${TRANSACTIONS}users`);
+export function fetchUserScore(accessToken){
+    const request = axios.get(`${REAL_URL}${TRANSACTIONS}users`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
 
     return {
         type: FETCH_USERSCORE,
@@ -50,25 +52,25 @@ export function fetchUserScore(){
 }
 
 export function fetchTeamScore(){
-    const request = axios.get(`${ROOT_URL}${TRANSACTIONS}teams`);
-
+    // const request = axios.get(`${REAL_URL}teams`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
+    const request = axios.get(`${ROOT_URL}${TRANSACTIONS}teams`)
     return {
         type: FETCH_TEAMSCORE,
         payload: request
     };
 
 }
-
-export function fetchProtected(){
-
-    const request = axios.get(PROTECTED_URL, {'headers': {'Authorization' : authHeader}})
-
-     console.log(request);
-    return {
-        type: FETCH_PROTECTED,
-        payload: request
-    };
-}
+//
+// export function fetchProtected(){
+//
+//     const request = axios.get(PROTECTED_URL, {'headers': {'Authorization' : authHeader}})
+//
+//      console.log(request);
+//     return {
+//         type: FETCH_PROTECTED,
+//         payload: request
+//     };
+// }
 
 export function fetchTime(){
     // const request = axios.get(URl)

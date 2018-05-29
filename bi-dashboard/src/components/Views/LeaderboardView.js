@@ -13,10 +13,13 @@ class LeaderboardView extends Component {
 
             if( i === 0 ){
                 topThree[i].classes = 'leader';
+            }else if (i === 1) {
+                topThree[i].classes = 'not-leader silver';
             }
             else{
-                topThree[i].classes = 'not-leader'
+                topThree[i].classes = 'not-leader bronze'
             }
+
             topThree[i].position = i +1;
 
 
@@ -32,6 +35,7 @@ class LeaderboardView extends Component {
     }
 
     render(){
+
         const { user, team } = this.props;
         return (
             <div className="leaderboard-view">
