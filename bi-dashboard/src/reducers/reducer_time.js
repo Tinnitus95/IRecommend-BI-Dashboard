@@ -109,7 +109,7 @@ export default function(state = defaultState, action){
         const todaysTips = []
 
         sortedByDate.forEach(recommendation => {
-            console.log(new Date(recommendation.created));
+            // console.log(new Date(recommendation.created));
             if(moment(recommendation.created).isSame(moment() , 'day')){
                 todaysTips.push(recommendation.created)
 
