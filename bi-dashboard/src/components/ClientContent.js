@@ -69,7 +69,7 @@ function mapStateToProps(state){
         userscore: state.userscore,
         teamscore: state.teamscore,
         positions: state.positions,
-        tips: state.tips
+        tips: state.tips,
         teamgoals: state.teamgoals
         // protected: state.protected
     };
