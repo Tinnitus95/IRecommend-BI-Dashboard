@@ -3,7 +3,7 @@ import NumberReducer from './reducer_numbers';
 import PositionsReducer from './reducer_positions';
 import UserScoreReducer from './reducer_userscore';
 import TeamScoreReducer from './reducer_teamscore';
-import ProtectedReducer from './reducer_protected';
+import TipsReducer from './reducer_tips';
 import TimeReducer from './reducer_time';
 import IdvBarReducer from './reducer_idvBar';
 
@@ -14,7 +14,8 @@ const rootReducer = combineReducers({
     userscore: UserScoreReducer,
     time: TimeReducer,
     idvBar: IdvBarReducer,
-    protected: ProtectedReducer
+    tips: TipsReducer
+
 
 });
 

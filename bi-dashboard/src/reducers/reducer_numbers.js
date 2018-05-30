@@ -4,6 +4,7 @@ import {FETCH_NUMBERS} from '../actions/index';
 export default function(state = [], action){
     switch (action.type) {
         case FETCH_NUMBERS:
+        console.log('numbers called!');
             const data = action.payload.data;
             const totalRec = data.filter( state => { return state.state >= 10 }).length;
             const interestedRec = data.filter (state => { return state.state >= 50 }).length;

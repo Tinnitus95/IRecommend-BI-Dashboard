@@ -3,9 +3,11 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import UserPanel from './Leaderboard/UserLeaderboard/UserPanel';
 import TeamPanel from './Leaderboard/TeamLeaderboard/TeamPanel';
 import { injectIntl } from 'react-intl';
+import {fetchTips} from '../actions/';
 
 class Leaderboard extends Component {
-  render() {
+
+    render() {
     const { intl, user, team } = this.props;
     return (
         <div className="Leaderboard">

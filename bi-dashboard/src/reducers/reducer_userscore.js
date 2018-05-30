@@ -19,8 +19,8 @@ export default function(state = [], action){
                 );
             })
 
-
             return userArr;
+
 
         }
         return state;

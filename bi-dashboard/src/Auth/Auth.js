@@ -10,7 +10,7 @@ export default class Auth {
     redirectUri: AUTH_CONFIG.callbackUrl,
     audience: 'https://api.irecommend.se',
     responseType: 'token id_token',
-    scope: 'openid profile'
+    scope: ''
   });
 
   constructor() {

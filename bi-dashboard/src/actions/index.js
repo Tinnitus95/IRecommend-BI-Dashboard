@@ -10,6 +10,7 @@ import axios from 'axios';
 const ROOT_URL = 'https://api.irecommend.se/api/v1/bi/';
 const PROTECTED_URL = 'https://api.irecommend.se/api/v1/positions';
 const REAL_URL = 'https://api.irecommend.se/api/v1/';
+const HEAD_URL = 'https://headagent.irecommend.se/api/v1/'
 const TRANSACTIONS = 'transactions/sum/';
 const authHeader = 'Bearer ';
 
@@ -20,11 +21,12 @@ export const FETCH_USERSCORE = 'FETCH_USERSCORE';
 export const FETCH_PROTECTED = 'FETCH_PROTECTED';
 export const FETCH_TIME = 'FETCH_TIME';
 export const FETCH_IDV_BAR ='FETCH_IDV_BAR';
+export const FETCH_TIPS = 'FETCH_TIPS';
 
 
 export function fetchNumbers(accessToken){
 
-    const request = axios.get(`${REAL_URL}recommendations`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
+    const request = axios.get(`${HEAD_URL}recommendations`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
 
     return {
         type: FETCH_NUMBERS,
@@ -42,7 +44,7 @@ export function fetchPositions(){
     };
 }
 export function fetchUserScore(accessToken){
-    const request = axios.get(`${REAL_URL}${TRANSACTIONS}users`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
+    const request = axios.get(`${HEAD_URL}${TRANSACTIONS}users`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
 
     return {
         type: FETCH_USERSCORE,
@@ -86,6 +88,15 @@ export function fetchIdvBar(){
 
     return {
         type: FETCH_IDV_BAR,
+        payload: request
+    };
+}
+
+export function fetchTips(accessToken, id){
+    const request = axios.get(`${HEAD_URL}recommendations/user/${id}`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
+
+    return {
+        type: FETCH_TIPS,
         payload: request
     };
 }

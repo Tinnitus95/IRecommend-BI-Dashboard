@@ -6,7 +6,7 @@ const UserListItem = (props) => {
         props.data.map((row, index) => (
             <tr key={index}>
                 <td>{index + 1}</td>
-                <td><img src={row.picture} draggable="false" alt="user"/>{`${row.firstname} ${row.lastname}`}</td>
+                <td><img src={!row.picture ? '../images/bi-logo.png' :row.picture } draggable="false" alt="user"/>{`${row.firstname} ${row.lastname}`}</td>
                 <td>
                     <CountUp
                         start={0}

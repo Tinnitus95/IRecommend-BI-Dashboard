@@ -27,6 +27,7 @@ class ClientContent extends Component {
 
     componentDidMount(){
     console.log(this.props);
+
         this.props.fetchNumbers(localStorage.getItem('access_token'));
         this.props.fetchTeamScore(localStorage.getItem('access_token'));
         this.props.fetchUserScore(localStorage.getItem('access_token'));
@@ -59,7 +60,7 @@ function mapStateToProps(state){
         numbers: state.number,
         userscore: state.userscore,
         teamscore: state.teamscore,
-        positions: state.positions
+        positions: state.positions,
         // protected: state.protected
     };
 }
