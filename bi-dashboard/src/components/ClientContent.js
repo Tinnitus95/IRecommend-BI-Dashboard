@@ -14,6 +14,7 @@ import {fetchNumbers,
     fetchUserScore,
     fetchTeamScore,
     fetchPositions,
+    fetchGoals,
     // fetchProtected,
     fetchIdvBar
 } from '../actions';
@@ -26,11 +27,12 @@ import {fetchNumbers,
 class ClientContent extends Component {
 
     componentDidMount(){
-    console.log(this.props);
+    const accessToken = localStorage.getItem('access_token');
 
-        this.props.fetchNumbers(localStorage.getItem('access_token'));
-        this.props.fetchTeamScore(localStorage.getItem('access_token'));
-        this.props.fetchUserScore(localStorage.getItem('access_token'));
+        this.props.fetchNumbers(accessToken);
+        this.props.fetchTeamScore(accessToken);
+        this.props.fetchUserScore(accessToken);
+        this.props.fetchGoals(accessToken);
         this.props.fetchPositions();
         // this.props.fetchProtected();
         this.props.fetchIdvBar();
@@ -61,6 +63,7 @@ function mapStateToProps(state){
         userscore: state.userscore,
         teamscore: state.teamscore,
         positions: state.positions,
+        teamgoals: state.teamgoals
         // protected: state.protected
     };
 }
@@ -71,6 +74,7 @@ export default withRouter(connect(mapStateToProps,
         fetchUserScore,
         fetchTeamScore,
         fetchPositions,
+        fetchGoals,
         // fetchProtected,
         fetchIdvBar
     })(ClientContent));

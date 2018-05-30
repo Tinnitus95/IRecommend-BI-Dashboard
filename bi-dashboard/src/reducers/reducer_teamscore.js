@@ -9,13 +9,13 @@ export default function(state = [], action){
 
             teamArr.push(
                 {
-                    name: team.team.name,
-                    picture: team.team.picture,
-                    points: team.points.Int64
+                    name: team.name,
+                    picture: team.picture,
+
                 }
                 );
             })
-         
+
             return teamArr;
 
     }

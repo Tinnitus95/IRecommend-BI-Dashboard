@@ -45,9 +45,25 @@ class NumberView extends Component {
 
     }
 
+
+    componentDidMount() {
+      let updateStateArray = this.state.hardcode.slice();
+      updateStateArray[0] = {...updateStateArray[0],
+        data: this.props.data.userscore.length
+      };
+        this.setState({hardcode: updateStateArray});
+    }
+
+
+
+
+
+
+
+
     render() {
         const data = this.props.data.numbers;
-        console.log(data);
+
         const value = data.map( numb => {
             return (
                 <NumberViewBox
@@ -61,6 +77,7 @@ class NumberView extends Component {
                 <NumberViewBox
                     key = {hard.title}
                     number={hard}
+                    user={this.props.data.userscore.length}
                 />
             );
         });
