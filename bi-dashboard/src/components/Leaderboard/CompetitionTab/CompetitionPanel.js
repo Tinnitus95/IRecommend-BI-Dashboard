@@ -3,10 +3,7 @@ import React, { Component } from 'react';
 class CompetitionPanel extends Component {
     render() {
         return(
-            <progress 
-                    max="100" 
-                    value="10">
-            </progress>
+            <div className="progress-bar-wrapper"></div>
         );
     }
 };
