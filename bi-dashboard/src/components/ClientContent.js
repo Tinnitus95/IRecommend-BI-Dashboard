@@ -14,6 +14,7 @@ import {fetchNumbers,
     fetchUserScore,
     fetchTeamScore,
     fetchPositions,
+    fetchGoals,
     // fetchProtected,
     fetchIdvBar,
     fetchTips,
@@ -37,6 +38,7 @@ class ClientContent extends Component {
         this.props.fetchTeamScore(accessToken);
         this.props.fetchUserScore(accessToken);
         this.props.fetchTime(accessToken);
+        this.props.fetchGoals(accessToken);
         this.props.fetchPositions();
         // this.props.fetchProtected();
         this.props.fetchIdvBar();
@@ -68,6 +70,7 @@ function mapStateToProps(state){
         teamscore: state.teamscore,
         positions: state.positions,
         tips: state.tips
+        teamgoals: state.teamgoals
         // protected: state.protected
     };
 }
@@ -78,6 +81,7 @@ export default withRouter(connect(mapStateToProps,
         fetchUserScore,
         fetchTeamScore,
         fetchPositions,
+        fetchGoals,
         // fetchProtected,
         fetchIdvBar,
         fetchTips,
