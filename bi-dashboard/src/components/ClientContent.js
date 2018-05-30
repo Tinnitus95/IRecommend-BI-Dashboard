@@ -15,7 +15,9 @@ import {fetchNumbers,
     fetchTeamScore,
     fetchPositions,
     // fetchProtected,
-    fetchIdvBar
+    fetchIdvBar,
+    fetchTips,
+    fetchTime
 } from '../actions';
 
 
@@ -24,20 +26,24 @@ import {fetchNumbers,
 
 
 class ClientContent extends Component {
+    state= {
+        tips: false
+    }
 
     componentDidMount(){
-    console.log(this.props);
+        const accessToken = localStorage.getItem('access_token')
 
-        this.props.fetchNumbers(localStorage.getItem('access_token'));
-        this.props.fetchTeamScore(localStorage.getItem('access_token'));
-        this.props.fetchUserScore(localStorage.getItem('access_token'));
+        this.props.fetchNumbers(accessToken);
+        this.props.fetchTeamScore(accessToken);
+        this.props.fetchUserScore(accessToken);
+        this.props.fetchTime(accessToken);
         this.props.fetchPositions();
         // this.props.fetchProtected();
         this.props.fetchIdvBar();
+        // this.props.fetchTips(localStorage.getItem('access_token'));
 
     }
     render(){
-
         return (
                 <div className="client-content">
                 <Switch>
@@ -61,6 +67,7 @@ function mapStateToProps(state){
         userscore: state.userscore,
         teamscore: state.teamscore,
         positions: state.positions,
+        tips: state.tips
         // protected: state.protected
     };
 }
@@ -72,5 +79,7 @@ export default withRouter(connect(mapStateToProps,
         fetchTeamScore,
         fetchPositions,
         // fetchProtected,
-        fetchIdvBar
+        fetchIdvBar,
+        fetchTips,
+        fetchTime
     })(ClientContent));

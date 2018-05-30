@@ -1,4 +1,6 @@
 import {FETCH_TIME} from '../actions';
+import moment from 'moment';
+
 
 const defaultState = {
     chartData:{
@@ -101,7 +103,34 @@ const defaultState = {
 export default function(state = defaultState, action){
     switch (action.type) {
         case FETCH_TIME:
-            return state;
+        const sortedByDate = action.payload.data.sort((a,b) => {
+            return a.created < b.created ? 1: -1;
+        });
+        const todaysTips = []
+
+        sortedByDate.forEach(recommendation => {
+            console.log(new Date(recommendation.created));
+            if(moment(recommendation.created).isSame(moment() , 'day')){
+                todaysTips.push(recommendation.created)
+
+            }
+
+        })
+
+        return {
+            ...state,
+            chartData:{
+                ...state.chartData,
+                datasets: state.chartData.datasets.map(
+                    (datasets, i) => i === 1 ? {...datasets, data: todaysTips.length} : datasets
+
+                )
+
+
+            }
+
+        }
+
 
     }
     return state;

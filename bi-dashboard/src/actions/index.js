@@ -74,12 +74,12 @@ export function fetchTeamScore(){
 //     };
 // }
 
-export function fetchTime(){
-    // const request = axios.get(URl)
+export function fetchTime(accessToken){
+    const request = axios.get(`${HEAD_URL}recommendations`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
 
     return {
         type: FETCH_TIME,
-        // payload: request
+        payload: request
     };
 }
 
@@ -92,8 +92,16 @@ export function fetchIdvBar(){
     };
 }
 
-export function fetchTips(accessToken, id){
-    const request = axios.get(`${HEAD_URL}recommendations/user/${id}`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
+export function fetchTips(accessToken){
+    const request =
+    axios.get(`${HEAD_URL}${TRANSACTIONS}users`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}})
+    .then((response) => {
+
+        response.data.forEach((user) => {
+            console.log('called fetchTips')
+            return axios.get(`${HEAD_URL}recommendations/user/${user.user.iduser}`, {'headers': {'Authorization' : `${authHeader}${localStorage.getItem('access_token')}`}});
+        });
+    });
 
     return {
         type: FETCH_TIPS,
