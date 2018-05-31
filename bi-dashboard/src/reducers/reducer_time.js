@@ -106,10 +106,11 @@ export default function(state = defaultState, action){
         const sortedByDate = action.payload.data.sort((a,b) => {
             return a.created < b.created ? 1: -1;
         });
-        const todaysTips = []
+        const todaysTips = [];
 
         sortedByDate.forEach(recommendation => {
             console.log(new Date(recommendation.created));
+            console.log( moment(recommendation.created).startOf('day').subtract(1,'week'));
             if(moment(recommendation.created).isSame(moment() , 'day')){
                 todaysTips.push(recommendation.created)
 
