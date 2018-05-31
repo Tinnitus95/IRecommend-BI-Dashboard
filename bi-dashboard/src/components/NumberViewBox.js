@@ -15,8 +15,10 @@ const NumberViewBox = ({number, user}) => {
 
 
       <div className="number-view-box">
+        <div className="number-view-bow-wrapper">
           <h3>{number.title}</h3>
           <p>{number.desc}</p>
+        </div>
           <div>
               <h1>
                   <CountUp
