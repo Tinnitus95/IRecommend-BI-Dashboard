@@ -17,7 +17,7 @@ class Leaderboard extends Component {
                 <TabList>
                     <Tab>{intl.formatMessage({ id:'leaderboard-tab'})}</Tab>
                     <Tab>{intl.formatMessage({ id:'leaderboard-tab-team'})}</Tab>
-                    <Tab>{intl.formatMessage({ id:'leaderboard-tab-team'})}</Tab>
+                    <Tab>{intl.formatMessage({ id:'leaderboard-tab-comp'})}</Tab>
                 </TabList>
                 <div className="leaderboard-content">
                     <TabPanel>
