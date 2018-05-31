@@ -22,6 +22,7 @@ export const FETCH_PROTECTED = 'FETCH_PROTECTED';
 export const FETCH_TIME = 'FETCH_TIME';
 export const FETCH_IDV_BAR ='FETCH_IDV_BAR';
 export const FETCH_TIPS = 'FETCH_TIPS';
+export const FETCH_GOALS = 'FETCH_GOALS';
 
 
 export function fetchNumbers(accessToken){
@@ -35,8 +36,7 @@ export function fetchNumbers(accessToken){
 }
 
 export function fetchPositions(){
-
-    const request = axios.get(`${ROOT_URL}positions`);
+  const request = axios.get(`${ROOT_URL}positions`);
 
     return {
         type: FETCH_POSITIONS,
@@ -53,33 +53,22 @@ export function fetchUserScore(accessToken){
 
 }
 
-export function fetchTeamScore(){
-    // const request = axios.get(`${REAL_URL}teams`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
-    const request = axios.get(`${ROOT_URL}${TRANSACTIONS}teams`)
+export function fetchTeamScore(accessToken){
+    const request = axios.get(`${HEAD_URL}teams`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
+    // const request = axios.get(`${ROOT_URL}${TRANSACTIONS}teams`)
     return {
         type: FETCH_TEAMSCORE,
         payload: request
     };
 
 }
-//
-// export function fetchProtected(){
-//
-//     const request = axios.get(PROTECTED_URL, {'headers': {'Authorization' : authHeader}})
-//
-//      console.log(request);
-//     return {
-//         type: FETCH_PROTECTED,
-//         payload: request
-//     };
-// }
 
-export function fetchTime(){
-    // const request = axios.get(URl)
+export function fetchTime(accessToken){
+    const request = axios.get(`${HEAD_URL}recommendations`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
 
     return {
         type: FETCH_TIME,
-        // payload: request
+        payload: request
     };
 }
 
@@ -92,11 +81,28 @@ export function fetchIdvBar(){
     };
 }
 
-export function fetchTips(accessToken, id){
-    const request = axios.get(`${HEAD_URL}recommendations/user/${id}`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
+export function fetchTips(accessToken){
+    const request =
+    axios.get(`${HEAD_URL}${TRANSACTIONS}users`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}})
+    .then((response) => {
+
+        response.data.forEach((user) => {
+            console.log('called fetchTips')
+            return axios.get(`${HEAD_URL}recommendations/user/${user.user.iduser}`, {'headers': {'Authorization' : `${authHeader}${localStorage.getItem('access_token')}`}});
+        });
+    });
 
     return {
         type: FETCH_TIPS,
+        payload: request
+    };
+}
+
+export function fetchGoals(accessToken){
+    const request = axios.get(`${HEAD_URL}goals`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
+
+    return {
+        type: FETCH_GOALS,
         payload: request
     };
 }

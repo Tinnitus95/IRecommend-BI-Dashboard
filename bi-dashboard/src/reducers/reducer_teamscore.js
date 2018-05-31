@@ -4,19 +4,23 @@ export default function(state = [], action){
     switch (action.type) {
         case FETCH_TEAMSCORE:
         const data = action.payload.data;
-        let teamArr = [];
-        data.map(team => {
+        const team = data.map( team => {
+          return { name: team.name, picture: team.picture};
+        });
 
-            teamArr.push(
-                {
-                    name: team.team.name,
-                    picture: team.team.picture,
-                    points: team.points.Int64
-                }
-                );
-            })
-         
-            return teamArr;
+        // let teamArr = [];
+        // data.map(team => {
+        //
+        //     teamArr.push(
+        //         {
+        //             name: team.name,
+        //             picture: team.picture,
+        //
+        //         }
+        //         );
+        //     })
+          // return teamArr;
+          return team;
 
     }
     return state;

@@ -6,6 +6,7 @@ import TeamScoreReducer from './reducer_teamscore';
 import TipsReducer from './reducer_tips';
 import TimeReducer from './reducer_time';
 import IdvBarReducer from './reducer_idvBar';
+import TeamGoalsReducer from './reducer_teamgoals';
 
 const rootReducer = combineReducers({
     number: NumberReducer,
@@ -14,8 +15,8 @@ const rootReducer = combineReducers({
     userscore: UserScoreReducer,
     time: TimeReducer,
     idvBar: IdvBarReducer,
-    tips: TipsReducer
-
+    tips: TipsReducer,
+    teamgoals: TeamGoalsReducer
 
 });
 

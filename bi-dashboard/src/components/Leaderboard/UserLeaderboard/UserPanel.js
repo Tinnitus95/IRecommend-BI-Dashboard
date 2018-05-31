@@ -6,23 +6,24 @@ import {connect} from 'react-redux';
 
 class UserPanel extends Component {
 
-    componentDidMount(props){
-        console.log(this.props);
-        const accessToken = localStorage.getItem('access_token');
-        const userData = this.props.data;
-        const newData = userData.slice(0,1);
+    // componentDidMount(props){
+    //     console.log(this.props);
+    //     const accessToken = localStorage.getItem('access_token');
+    //     const userData = this.props.data;
+    //     // const newData = userData.slice(0);
+    //
+    //     if(!userData.length === 0 && accessToken){
+    //         console.log(userData, accessToken);
+    //         userData.forEach((user) => {
+    //
 
-        if(!newData.length === 0 && accessToken){
-            console.log(newData, accessToken);
-            newData.forEach((user) => {
-
-                this.props.fetchTips(accessToken, user.id);
-            });
-
-        }
-    }
+    //         });
+    //
+    //     }
+    // }
 
   render() {
+     
 
     const { intl } = this.props;
     return (
