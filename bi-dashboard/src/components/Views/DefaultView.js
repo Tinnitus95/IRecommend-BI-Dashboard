@@ -17,7 +17,7 @@ export default class DefaultView extends Component{
                 <NumberWidget data={data.numbers} users={data.userscore}/>
                 <div className="wrapper">
                     <PositionGraph data={data.positions}/>
-                    <Leaderboard user={data.userscore} team={data.teamscore}/>
+                    <Leaderboard user={data.userscore} team={data.teamscore} comp={data.teamgoals}/>
                 </div>
                 <LineCharts />
                 <Teamgoals data={data.teamgoals}/>

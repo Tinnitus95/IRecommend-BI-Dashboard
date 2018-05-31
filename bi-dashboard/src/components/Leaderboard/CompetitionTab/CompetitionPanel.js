@@ -1,13 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class CompetitionPanel extends Component {
-    render() {
+const CompetitionPanel = (props) => {
+        let data = {};
+        if(props.data[0]){
+            data = props.data[0].data.goals[1];
+        }
+
         return(
             <div className="progress-bar-wrapper">
-                <progress max="100" value="40"></progress>
+                <progress max="60000" value={data.points}></progress>
             </div>
         );
-    }
+    
 };
 
 export default CompetitionPanel;

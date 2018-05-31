@@ -9,7 +9,7 @@ import {fetchTips} from '../actions/';
 class Leaderboard extends Component {
 
     render() {
-    const { intl, user, team } = this.props;
+    const { intl, user, team, comp } = this.props;
     return (
         <div className="Leaderboard">
             <h2 className="highscore-title">High-Scores</h2>
@@ -27,7 +27,7 @@ class Leaderboard extends Component {
                         <TeamPanel data={team}/>
                     </TabPanel>
                     <TabPanel>
-                        <CompetitionPanel/>
+                        <CompetitionPanel data={comp}/>
                     </TabPanel>
                 </div>
             </Tabs>
