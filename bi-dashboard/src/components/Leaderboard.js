@@ -27,7 +27,7 @@ class Leaderboard extends Component {
                         <TeamPanel data={team}/>
                     </TabPanel>
                     <TabPanel>
-                        <CompetitionPanel data={comp}/>
+                        <CompetitionPanel data={comp} users={user}/>
                     </TabPanel>
                 </div>
             </Tabs>
