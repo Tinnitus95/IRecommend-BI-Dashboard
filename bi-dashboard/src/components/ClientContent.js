@@ -73,7 +73,8 @@ function mapStateToProps(state){
         teamscore: state.teamscore,
         positions: state.positions,
         tips: state.tips,
-        teamgoals: state.teamgoals
+        teamgoals: state.teamgoals,
+        time: state.time
         // protected: state.protected
     };
 }

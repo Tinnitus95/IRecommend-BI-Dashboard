@@ -7,7 +7,7 @@ const weeklabels = [];
 
 for (var i = 24; i >= 1; i--) {
     daylabels.push(moment().add(-i, 'hours').format('HH'));
-    console.log(daylabels);
+
 }
 for (var i = 7; i >= 1; i--) {
     weeklabels.push(moment().add(-i, 'days').format('Do'))
@@ -19,7 +19,7 @@ const defaultState = {
         datasets:[
             {
                 label: 'line-chart-total-tips',
-                data: [1, 0, 0, 0, 1, 2, 2,3,6,2,1,12,9,3,4,4,12,16,21,18,12,6,4,1],
+                data: [],
                 lineTension: 0.3,
                 fill: true,
                 borderColor: 'rgb(255, 102, 163)',
@@ -34,7 +34,7 @@ const defaultState = {
             },
             {
                 label: 'line-chart-total-answers',
-                data: [0, 0, 0, 0, 0, 1, 1, 2, 4,8,1,0,20,11,2,0,0,12,11,21,2,2,1,0,1],
+                data: [],
                 lineTension: 0.3,
                 fill: true,
                 borderColor: '#2a9a9e',
@@ -131,7 +131,7 @@ export default function(state = defaultState, action){
         var last7DayStart = moment().startOf('day').subtract(1,'week');
         var yesterdayEndOfRange = moment().endOf('day').subtract(1,'day');
 
-        // console.log(sortedByDate);
+
         sortedByDate.forEach(recommendation => {
             if(moment(recommendation.created)
               .isBetween(last7DayStart, yesterdayEndOfRange)){
@@ -182,9 +182,108 @@ export default function(state = defaultState, action){
             return a.created < b.created ? 1: -1;
         });
 
-        const todaysTips = sortedByDate2;
-        console.log(todaysTips);
-        return state;
+        const todaysTips = [];
+
+        const a = [],b = [],c = [],d = [],e = [],f = [],g = [],h = [],i = [],j = [],k = [],l = [],m = [],
+        n = [],o = [],p = [],q = [],r = [],s = [],t = [],u = [],v = [],w = [],x = [];
+        var todayStart = moment().startOf('day').subtract(1,'day');
+        var todayEndOfRange = moment().endOf('day').subtract(0,'hours');
+
+        sortedByDate2.forEach(recommendation => {
+            if(moment(recommendation.created)
+              .isBetween(todayStart, todayEndOfRange)){
+                  todaysTips.push(moment(recommendation.created).format('HH'));
+                  if (moment(recommendation.created).format('HH') === moment().add(-1, 'hours').format('HH')) {
+                      a.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-2, 'hours').format('HH')) {
+                      b.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-3, 'hours').format('HH')) {
+                      c.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-4, 'hours').format('HH')) {
+                      d.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-5, 'hours').format('HH')) {
+                      e.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-6, 'hours').format('HH')) {
+                      f.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-7, 'hours').format('HH')) {
+                      g.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-8, 'hours').format('HH')) {
+                      h.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-9, 'hours').format('HH')) {
+                      i.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-10, 'hours').format('HH')) {
+                      j.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-11, 'hours').format('HH')) {
+                      k.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-12, 'hours').format('HH')) {
+                      l.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-13, 'hours').format('HH')) {
+                      m.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-14, 'hours').format('HH')) {
+                      n.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-15, 'hours').format('HH')) {
+                      o.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-16, 'hours').format('HH')) {
+                      p.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-17, 'hours').format('HH')) {
+                      q.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-18, 'hours').format('HH')) {
+                      r.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-19, 'hours').format('HH')) {
+                      s.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-20, 'hours').format('HH')) {
+                      t.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-21, 'hours').format('HH')) {
+                      u.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-22, 'hours').format('HH')) {
+                      v.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-23, 'hours').format('HH')) {
+                      w.push(moment(recommendation.created).format('HH'));
+                  }
+                  else if (moment(recommendation.created).format('HH') === moment().add(-24, 'hours').format('HH')) {
+                      x.push(moment(recommendation.created).format('HH'));
+                  }
+
+              }
+        })
+
+        return{
+            ...state,
+            chartData:{
+                ...state.chartData,
+                datasets: state.chartData.datasets.map(
+                    (datasets, i) => i === 1 ?  datasets : {...datasets, data: [a.length,b.length,c.length,d.length,e.length,f.length,g.length,h.length,i.length,j.length,k.length,l.length,m.length,n.length,o.length,p.length,q.length,
+                        r.length,s.length,t.length,
+                        u.length,v.length,w.length,x.length].reverse()}
+
+                )
+
+
+            }
+
+        }
 
     }
     return state;
