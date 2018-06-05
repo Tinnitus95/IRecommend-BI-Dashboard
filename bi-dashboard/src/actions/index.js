@@ -19,10 +19,12 @@ export const FETCH_POSITIONS = 'FETCH_POSITIONS';
 export const FETCH_TEAMSCORE = 'FETCH_TEAMSCORE';
 export const FETCH_USERSCORE = 'FETCH_USERSCORE';
 export const FETCH_PROTECTED = 'FETCH_PROTECTED';
-export const FETCH_TIME = 'FETCH_TIME';
+export const FETCH_WEEK = 'FETCH_WEEK';
 export const FETCH_IDV_BAR ='FETCH_IDV_BAR';
 export const FETCH_TIPS = 'FETCH_TIPS';
 export const FETCH_GOALS = 'FETCH_GOALS';
+export const FETCH_TIME = 'FETCH_TIME';
+
 
 
 export function fetchNumbers(accessToken){
@@ -63,11 +65,11 @@ export function fetchTeamScore(accessToken){
 
 }
 
-export function fetchTime(accessToken){
+export function fetchWeek(accessToken){
     const request = axios.get(`${HEAD_URL}recommendations`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
 
     return {
-        type: FETCH_TIME,
+        type: FETCH_WEEK,
         payload: request
     };
 }
@@ -103,6 +105,15 @@ export function fetchGoals(accessToken){
 
     return {
         type: FETCH_GOALS,
+        payload: request
+    };
+}
+
+export function fetchTime(accessToken){
+    const request = axios.get(`${HEAD_URL}recommendations`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
+
+    return {
+        type: FETCH_TIME,
         payload: request
     };
 }
