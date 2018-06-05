@@ -6,7 +6,6 @@ import FontAwesome from 'react-fontawesome';
 
 class TopnavLinks extends Component {
     render() {
-        console.log(this.props);
     const { intl } = this.props;
         return(
         <ul className="topnav-links">

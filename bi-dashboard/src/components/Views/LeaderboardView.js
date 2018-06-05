@@ -24,7 +24,7 @@ class LeaderboardView extends Component {
 
 
         }
-        console.log(topThree);
+
         return _.map(topThree, top => {
             return <UserOrbs
                 key= {top.id}

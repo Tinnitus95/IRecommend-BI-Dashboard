@@ -4,7 +4,6 @@ import CountUp from 'react-countup';
 const NumberViewBox = ({number, user}) => {
   let data = number.data;
   let decimal = 0;
-  console.log(number.stylingclass);
 
   if (number.stylingclass === 'number-balls grayball'){
       data = (number.data / user).toFixed(1);

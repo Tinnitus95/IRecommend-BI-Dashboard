@@ -52,23 +52,13 @@ class NumberView extends Component {
         data: this.props.data.userscore.length
       };
         this.setState({hardcode: updateStateArray});
-        console.log('numberview', this.props.data.userscore);
-
     }
-
-
-
-
-
-
-
 
 
     render() {
       if(this.props.data.userscore.length > 0){
         const usersScore = this.props.data.userscore.filter( score => score.points).map( score => score.points);
         const totalScore = usersScore.reduce( (a, b) => a + b);
-        alert(`Totala poäng för företaget ${totalScore}`);
       }
 
         const data = this.props.data.numbers;
