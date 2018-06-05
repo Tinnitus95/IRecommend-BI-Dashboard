@@ -87,9 +87,8 @@ export function fetchTips(accessToken){
     const request =
     axios.get(`${HEAD_URL}${TRANSACTIONS}users`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}})
     .then((response) => {
-
         response.data.forEach((user) => {
-            console.log('called fetchTips')
+
             return axios.get(`${HEAD_URL}recommendations/user/${user.user.iduser}`, {'headers': {'Authorization' : `${authHeader}${localStorage.getItem('access_token')}`}});
         });
     });

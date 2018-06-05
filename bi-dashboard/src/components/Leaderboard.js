@@ -7,49 +7,37 @@ import {fetchTips} from '../actions/';
 
 class Leaderboard extends Component {
 
+  // Takes in the user and team array and sort the users in the right team
+  calculateTeamPointsHandler = (props) => {
+    const team = this.props.team;
+    const user = this.props.user;
+    let teams = [],
+        points = 0,
+        teamMembers = 0;
 
-calculateTeamPointsHandler = (props) => {
-  const team = this.props.team;
-  const user = this.props.user;
-  const teams = [];
-
-  //Checks if the user is in a team and push them to the teams array.
-  for(let i = 0, x = user.length; i < x; i++){
-    for(let j = 0, k = team.length; j < k; j++){
-      if( user[i].teamhref === team[j].href) {
-        teams.push({team: team[j].name, user: user[i].firstname, points: user[i].points });
+    //Loop over all teams and bind the users to the right team
+    for( let i = 0, x = team.length; i < x; i++) {
+      for( let j = 0, k = user.length; j < k; j++) {
+        if( team[i].href === user[j].teamhref ) {
+          points += user[j].points;
+          teamMembers++;
+        }
+        if( j === user.length - 1){
+          let totalPoints = (points / teamMembers);
+          teams.push( { name: team[i].name, points: totalPoints, totalMembers: teamMembers, picture: team[i].picture } );
+          points = 0;
+          teamMembers = 0;
+        }
       }
     }
+    // sort the teams by points
+    let sortedTeams = teams.slice().sort( ( a, b ) => a.points < b.points);
+    return sortedTeams;
   }
 
-    // Sorting the users to the right team
-    let sortedTeams = teams.reduce( (line, team) => {
-      line[team.team] = (line[team.team] || [])
-      line[team.team].push({
-        name: team.user,
-        points: team.points
-      });
-      return line
-    }, []);
-
-    // Calculating total team-score
-
-
-    // const usersScore = this.props.data.userscore.filter( score => score.points).map( score => score.points);
-    // const totalScore = usersScore.reduce( (a, b) => a + b);
-this.newHandler( sortedTeams );
-return sortedTeams;
-}
-
-newHandler = (data) => {
-
-  console.log(data['Team Tornet']);
-
-}
-
-    render() {
+  render() {
     const { intl, user, team } = this.props;
-    console.log(this.calculateTeamPointsHandler());
+    let teamData = this.calculateTeamPointsHandler();
     return (
         <div className="Leaderboard">
             <h2 className="highscore-title">High-Scores</h2>
@@ -63,13 +51,47 @@ newHandler = (data) => {
                         <UserPanel data={user} />
                     </TabPanel>
                     <TabPanel>
-                        <TeamPanel data={team}/>
+                        <TeamPanel data={teamData}/>
                     </TabPanel>
                 </div>
             </Tabs>
         </div>
     );
-    }
+  }
 }
 
 export default injectIntl(Leaderboard);
+
+
+//
+//
+// for teams
+// teampoints = 0
+// teammembers = 0
+// for users
+// if user.team = team then teampoints+= user.teampoints
+// teammembers++
+// end for users
+// array.push(name: team[i].name, points: teampoints, members: teamember )
+// let tornet = teams.filter( team => team.team === 'Team Tornet' );
+//
+//
+// console.log(tornet);
+//     // Sorting the users to the right team
+//     let sortedTeams = teams.reduce( (line, team) => {
+//       line[team.team] = (line[team.team] || [])
+//       line[team.team].push({
+//         name: team.user,
+//         points: team.points
+//       });
+//       return line
+//     }, []);
+
+
+
+    // Calculating total team-score
+
+
+    // const usersScore = this.props.data.userscore.filter( score => score.points).map( score => score.points);
+    // const totalScore = usersScore.reduce( (a, b) => a + b);
+// this.newHandler( teams );

@@ -44,7 +44,7 @@ class ClientContent extends Component {
         this.props.fetchPositions();
         // this.props.fetchProtected();
         this.props.fetchIdvBar();
-        // this.props.fetchTips(localStorage.getItem('access_token'));
+        this.props.fetchTips(localStorage.getItem(accessToken));
 
 
     }

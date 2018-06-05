@@ -23,7 +23,8 @@ class UserPanel extends Component {
     // }
 
   render() {
-     
+    // console.log('tips' , this.props.tips);
+
 
     const { intl } = this.props;
     return (
