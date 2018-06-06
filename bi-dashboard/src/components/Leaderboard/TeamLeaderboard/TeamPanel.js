@@ -11,6 +11,7 @@ class TeamPanel extends Component {
                     <tr>
                         <th>{intl.formatMessage({ id: 'leaderboard-rank' })}</th>
                         <th>{intl.formatMessage({ id: 'leaderboard-team' })}</th>
+                        <th>Medlemmar</th>
                         <th>{intl.formatMessage({ id: 'leaderboard-score' })}</th>
                     </tr>
                 </thead>

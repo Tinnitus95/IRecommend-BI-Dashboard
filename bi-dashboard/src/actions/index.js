@@ -83,22 +83,22 @@ export function fetchIdvBar(){
     };
 }
 
-export function fetchTips(accessToken){
-    const request =
-    axios.get(`${HEAD_URL}${TRANSACTIONS}users`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}})
-    .then((response) => {
+// TODO: 401 error when trying to fetch all users recommendations
+// export function fetchTips(accessToken){
+//     const request =
+//     axios.get(`${HEAD_URL}${TRANSACTIONS}users`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}})
+//     .then((response) => {
+//         response.data.forEach((user) => {
+//
+//             return axios.get(`${HEAD_URL}recommendations/user/${user.user.iduser}`, {'headers': {'Authorization' : `${authHeader}${localStorage.getItem('access_token')}`}});
+//         });
+//     });
 
-        response.data.forEach((user) => {
-            console.log('called fetchTips')
-            return axios.get(`${HEAD_URL}recommendations/user/${user.user.iduser}`, {'headers': {'Authorization' : `${authHeader}${localStorage.getItem('access_token')}`}});
-        });
-    });
-
-    return {
-        type: FETCH_TIPS,
-        payload: request
-    };
-}
+//     return {
+//         type: FETCH_TIPS,
+//         payload: request
+//     };
+// }
 
 export function fetchGoals(accessToken){
     const request = axios.get(`${HEAD_URL}goals`, {'headers': {'Authorization' : `${authHeader}${accessToken}`}});
