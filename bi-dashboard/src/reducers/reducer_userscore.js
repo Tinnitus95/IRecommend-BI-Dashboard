@@ -11,7 +11,7 @@ export default function(state = [], action){
               id: user.user.iduser,
               lastname: user.user.familyname,
               firstname: user.user.givenname,
-              // picture: user.user.picture,
+              picture: user.user.picture,
               points: user.points.Int64,
               teamhref: user.user.team.href
             }
