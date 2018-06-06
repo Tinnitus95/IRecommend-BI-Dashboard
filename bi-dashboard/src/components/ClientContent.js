@@ -44,7 +44,8 @@ class ClientContent extends Component {
         this.props.fetchPositions();
         // this.props.fetchProtected();
         this.props.fetchIdvBar();
-        this.props.fetchTips(localStorage.getItem(accessToken));
+        //TODO: 401 errors
+        // this.props.fetchTips(localStorage.getItem(accessToken));
 
 
     }

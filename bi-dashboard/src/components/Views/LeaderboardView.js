@@ -3,6 +3,7 @@ import UserOrbs from '../UserOrbs';
 import UserPanel from '../Leaderboard/UserLeaderboard/UserPanel';
 import TeamPanel from '../Leaderboard/TeamLeaderboard/TeamPanel';
 import _ from 'lodash';
+import { calculateTeamPointsHandler } from '../CalculateTeamPointsHandler';
 
 class LeaderboardView extends Component {
     renderTop(){
@@ -36,7 +37,8 @@ class LeaderboardView extends Component {
 
     render(){
 
-        const { user, team } = this.props;
+        const { userscore, teamscore,  } = this.props.data;
+        let teamData = calculateTeamPointsHandler(userscore, teamscore);
         return (
             <div className="leaderboard-view">
                 <div className="top-three">
@@ -44,10 +46,10 @@ class LeaderboardView extends Component {
                 </div>
                 <div className="leaderboard-wrapper">
                 <div className="leaderboard-view-content">
-                  <UserPanel data={this.props.data.userscore} />
+                  <UserPanel data={userscore} />
                 </div>
                 <div className="leaderboard-view-content">
-                  <TeamPanel data={this.props.data.teamscore} />
+                  <TeamPanel data={teamData} />
                 </div>
                 </div>
             </div>
