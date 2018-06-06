@@ -1,8 +1,7 @@
 import React from 'react';
 
-
-
 const UserOrbs = ({top, position}) => (
+    // Props from LeaderboardView.js
     <div className={`user-orbs ${top.classes}`}>
         <figure>
             <img draggable="false" src={top.picture} alt="userpictuere"/>
@@ -11,7 +10,6 @@ const UserOrbs = ({top, position}) => (
                     {top.position}
                 </span>
             </div>
-            <figcaption></figcaption>
         </figure>
     </div>
 )

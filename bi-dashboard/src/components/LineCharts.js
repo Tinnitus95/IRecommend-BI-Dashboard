@@ -1,34 +1,20 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import {Tab, Tabs, TabList, TabPanel} from 'react-tabs'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import LineChart from './LineChart';
 import { injectIntl } from 'react-intl';
-import {connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 class LineCharts extends Component {
-    state= {
-        chartData:{}
+    state = {
+        size: {
+            width: 800,
+            height: 200
+        }
     }
-
-    componentWillMount(){
-        this.getChartData();
-    }
-    getChartData(){
-      const { intl } = this.props;
-        this.setState({
-
-
-            size: {
-                width: 800,
-                height: 200
-            }
-        })
-    }
-
     render() {
-        const data = this.props.time
-        console.log(this.props.time);
-      const { intl } = this.props;
+        const data = this.props.time;
+        const { intl } = this.props;
         return(
             <Tabs>
                 <TabList>
@@ -57,6 +43,8 @@ class LineCharts extends Component {
 }
 
 function mapStateToProps(state){
-    chartData: state.time
+    return {
+        time: state.time
+    };
 }
-export default connect()(injectIntl(LineCharts));
+export default connect(mapStateToProps)(injectIntl(LineCharts));

@@ -8,6 +8,7 @@ import TimeReducer from './reducer_time';
 import IdvBarReducer from './reducer_idvBar';
 import TeamGoalsReducer from './reducer_teamgoals';
 
+//combine all reducers to create the application state;
 const rootReducer = combineReducers({
     number: NumberReducer,
     positions: PositionsReducer,

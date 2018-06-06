@@ -4,7 +4,6 @@ import UserPanel from './Leaderboard/UserLeaderboard/UserPanel';
 import TeamPanel from './Leaderboard/TeamLeaderboard/TeamPanel';
 import CompetitionPanel from './Leaderboard/CompetitionTab/CompetitionPanel';
 import { injectIntl } from 'react-intl';
-import {fetchTips} from '../actions/';
 import { calculateTeamPointsHandler } from './CalculateTeamPointsHandler';
 
 class Leaderboard extends Component {
