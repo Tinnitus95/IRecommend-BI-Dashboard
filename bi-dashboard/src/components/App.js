@@ -17,6 +17,8 @@ const auth = new Auth();
 
 const routes = makeMainRoutes();
 export default class App extends Component {
+
+    
     render(){
 
         return(

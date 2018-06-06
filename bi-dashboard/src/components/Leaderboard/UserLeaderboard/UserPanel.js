@@ -1,10 +1,31 @@
 import React, { Component } from 'react';
 import UserListItem from './UserListItem';
 import { injectIntl } from 'react-intl';
-
+import {fetchTips} from '../../../actions';
+import {connect} from 'react-redux';
 
 class UserPanel extends Component {
+
+    // componentDidMount(props){
+    //     console.log(this.props);
+    //     const accessToken = localStorage.getItem('access_token');
+    //     const userData = this.props.data;
+    //     // const newData = userData.slice(0);
+    //
+    //     if(!userData.length === 0 && accessToken){
+    //         console.log(userData, accessToken);
+    //         userData.forEach((user) => {
+    //
+
+    //         });
+    //
+    //     }
+    // }
+
   render() {
+    // console.log('tips' , this.props.tips);
+
+
     const { intl } = this.props;
     return (
         <table className="user-panel">
@@ -24,4 +45,11 @@ class UserPanel extends Component {
   }
 };
 
-export default injectIntl(UserPanel);
+function mapStateToProps(state) {
+    return {
+        tips: state.tips
+    }
+
+}
+
+export default connect(mapStateToProps,{fetchTips})(injectIntl(UserPanel));

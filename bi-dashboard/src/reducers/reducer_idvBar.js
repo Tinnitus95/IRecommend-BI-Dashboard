@@ -17,7 +17,7 @@ export default function(state = [], action) {
                     datasets: [
                         {
                             label: "Antal tips",
-                            backgroundColor: 'rgba(42, 154, 158, 0.6)',
+                            backgroundColor: 'rgba(139, 212, 206, 0.6)',
                             data: recommendations
                         }
                     ]
@@ -28,7 +28,7 @@ export default function(state = [], action) {
                     datasets: [
                         {
                             label: "Days",
-                            backgroundColor: 'rgba(255, 26, 179, 0.6)',
+                            backgroundColor: 'rgba(98, 58, 162, 0.6)',
                             data: [3, 5]
                         }
                     ]
@@ -39,7 +39,7 @@ export default function(state = [], action) {
                     datasets: [
                         {
                             label: "Yellow",
-                            backgroundColor: 'rgba(69, 188, 183, 0.6)',
+                            backgroundColor: 'rgba(255, 97, 88, 0.6)',
                             data: [1, 5]
                         }
                     ]

@@ -3,6 +3,7 @@ import NumberWidgetItem from './NumberWidgetItem';
 
 const NumberWidget = ({data, users}) => {
     const value = data.map( numb => {
+
         return (
             <NumberWidgetItem
                 key={numb.title}

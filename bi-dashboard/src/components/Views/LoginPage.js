@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
 class App extends Component {
+
+    componentWillMount(){
+    if(!this.props.auth.isAuthenticated()){
+
+        this.login()
+        }
+    }
     goTo(route) {
         this.props.history.replace(`/${route}`)
     }
@@ -21,7 +28,7 @@ class App extends Component {
                 <button onClick={this.goTo.bind(this, 'home')}>Home</button>
                 {!isAuthenticated() && (<button onClick={this.login.bind(this)}> login</button>)}
 
-                {isAuthenticated() && (<button onClick={this.logout.bind(this)}>Log Out</button>)}
+                {isAuthenticated() && this.goTo('dashboard/default')}
 
             </div>
         );

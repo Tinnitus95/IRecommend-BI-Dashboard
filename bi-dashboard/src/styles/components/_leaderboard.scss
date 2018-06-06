@@ -23,7 +23,7 @@
   }
 
   tr:nth-child(even) {
-    background-color: $IR-lightgreen;
+    background-color: rgb(139, 212, 206);
   }
 }
 
@@ -60,7 +60,7 @@
   }
 
   tr:nth-child(even) {
-    background-color: $IR-lightgreen;
+    background-color: rgba(139, 212, 206, 0.6);
   }
 }
 
@@ -119,5 +119,14 @@
 .highscore-title {
   font-weight: bold;
   color: #696969;
+  text-align: center;
+}
+
+.teamgoals {
+  width: 50%;
+  height: 400px;
+  background: #FFF;
+  margin: 100px auto;
+  padding: 20px;
   text-align: center;
 }

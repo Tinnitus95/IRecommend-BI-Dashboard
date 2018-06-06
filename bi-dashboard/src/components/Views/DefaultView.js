@@ -4,19 +4,22 @@ import PositionGraph from '../PositionGraph'
 import Leaderboard from '../Leaderboard';
 import BarDiagram from '../BarDiagram';
 import LineCharts from '../LineCharts';
+import Teamgoals from '../Teamgoals';
+
 
 export default class DefaultView extends Component{
-      render(){
+    render(){
         const data = this.props.data;
-
         return (
+
             <div className="default-view">
                 <NumberWidget data={data.numbers} users={data.userscore}/>
                 <div className="wrapper">
                     <PositionGraph data={data.positions}/>
-                    <Leaderboard user={data.userscore} team={data.teamscore}/>
+                    <Leaderboard user={data.userscore} team={data.teamscore} comp={data.teamgoals}/>
                 </div>
-                <LineCharts />
+                <LineCharts time= {data.time}/>
+                <Teamgoals data={data.teamgoals}/>
             </div>
         );
     }

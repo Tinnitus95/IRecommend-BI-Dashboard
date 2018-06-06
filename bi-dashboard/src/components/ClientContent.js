@@ -14,29 +14,53 @@ import {fetchNumbers,
     fetchUserScore,
     fetchTeamScore,
     fetchPositions,
-    fetchProtected,
-    fetchIdvBar
+    fetchGoals,
+    // fetchProtected,
+    fetchIdvBar,
+    fetchTips,
+    fetchWeek,
+    fetchTime
 } from '../actions';
 
+
+
+
+
+
 class ClientContent extends Component {
+    state= {
+        tips: false
+    }
+
     componentDidMount(){
-        this.props.fetchNumbers();
-        this.props.fetchTeamScore();
-        this.props.fetchUserScore();
+        const accessToken = localStorage.getItem('access_token')
+
+        this.props.fetchNumbers(accessToken);
+        this.props.fetchTeamScore(accessToken);
+        this.props.fetchUserScore(accessToken);
+        this.props.fetchWeek(accessToken);
+        this.props.fetchGoals(accessToken);
+        this.props.fetchTime(accessToken);
         this.props.fetchPositions();
-        this.props.fetchProtected();
+        // this.props.fetchProtected();
         this.props.fetchIdvBar();
+        //TODO: 401 errors
+        // this.props.fetchTips(localStorage.getItem(accessToken));
+
+
     }
     render(){
         return (
-            <div className="client-content">
+                <div className="client-content">
                 <Switch>
-                    <Route exact path="/home" render={(props) => (<DefaultView {...props} data={this.props}/>)} />
-                    <Route path="/numbers" render={(props) => (<NumberView {...props} data={this.props} /> )} />
-                    <Route path="/time" render={(props) => (<GraphView {...props} data={this.props}/>)} />
-                    <Route path="/highscores" render={(props)=> (<LeaderboardView {...props} data={this.props} />)} />
+                    <Route path="/dashboard/default" render={(props) => (<DefaultView {...props} data={this.props}/>)} />
+                    <Route path="/dashboard/numbers" render={(props) => (<NumberView {...props} data={this.props} /> )} />
+                    <Route path="/dashboard/time" render={(props) => (<GraphView {...props} data={this.props}/>)} />
+                    <Route path="/dashboard/highscores" render={(props)=> (<LeaderboardView {...props} data={this.props} />)} />
                 </Switch>
             </div>
+
+
         );
     }
 }
@@ -49,7 +73,10 @@ function mapStateToProps(state){
         userscore: state.userscore,
         teamscore: state.teamscore,
         positions: state.positions,
-        protected: state.protected
+        tips: state.tips,
+        teamgoals: state.teamgoals,
+        time: state.time
+        // protected: state.protected
     };
 }
 
@@ -59,6 +86,10 @@ export default withRouter(connect(mapStateToProps,
         fetchUserScore,
         fetchTeamScore,
         fetchPositions,
-        fetchProtected,
-        fetchIdvBar
+        fetchGoals,
+        // fetchProtected,
+        fetchIdvBar,
+        fetchTips,
+        fetchWeek,
+        fetchTime
     })(ClientContent));

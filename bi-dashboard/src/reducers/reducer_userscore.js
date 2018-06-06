@@ -5,22 +5,21 @@ export default function(state = [], action){
         case FETCH_USERSCORE:
         const data = action.payload.data;
 
-        let userArr = [];
-        data.map(user => {
+        const user = data.map( user => {
+          return(
+            {
+              id: user.user.iduser,
+              lastname: user.user.familyname,
+              firstname: user.user.givenname,
+              picture: user.user.picture,
+              points: user.points.Int64,
+              teamhref: user.user.team.href
+            }
+          );
+        });
 
-            userArr.push(
-                {
-                    id: user.user.iduser,
-                    lastname: user.user.familyname,
-                    firstname: user.user.givenname,
-                    picture: user.user.picture,
-                    points: user.points.Int64
-                }
-                );
-            })
+            return user;
 
-
-            return userArr;
 
         }
         return state;
