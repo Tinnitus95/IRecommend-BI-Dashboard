@@ -11,8 +11,8 @@ class ClientMain extends Component {
     }
     render(){
         const { isAuthenticated } = this.props.auth;
-        console.log(this.props);
-        console.log(localStorage.getItem('access_token'));
+        // console.log(this.props);
+        // console.log(localStorage.getItem('access_token'));
         return(
             <BrowserRouter>
                 <div className="client-main">

@@ -10,7 +10,6 @@ import Teamgoals from '../Teamgoals';
 export default class DefaultView extends Component{
     render(){
         const data = this.props.data;
-
         return (
 
             <div className="default-view">
@@ -19,7 +18,7 @@ export default class DefaultView extends Component{
                     <PositionGraph data={data.positions}/>
                     <Leaderboard user={data.userscore} team={data.teamscore} comp={data.teamgoals}/>
                 </div>
-                <LineCharts />
+                <LineCharts time= {data.time}/>
                 <Teamgoals data={data.teamgoals}/>
             </div>
         );

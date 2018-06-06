@@ -18,6 +18,7 @@ import {fetchNumbers,
     // fetchProtected,
     fetchIdvBar,
     fetchTips,
+    fetchWeek,
     fetchTime
 } from '../actions';
 
@@ -37,12 +38,14 @@ class ClientContent extends Component {
         this.props.fetchNumbers(accessToken);
         this.props.fetchTeamScore(accessToken);
         this.props.fetchUserScore(accessToken);
-        this.props.fetchTime(accessToken);
+        this.props.fetchWeek(accessToken);
         this.props.fetchGoals(accessToken);
+        this.props.fetchTime(accessToken);
         this.props.fetchPositions();
         // this.props.fetchProtected();
         this.props.fetchIdvBar();
         // this.props.fetchTips(localStorage.getItem('access_token'));
+
 
     }
     render(){
@@ -70,7 +73,8 @@ function mapStateToProps(state){
         teamscore: state.teamscore,
         positions: state.positions,
         tips: state.tips,
-        teamgoals: state.teamgoals
+        teamgoals: state.teamgoals,
+        time: state.time
         // protected: state.protected
     };
 }
@@ -85,5 +89,6 @@ export default withRouter(connect(mapStateToProps,
         // fetchProtected,
         fetchIdvBar,
         fetchTips,
+        fetchWeek,
         fetchTime
     })(ClientContent));
