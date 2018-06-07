@@ -23,7 +23,7 @@
     }
 
     tr:nth-child(even) {
-        background-color: rgb(139, 212, 206);
+        background-color: $IR-lightgreen;
     }
 }
 
@@ -60,7 +60,7 @@
     }
 
     tr:nth-child(even) {
-        background-color: rgba(139, 212, 206, 0.6);
+        background-color: $IR-lightgreen;
     }
 }
 
