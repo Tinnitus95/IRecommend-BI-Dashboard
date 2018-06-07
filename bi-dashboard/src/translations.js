@@ -3,7 +3,7 @@ import sv from './translations/sv';
 
 const translations = {
     en,
-    sv,
+    sv
 };
 
 export default translations;

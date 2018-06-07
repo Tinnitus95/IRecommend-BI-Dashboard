@@ -7,8 +7,9 @@ progress {
 }
 
 progress::-webkit-progress-bar {
-  background-color: #f3f3f3;
+    background-color: #f3f3f3;
 }
+
 progress::-webkit-progress-value {
     background-color: $main-green;
     // background-color: -webkit-linear-gradient(to bottom right, #45BCB7 , #007185);

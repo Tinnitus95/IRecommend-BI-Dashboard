@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import LineChart from '../LineChart';
 import { injectIntl } from 'react-intl';
 import {connect} from 'react-redux';
+
+import LineChart from '../LineChart';
 import BarDiagram from '../BarDiagram';
-import Aux from '../ReactAux';
-
-
 
 class GraphView extends Component {
     //create a bar chart for every data
@@ -42,14 +40,14 @@ class GraphView extends Component {
                     </div>
                 );
             }
-        }
+    }
 
-        //map application state to component
-        function mapStateToProps(state){
-            return {
-                time: state.time,
-                positions: state.idvBar
-            };
-        }
+    //map application state to component
+    function mapStateToProps(state){
+        return {
+            time: state.time,
+            positions: state.idvBar
+        };
+    }
 
-        export default connect(mapStateToProps)(GraphView);
+export default connect(mapStateToProps)(GraphView);

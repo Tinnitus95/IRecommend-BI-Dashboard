@@ -46,8 +46,7 @@ class NumberView extends Component {
             }
         ]
     }
-
-    // Vad gör detta ?
+    // HACK: will be fixed when all the data comes from redux
     componentDidMount() {
         let updateStateArray = this.state.hardcode.slice();
         updateStateArray[0] = {...updateStateArray[0],
@@ -80,6 +79,7 @@ class NumberView extends Component {
             );
         });
     }
+
     render() {
         return(
             <div className="NumberView">

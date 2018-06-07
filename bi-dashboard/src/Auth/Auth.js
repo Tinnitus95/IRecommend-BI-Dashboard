@@ -4,7 +4,6 @@ import jwtDecode from 'jwt-decode';
 import { AUTH_CONFIG } from './auth0-variables';
 
 //set up props for Auth
-
 export default class Auth {
     auth0 = new auth0.WebAuth({
         domain: AUTH_CONFIG.domain,
@@ -60,5 +59,4 @@ export default class Auth {
         console.log("isAuth reached" + (new Date().getTime() < expiresAt));
         return new Date().getTime() < expiresAt
     }
-
 }

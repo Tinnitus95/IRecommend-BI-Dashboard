@@ -3,14 +3,14 @@ import { Route, Router , Switch } from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import ReduxPromise from 'redux-promise';
+
+import Auth from '../Auth/Auth';
 import reducers from '../reducers';
+import history from '../history';
 
 import LoginPage from './Views/LoginPage';
-
 import ClientMain from './ClientMain';
 import Callback from './Views/Callback';
-import Auth from '../Auth/Auth';
-import history from '../history';
 
 //create the redux store
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);

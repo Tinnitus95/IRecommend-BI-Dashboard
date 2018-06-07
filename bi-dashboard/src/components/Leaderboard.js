@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
+import { injectIntl } from 'react-intl';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
+import { calculateTeamPointsHandler } from './CalculateTeamPointsHandler';
+
 import UserPanel from './Leaderboard/UserLeaderboard/UserPanel';
 import TeamPanel from './Leaderboard/TeamLeaderboard/TeamPanel';
 import CompetitionPanel from './Leaderboard/CompetitionTab/CompetitionPanel';
-import { injectIntl } from 'react-intl';
-import { calculateTeamPointsHandler } from './CalculateTeamPointsHandler';
+
+
 
 class Leaderboard extends Component {
   render() {

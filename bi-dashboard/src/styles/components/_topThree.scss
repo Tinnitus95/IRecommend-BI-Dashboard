@@ -1,17 +1,20 @@
-.top-three{
+.top-three {
     display: flex;
     justify-content: center;
-    & div:first-of-type{
+
+    & div:first-of-type {
         order: 2;
     }
-    & div:last-of-type{
+
+    & div:last-of-type {
         order: 3;
     }
-    .user-orbs{
 
-        figure{
+    .user-orbs {
+        figure {
             text-align: center;
-            img{
+
+            img {
                 border-radius: 50%;
                 width: 100px;
                 height: 100px;
@@ -20,63 +23,73 @@
                 animation-name: animate-highscore;
                 animation-duration: 2s;
             }
-
         }
-        .position-orb{
+
+        .position-orb {
             padding-top: 2px;
             width: 25px !important;
             bottom: 45px !important;
-            position:relative!important;
+            position: relative!important;
             right: -78px !important;
             background-color: green;
             height: 25px !important;
             border-radius: 50%;
             animation-name: animate-highscore;
             animation-duration: 2s;
-            span{
+
+            span {
                 color: white;
             }
         }
     }
-    .leader{
+
+    .leader {
         transform: translateY(-12.5px);
-        .position-orb{
+
+        .position-orb {
             bottom: 58px !important;
             right: -104px !important;
             background-color: #FFC900;
-
         }
-        figure{
 
-
-            img{
+        figure {
+            img {
                 width: 125px;
                 height: 125px;
                 border-radius: 50%;
             }
         }
     }
-    .silver{
-        .position-orb{
+
+    .silver {
+        .position-orb {
             background-color: #C5C5C5;
         }
     }
-    .bronze{
-        .position-orb{
+
+    .bronze {
+        .position-orb {
             background-color: #E2AE5A;
         }
     }
-
 }
 
 figure img:hover {
-  transform: scale(1.2);
-  transition: all 0.3s ease-in;
+    transform: scale(1.2);
+    transition: all 0.3s ease-in;
 }
-
 @keyframes animate-highscore {
-  0% { margin-top: -500px;}
-  25% {margin-top: 25px;}
-  50% {margin-top: 0px;}
-  100% {}
+    0% {
+        margin-top: -500px;
+    }
+
+    25% {
+        margin-top: 25px;
+    }
+
+    50% {
+        margin-top: 0;
+    }
+
+    100% {}
 }

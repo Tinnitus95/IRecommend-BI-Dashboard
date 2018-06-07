@@ -7,6 +7,7 @@ export default function(state = [], action) {
             const data = action.payload.data;
             const title = data.map(title => title.title);
             const recommendations = data.map(rec => rec.recommendations);
+            //same as idvBar
             const startDate = data.map(start => start.created);
             const endDate = data.map(end => end.enddate);
 
@@ -28,9 +29,7 @@ export default function(state = [], action) {
                     }
                 ]
             }
-
             return barData;
-
     }
     return state;
 }

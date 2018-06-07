@@ -5,11 +5,9 @@ export default function(state = [], action){
         case FETCH_TEAMSCORE:
         const data = action.payload.data;
         const team = data.map( team => {
-          return { name: team.name, picture: team.picture, href: team.href};
+            return { name: team.name, picture: team.picture, href: team.href};
         });
-
-          return team;
-
+        return team;
     }
     return state;
 }

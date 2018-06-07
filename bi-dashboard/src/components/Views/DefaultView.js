@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import NumberWidget from '../NumberWidget';
 
 import BarDiagram from '../BarDiagram';
@@ -6,21 +7,32 @@ import Leaderboard from '../Leaderboard';
 import LineCharts from '../LineCharts';
 
 //Main route
-export default class DefaultView extends Component{
+class DefaultView extends Component{
     render(){
-        //get props from ClientContent.js
-        const data = this.props.data;
+        const {numbers, userscore, teamscore, positions, teamgoals} = this.props;
         return (
             <div className="default-view">
-                <NumberWidget data={data.numbers} users={data.userscore}/>
+                <NumberWidget data={numbers} users={userscore}/>
                 <div className="wrapper">
                     <div className="position-graph">
-                        <BarDiagram data={data.positions}/>
+                        <BarDiagram data={positions}/>
                     </div>
-                    <Leaderboard user={data.userscore} team={data.teamscore} comp={data.teamgoals}/>
+                    <Leaderboard user={userscore} team={teamscore} comp={teamgoals}/>
                 </div>
                 <LineCharts/>
             </div>
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        numbers: state.number,
+        userscore: state.userscore,
+        teamscore: state.teamscore,
+        positions: state.positions,
+        teamgoals: state.teamgoals
+    };
+}
+
+export default connect(mapStateToProps)(DefaultView);

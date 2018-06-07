@@ -3,18 +3,16 @@
     height: 500px;
     text-align: center;
     margin: 30px 0;
-
 }
-
 @media(max-width: 1600px) {
     .position-graph {
-      height: 400px;
+        height: 400px;
     }
-  }
+}
 
 .idv-bar {
-  width: 30%;
-  margin: 1.66%; 
-  box-shadow: $main-shadow;
-  background: #FFF;
+    width: 30%;
+    margin: 1.66%;
+    box-shadow: $main-shadow;
+    background: #FFF;
 }

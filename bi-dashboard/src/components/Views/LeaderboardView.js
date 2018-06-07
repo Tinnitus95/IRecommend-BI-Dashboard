@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import UserOrbs from '../UserOrbs';
+import _ from 'lodash';
+
+import { calculateTeamPointsHandler } from '../CalculateTeamPointsHandler';
+
 import UserPanel from '../Leaderboard/UserLeaderboard/UserPanel';
 import TeamPanel from '../Leaderboard/TeamLeaderboard/TeamPanel';
-import _ from 'lodash';
-import { calculateTeamPointsHandler } from '../CalculateTeamPointsHandler';
+import UserOrbs from '../UserOrbs';
+
 
 class LeaderboardView extends Component {
     renderTop(){
