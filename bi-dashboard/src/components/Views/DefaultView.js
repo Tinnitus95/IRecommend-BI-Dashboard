@@ -1,26 +1,38 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import NumberWidget from '../NumberWidget';
-import PositionGraph from '../PositionGraph'
-import Leaderboard from '../Leaderboard';
+
 import BarDiagram from '../BarDiagram';
+import Leaderboard from '../Leaderboard';
 import LineCharts from '../LineCharts';
-import Teamgoals from '../Teamgoals';
 
-
-export default class DefaultView extends Component{
+//Main route
+class DefaultView extends Component{
     render(){
-        const data = this.props.data;
+        const {numbers, userscore, teamscore, positions, teamgoals} = this.props;
         return (
-
             <div className="default-view">
-                <NumberWidget data={data.numbers} users={data.userscore}/>
+                <NumberWidget data={numbers} users={userscore}/>
                 <div className="wrapper">
-                    <PositionGraph data={data.positions}/>
-                    <Leaderboard user={data.userscore} team={data.teamscore} comp={data.teamgoals}/>
+                    <div className="position-graph">
+                        <BarDiagram data={positions}/>
+                    </div>
+                    <Leaderboard user={userscore} team={teamscore} comp={teamgoals}/>
                 </div>
-                <LineCharts time= {data.time}/>
-                <Teamgoals data={data.teamgoals}/>
+                <LineCharts/>
             </div>
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        numbers: state.number,
+        userscore: state.userscore,
+        teamscore: state.teamscore,
+        positions: state.positions,
+        teamgoals: state.teamgoals
+    };
+}
+
+export default connect(mapStateToProps)(DefaultView);

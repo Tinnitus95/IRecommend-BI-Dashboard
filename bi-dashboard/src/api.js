@@ -5,11 +5,15 @@
 export const getLanguage = () => {
     const supportedLanguages = ['en', 'sv'];
     const navigatorLanguage = navigator.language.substr(0, 2);
-    const browserLanguage = supportedLanguages.indexOf(navigatorLanguage) === -1 ? FALLBACK_LANGUAGE : navigatorLanguage;
+    const browserLanguage = supportedLanguages.indexOf(navigatorLanguage) === -1
+        ? FALLBACK_LANGUAGE
+        : navigatorLanguage;
 
     let language = localStorage.getItem('@irecommend:language');
 
-    return language === null ? browserLanguage : language;
+    return language === null
+        ? browserLanguage
+        : language;
 }
 
 /**

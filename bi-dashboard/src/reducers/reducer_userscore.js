@@ -6,21 +6,19 @@ export default function(state = [], action){
         const data = action.payload.data;
 
         const user = data.map( user => {
-          return(
-            {
-              id: user.user.iduser,
-              lastname: user.user.familyname,
-              firstname: user.user.givenname,
-              picture: user.user.picture,
-              points: user.points.Int64,
-              teamhref: user.user.team.href
-            }
-          );
+            //just return the needed data;
+            return(
+                {
+                    id: user.user.iduser,
+                    lastname: user.user.familyname,
+                    firstname: user.user.givenname,
+                    picture: user.user.picture,
+                    points: user.points.Int64,
+                    teamhref: user.user.team.href
+                }
+            );
         });
-
-            return user;
-
-
-        }
-        return state;
+        return user;
     }
+    return state;
+}

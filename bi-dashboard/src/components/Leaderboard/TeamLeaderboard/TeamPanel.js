@@ -9,8 +9,10 @@ class TeamPanel extends Component {
             <table className="team-panel">
                 <thead>
                     <tr>
+                        {/* use intl to handle translations */}
                         <th>{intl.formatMessage({ id: 'leaderboard-rank' })}</th>
                         <th>{intl.formatMessage({ id: 'leaderboard-team' })}</th>
+                        {/* TODO: format to intl */}
                         <th>Medlemmar</th>
                         <th>{intl.formatMessage({ id: 'leaderboard-score' })}</th>
                     </tr>

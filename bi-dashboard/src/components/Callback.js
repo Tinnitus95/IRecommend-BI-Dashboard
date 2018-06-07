@@ -1,13 +1,7 @@
 import React, {Component } from 'react';
-import Auth from '../Auth';
+
 export default class Callback extends Component{
-
-    componentDidMount(){
-        const auth = new Auth();
-        auth.handleAuthentication();
-
-    }
-
+    //this is just a Component for Auth0 to hit after login
     render(){
         return (
             <div>

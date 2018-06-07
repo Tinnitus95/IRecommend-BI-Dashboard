@@ -4,15 +4,15 @@ import _ from 'lodash';
 
 const daylabels= [];
 const weeklabels = [];
-
 for (var i = 24; i >= 1; i--) {
     daylabels.push(moment().add(-i, 'hours').format('HH'));
-
 }
 for (var i = 7; i >= 1; i--) {
     weeklabels.push(moment().add(-i, 'days').format('Do'))
 }
 
+// HACK: essential props for Chartjs but should maybe not be initialized here
+// TODO: Answers per day and per week not working since no endpoint for that data
 const defaultState = {
     chartData:{
         labels: daylabels,
@@ -31,37 +31,22 @@ const defaultState = {
                 pointHitRadius: 30,
                 pointBorderWidth: 2,
                 pointStyle: 'circle'
-            },
-            {
-                label: 'line-chart-total-answers',
-                data: [],
-                lineTension: 0.3,
-                fill: true,
-                borderColor: 'rgb(139, 212, 206)',
-                backgroundColor: 'rgba(139, 212, 206, 0.2)',
-                pointBorderColor: 'rgba(139, 212, 206, 0.2)',
-                pointBackgroundColor: 'rgb(139, 212, 206)',
-                pointRadius: 5,
-                pointHoverRadius: 15,
-                pointHitRadius: 30,
-                pointBorderWidth: 2
             }
+            // {
+            //     label: 'line-chart-total-answers',
+            //     data: [],
+            //     lineTension: 0.3,
+            //     fill: true,
+            //     borderColor: 'rgb(139, 212, 206)',
+            //     backgroundColor: 'rgba(139, 212, 206, 0.2)',
+            //     pointBorderColor: 'rgba(139, 212, 206, 0.2)',
+            //     pointBackgroundColor: 'rgb(139, 212, 206)',
+            //     pointRadius: 5,
+            //     pointHoverRadius: 15,
+            //     pointHitRadius: 30,
+            //     pointBorderWidth: 2
+            // }
         ]
-    },
-    options: {
-        title:{
-            display:true,
-            text: 'line-chart-tab-hourly',
-            fontSize:25
-        },
-        legend:{
-            display:true,
-            position: "top"
-        }
-    },
-    size: {
-        width: 400,
-        height: 250
     },
     weekChart:{
         labels: weeklabels,
@@ -80,25 +65,35 @@ const defaultState = {
                 pointHitRadius: 30,
                 pointBorderWidth: 2,
                 pointStyle: 'circle'
-            },
-            {
-                label: 'line-chart-total-answers',
-                data: [/*0, 0, 0, 0, 0, 1, 1, 2, 4,8,1,0,20,11,2,0,0,12,11,21,2,2,1,0,1*/],
-                lineTension: 0.3,
-                fill: true,
-                borderColor: 'rgb(139, 212, 206)',
-                backgroundColor: 'rgba(139, 212, 206, 0.2)',
-                pointBorderColor: 'rgba(139, 212, 206, 0.2)',
-                pointBackgroundColor: 'rgb(139, 212, 206)',
-                pointRadius: 5,
-                pointRadius: 5,
-                pointHoverRadius: 15,
-                pointHitRadius: 30,
-                pointBorderWidth: 2
             }
-
+            // {
+            //     label: 'line-chart-total-answers',
+            //     data: [/*0, 0, 0, 0, 0, 1, 1, 2, 4,8,1,0,20,11,2,0,0,12,11,21,2,2,1,0,1*/],
+            //     lineTension: 0.3,
+            //     fill: true,
+            //     borderColor: 'rgb(139, 212, 206)',
+            //     backgroundColor: 'rgba(139, 212, 206, 0.2)',
+            //     pointBorderColor: 'rgba(139, 212, 206, 0.2)',
+            //     pointBackgroundColor: 'rgb(139, 212, 206)',
+            //     pointRadius: 5,
+            //     pointRadius: 5,
+            //     pointHoverRadius: 15,
+            //     pointHitRadius: 30,
+            //     pointBorderWidth: 2
+            // }
         ]
 
+    },
+    options: {
+        title:{
+            display:true,
+            text: 'line-chart-tab-hourly',
+            fontSize:25
+        },
+        legend:{
+            display:true,
+            position: "top"
+        }
     },
     weekOptions:{
         title:{
@@ -110,40 +105,38 @@ const defaultState = {
             display:true,
             position: "top"
         }
+    },
+    size: {
+        width: 400,
+        height: 250
     }
+
 }
 export default function(state = defaultState, action){
     switch (action.type) {
         case FETCH_WEEK:
-            const sortedByDate = action.payload.data.sort((a,b) => {
-                return a.created < b.created ? 1: -1;
-            });
+        const sortedByDate = action.payload.data.sort((a,b) => {
+            return a.created < b.created ? 1: -1;
+        });
+        const last7DayStart = moment().startOf('day').subtract(1,'week');
+        const yesterdayEndOfRange = moment().endOf('day').subtract(1,'day');
 
+        const weekHits = new Array(6);
+        for (let i = 0; i < 7; i++) {
+            weekHits[i] = 0;
+        }
 
-            var last7DayStart = moment().startOf('day').subtract(1,'week');
-            var yesterdayEndOfRange = moment().endOf('day').subtract(1,'day');
-
-            var weekHits = new Array(6);
-            for (var i=0;i < 7; i++) {
-                weekHits[i] = 0;
+        sortedByDate.forEach(recommendation => {
+            if(moment(recommendation.created)
+            .isBetween(last7DayStart, yesterdayEndOfRange)){
+                for (let j = 0; j < 7; j++) {
+                    if (moment(recommendation.created).format('Do') === moment().add(-(j + 1), 'days').format('Do')) {
+                        weekHits[j]++;
+                        break;
+                    }
+                }
             }
-
-            sortedByDate.forEach(recommendation => {
-                if(moment(recommendation.created)
-                  .isBetween(last7DayStart, yesterdayEndOfRange)){
-                        console.log(recommendation.created);
-                      for (var j=0;j < 7; j++) {
-                        if (moment(recommendation.created).format('Do') === moment().add(-(j + 1), 'days').format('Do')) {
-                             weekHits[j]++;
-                             break;
-                         }
-                      }
-
-                  }
-            })
-            console.log(weekHits);
-
-
+        })
 
         return{
             ...state,
@@ -151,57 +144,46 @@ export default function(state = defaultState, action){
                 ...state.weekChart,
                 datasets: state.weekChart.datasets.map(
                     (datasets, i) => i === 1 ?  datasets : {...datasets, data: weekHits.reverse()}
-
                 )
-
-
             }
-
         }
 
         case FETCH_TIME:
-            const sortedByDate2 = action.payload.data.sort((a,b) => {
-                return a.created < b.created ? 1: -1;
-            });
+        const sortedByDate2 = action.payload.data.sort((a,b) => {
+            return a.created < b.created ? 1: -1;
+        });
 
+        const hourHits = new Array(24);
+        for (var i=0;i < 24; i++) {
+            hourHits[i] = 0;
+        }
 
-            var hourHits = new Array(24);
-            for (var i=0;i < 24; i++) {
-                hourHits[i] = 0;
-            }
+        const todayStart = moment().subtract(24,'hours').format();
+        const todayEndOfRange = moment().format();
 
-            var todayStart = moment().subtract(24,'hours').format();
-
-            console.log(moment().subtract(24,'hours').format());
-            var todayEndOfRange = moment().format();
-            console.log(moment());
-            sortedByDate2.forEach(recommendation => {
-                    // HACK: Need to format timestamp from DB to Local timezone
-                if(moment(recommendation.created).add(-2, 'hours')
-                  .isBetween(todayStart, todayEndOfRange)){
-                        console.log(moment(recommendation.created).format('HH'));
-                      for (var j=0;j < 24; j++) {
-                        if (moment(recommendation.created).format('HH') === moment().add(-(j + 1), 'hours').format('HH')) {
-                             hourHits[j]++;
-                             break;
-                         }
-                      }
-
-                  }
-            })
-            console.log(hourHits);
-
-
-            return{
-                ...state,
-                chartData:{
-                    ...state.chartData,
-                    datasets: state.chartData.datasets.map(
-                        (datasets, i) => i === 1 ?  datasets : {...datasets, data: hourHits.reverse()}
-
-                    )
+        sortedByDate2.forEach(recommendation => {
+            // HACK: Need to format timestamp from DB to Local timezone
+            if(moment(recommendation.created).add(-2, 'hours')
+            .isBetween(todayStart, todayEndOfRange)){
+                console.log(moment(recommendation.created).format('HH'));
+                for (let j = 0; j < 24; j++) {
+                    if (moment(recommendation.created).format('HH') === moment().add(-(j + 1), 'hours').format('HH')) {
+                        hourHits[j]++;
+                        break;
+                    }
                 }
             }
+        })
+
+        return{
+            ...state,
+            chartData:{
+                ...state.chartData,
+                datasets: state.chartData.datasets.map(
+                    (datasets, i) => i === 1 ?  datasets : {...datasets, data: hourHits.reverse()}
+                )
+            }
+        }
     }
     return state;
 }

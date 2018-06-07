@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import NumberViewBox from '../NumberViewBox';
+import _ from 'lodash';
+
 
 class NumberView extends Component {
+    // TODO: need to fill all the boxes with real data
     state={
         hardcode:[
             {
@@ -40,53 +44,57 @@ class NumberView extends Component {
                 desc: 'Alla',
                 data: 10000
             }
-
         ]
-
     }
-
-
+    // HACK: will be fixed when all the data comes from redux
     componentDidMount() {
-      let updateStateArray = this.state.hardcode.slice();
-      updateStateArray[0] = {...updateStateArray[0],
-        data: this.props.data.userscore.length
-      };
+        let updateStateArray = this.state.hardcode.slice();
+        updateStateArray[0] = {...updateStateArray[0],
+            data: this.props.userscore.length
+        };
         this.setState({hardcode: updateStateArray});
     }
-
-
-    render() {
-      if(this.props.data.userscore.length > 0){
-        const usersScore = this.props.data.userscore.filter( score => score.points).map( score => score.points);
-        const totalScore = usersScore.reduce( (a, b) => a + b);
-      }
-
-        const data = this.props.data.numbers;
-        const value = data.map( numb => {
+    // HACK: should probably add application state to the component state
+    // using the spread operator
+    renderReduxData(){
+        const data = this.props.numbers;
+        return  _.map(data, numb => {
             return (
                 <NumberViewBox
                     key={numb.title}
                     number={numb}
+                    user={this.props.userscore.length}
                 />
             );
         });
-        const harddata = this.state.hardcode.map( hard => {
+    }
+    renderHardData(){
+        const hardcode = this.state.hardcode;
+        return _.map(hardcode, hard => {
             return (
                 <NumberViewBox
                     key = {hard.title}
                     number={hard}
-                    user={this.props.data.userscore.length}
                 />
             );
         });
+    }
 
+    render() {
         return(
             <div className="NumberView">
-                {value}
-                {harddata}
+                {this.renderReduxData()}
+                {this.renderHardData()}
             </div>
         );
     }
 }
 
-export default NumberView;
+function mapStateToProps(state){
+    return {
+        numbers: state.number,
+        userscore: state.userscore
+    };
+}
+
+export default connect(mapStateToProps)(NumberView);

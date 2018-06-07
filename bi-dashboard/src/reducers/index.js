@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+
 import NumberReducer from './reducer_numbers';
 import PositionsReducer from './reducer_positions';
 import UserScoreReducer from './reducer_userscore';
@@ -8,16 +9,16 @@ import TimeReducer from './reducer_time';
 import IdvBarReducer from './reducer_idvBar';
 import TeamGoalsReducer from './reducer_teamgoals';
 
+//combine all reducers to create the application state;
 const rootReducer = combineReducers({
-    number: NumberReducer,
-    positions: PositionsReducer,
-    teamscore: TeamScoreReducer,
-    userscore: UserScoreReducer,
-    time: TimeReducer,
-    idvBar: IdvBarReducer,
-    tips: TipsReducer,
-    teamgoals: TeamGoalsReducer
-
+      number: NumberReducer,
+      positions: PositionsReducer,
+      teamscore: TeamScoreReducer,
+      userscore: UserScoreReducer,
+      time: TimeReducer,
+      idvBar: IdvBarReducer,
+      tips: TipsReducer,
+      teamgoals: TeamGoalsReducer
 });
 
 export default rootReducer;

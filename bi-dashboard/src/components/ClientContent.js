@@ -1,95 +1,23 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import { withRouter } from 'react-router';
+
 import DefaultView from './Views/DefaultView';
 import NumberView from './Views/NumberView';
 import GraphView from './Views/GraphView';
 import LeaderboardView from './Views/LeaderboardView';
 
-// import Highscores from './Views/Highscores';
-// import TimeGraphs from './Views/Time'
+export default class ClientContent extends Component {
 
-import {connect} from 'react-redux';
-import {fetchNumbers,
-    fetchUserScore,
-    fetchTeamScore,
-    fetchPositions,
-    fetchGoals,
-    // fetchProtected,
-    fetchIdvBar,
-    fetchTips,
-    fetchWeek,
-    fetchTime
-} from '../actions';
-
-
-
-
-
-
-class ClientContent extends Component {
-    state= {
-        tips: false
-    }
-
-    componentDidMount(){
-        const accessToken = localStorage.getItem('access_token')
-
-        this.props.fetchNumbers(accessToken);
-        this.props.fetchTeamScore(accessToken);
-        this.props.fetchUserScore(accessToken);
-        this.props.fetchWeek(accessToken);
-        this.props.fetchGoals(accessToken);
-        this.props.fetchTime(accessToken);
-        this.props.fetchPositions();
-        // this.props.fetchProtected();
-        this.props.fetchIdvBar();
-        //TODO: 401 errors
-        // this.props.fetchTips(localStorage.getItem(accessToken));
-
-
-    }
     render(){
         return (
-                <div className="client-content">
+            <div className="client-content">
                 <Switch>
-                    <Route path="/dashboard/default" render={(props) => (<DefaultView {...props} data={this.props}/>)} />
-                    <Route path="/dashboard/numbers" render={(props) => (<NumberView {...props} data={this.props} /> )} />
-                    <Route path="/dashboard/time" render={(props) => (<GraphView {...props} data={this.props}/>)} />
-                    <Route path="/dashboard/highscores" render={(props)=> (<LeaderboardView {...props} data={this.props} />)} />
+                    <Route path="/dashboard/default" component={DefaultView} />
+                    <Route path="/dashboard/numbers" component={NumberView} />
+                    <Route path="/dashboard/time" component={GraphView} />
+                    <Route path="/dashboard/highscores" component={LeaderboardView} />
                 </Switch>
             </div>
-
-
         );
     }
 }
-//
-//
-
-function mapStateToProps(state){
-    return {
-        numbers: state.number,
-        userscore: state.userscore,
-        teamscore: state.teamscore,
-        positions: state.positions,
-        tips: state.tips,
-        teamgoals: state.teamgoals,
-        time: state.time
-        // protected: state.protected
-    };
-}
-
-
-export default withRouter(connect(mapStateToProps,
-    {fetchNumbers,
-        fetchUserScore,
-        fetchTeamScore,
-        fetchPositions,
-        fetchGoals,
-        // fetchProtected,
-        fetchIdvBar,
-        fetchTips,
-        fetchWeek,
-        fetchTime
-    })(ClientContent));

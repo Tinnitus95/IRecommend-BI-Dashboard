@@ -3,14 +3,12 @@ import {Bar} from 'react-chartjs-2';
 
 class BarDiagram extends Component {
   render() {
-
     if (!this.props.data) {
         return <div>Loading</div>;
     }
     return(
       <Bar
           data={this.props.data}
-          //width={50}
           height={350}
           options={{
               maintainAspectRatio: false,
@@ -29,4 +27,4 @@ class BarDiagram extends Component {
    }
 }
 
-    export default BarDiagram;
+export default BarDiagram;
