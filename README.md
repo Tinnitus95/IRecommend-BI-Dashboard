@@ -24,6 +24,17 @@ and then to start up the development server run:
 yarn start
 ```
 
+### Structure
+Fetch all data in the ClientMain component, The fetches are in the actions folder. 
+Each Action is linked to a specific endpoint and the result from the axios.get is stored in the payload of the action.
+When a fetch is triggered the payload gets sent to a dedicated reducer where we pick off the relevant data and mutate it. 
+The mutated data is then stored in the Redux Store. 
+All the reducers are combined to create the application state.
+When we need to display the data we make a connect from the specific component and pick off the data from the state.
+most components use a map-function to display the data.
+
+Most higher level components have their own style file for a better structure and there's a settings-file with all the style variables.
+
 ## Built With
 
 * [React](https://reactjs.org/) - The web framework used
@@ -35,6 +46,7 @@ yarn start
 ## Versioning
 
 For the versions available, see the [tags on this repository](https://github.com/Tinnitus95/IRecommend-BI-Dashboard/tags). 
+
 
 ## Authors
 
